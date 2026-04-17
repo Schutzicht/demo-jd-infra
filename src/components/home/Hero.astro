@@ -21,7 +21,7 @@ const slides = [
 ];
 ---
 
-<section data-hero class="relative min-h-screen flex flex-col justify-end -mt-20 sm:-mt-24 overflow-hidden">
+<section data-hero class="relative -mt-20 sm:-mt-24 overflow-hidden">
   <!-- Slide backgrounds -->
   {slides.map((slide, i) => (
     <div class:list={['hero-slide', i === 0 ? 'active' : '']} data-slide-bg={i}>
@@ -39,16 +39,15 @@ const slides = [
   <!-- Grain overlay -->
   <div class="absolute inset-0 grain z-[2]"></div>
 
-  <!-- All content stacked vertically, all relative z-10 -->
-  <div class="relative z-10 w-full flex-1 flex flex-col justify-end pb-0">
-    <!-- Heading - positioned above stride cards -->
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full mb-8 sm:mb-10">
+  <!-- Heading - absolutely positioned, always visible -->
+  <div class="relative z-10 w-full pt-28 sm:pt-36 lg:pt-44 pb-6 sm:pb-10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div class="max-w-4xl">
         <h1 class="animate-slide-up" style="animation-delay: 0.3s;">
-          <span class="block font-heading font-black text-white text-5xl sm:text-7xl lg:text-8xl xl:text-9xl leading-[0.85] tracking-tight">
+          <span class="block font-heading font-black text-white text-4xl sm:text-7xl lg:text-8xl xl:text-9xl leading-[0.85] tracking-tight">
             JD Infra
           </span>
-          <span class="block font-heading font-bold text-white/70 text-xl sm:text-2xl lg:text-3xl mt-3 sm:mt-4 leading-tight">
+          <span class="block font-heading font-bold text-white/70 text-lg sm:text-2xl lg:text-3xl mt-2 sm:mt-4 leading-tight">
             Bouwt. Bestraat. <span class="text-accent-400">Verbindt.</span>
           </span>
         </h1>
@@ -56,8 +55,8 @@ const slides = [
     </div>
   </div>
 
-  <!-- Stride cards + stats - at the very bottom -->
-  <div class="relative z-10 w-full pb-6 sm:pb-12 lg:pb-16 pt-4">
+  <!-- Stride cards + stats -->
+  <div class="relative z-10 w-full pb-6 sm:pb-12 lg:pb-16 pt-2 sm:pt-4">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <!-- Stats bar with pill backgrounds -->
       <div class="flex flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8">
