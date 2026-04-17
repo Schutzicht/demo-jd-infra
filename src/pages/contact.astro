@@ -61,37 +61,37 @@ import { siteConfig } from '../data/siteConfig';
         </h2>
         <p class="text-secondary-400 max-w-xl mx-auto">Klik op een projecttype om het formulier automatisch in te vullen</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="project-cards">
-        <button class="project-card reveal group bg-white rounded-2xl border-2 border-secondary-100 p-6 text-left hover:border-accent-400 hover:shadow-lg transition-all cursor-pointer" data-project="straatwerk" data-description="Oprit bestraten met sierbestrating of gebakken klinkers">
-          <div class="w-12 h-12 bg-accent-400/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent-400/20 transition-colors">
-            <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" /></svg>
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5" id="project-cards">
+        <button class="project-card reveal group bg-white rounded-2xl border-2 border-secondary-100 p-4 sm:p-6 text-left hover:border-accent-400 hover:shadow-lg transition-all cursor-pointer" data-project="straatwerk" data-description="Oprit bestraten met sierbestrating of gebakken klinkers">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-accent-400/10 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-accent-400/20 transition-colors">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" /></svg>
           </div>
-          <h3 class="font-heading font-bold text-primary-500 mb-1">Oprit bestraten</h3>
-          <p class="text-secondary-400 text-sm">Van sierbestrating tot gebakken klinkers</p>
+          <h3 class="font-heading font-bold text-sm sm:text-base text-primary-500 mb-1">Oprit bestraten</h3>
+          <p class="text-secondary-400 text-xs sm:text-sm">Van sierbestrating tot gebakken klinkers</p>
         </button>
 
-        <button class="project-card reveal group bg-white rounded-2xl border-2 border-secondary-100 p-6 text-left hover:border-accent-400 hover:shadow-lg transition-all cursor-pointer" data-project="grondwerk" data-description="Tuin aanleggen: terras, paden, borders en afwatering" style="transition-delay: 80ms">
-          <div class="w-12 h-12 bg-accent-400/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent-400/20 transition-colors">
-            <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+        <button class="project-card reveal group bg-white rounded-2xl border-2 border-secondary-100 p-4 sm:p-6 text-left hover:border-accent-400 hover:shadow-lg transition-all cursor-pointer" data-project="grondwerk" data-description="Tuin aanleggen: terras, paden, borders en afwatering" style="transition-delay: 80ms">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-accent-400/10 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-accent-400/20 transition-colors">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
           </div>
-          <h3 class="font-heading font-bold text-primary-500 mb-1">Tuin aanleggen</h3>
-          <p class="text-secondary-400 text-sm">Terras, paden, borders en afwatering</p>
+          <h3 class="font-heading font-bold text-sm sm:text-base text-primary-500 mb-1">Tuin aanleggen</h3>
+          <p class="text-secondary-400 text-xs sm:text-sm">Terras, paden, borders en afwatering</p>
         </button>
 
-        <button class="project-card reveal group bg-white rounded-2xl border-2 border-secondary-100 p-6 text-left hover:border-accent-400 hover:shadow-lg transition-all cursor-pointer" data-project="riolering" data-description="Drainage en riolering: wateroverlast oplossen, nieuwe huisaansluiting" style="transition-delay: 160ms">
-          <div class="w-12 h-12 bg-accent-400/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent-400/20 transition-colors">
-            <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+        <button class="project-card reveal group bg-white rounded-2xl border-2 border-secondary-100 p-4 sm:p-6 text-left hover:border-accent-400 hover:shadow-lg transition-all cursor-pointer" data-project="riolering" data-description="Drainage en riolering: wateroverlast oplossen, nieuwe huisaansluiting" style="transition-delay: 160ms">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-accent-400/10 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-accent-400/20 transition-colors">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
           </div>
-          <h3 class="font-heading font-bold text-primary-500 mb-1">Drainage & riolering</h3>
-          <p class="text-secondary-400 text-sm">Wateroverlast oplossen, nieuwe huisaansluiting</p>
+          <h3 class="font-heading font-bold text-sm sm:text-base text-primary-500 mb-1">Drainage & riolering</h3>
+          <p class="text-secondary-400 text-xs sm:text-sm">Wateroverlast oplossen, nieuwe huisaansluiting</p>
         </button>
 
-        <button class="project-card reveal group bg-white rounded-2xl border-2 border-secondary-100 p-6 text-left hover:border-accent-400 hover:shadow-lg transition-all cursor-pointer" data-project="grondwerk" data-description="Grondwerk voor aanbouw: ontgraven, fundering, bouwrijp maken" style="transition-delay: 240ms">
-          <div class="w-12 h-12 bg-accent-400/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent-400/20 transition-colors">
-            <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+        <button class="project-card reveal group bg-white rounded-2xl border-2 border-secondary-100 p-4 sm:p-6 text-left hover:border-accent-400 hover:shadow-lg transition-all cursor-pointer" data-project="grondwerk" data-description="Grondwerk voor aanbouw: ontgraven, fundering, bouwrijp maken" style="transition-delay: 240ms">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-accent-400/10 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-accent-400/20 transition-colors">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
           </div>
-          <h3 class="font-heading font-bold text-primary-500 mb-1">Grondwerk voor aanbouw</h3>
-          <p class="text-secondary-400 text-sm">Ontgraven, fundering, bouwrijp maken</p>
+          <h3 class="font-heading font-bold text-sm sm:text-base text-primary-500 mb-1">Grondwerk voor aanbouw</h3>
+          <p class="text-secondary-400 text-xs sm:text-sm">Ontgraven, fundering, bouwrijp maken</p>
         </button>
       </div>
     </div>
@@ -269,10 +269,10 @@ import { siteConfig } from '../data/siteConfig';
                 <h3 class="font-heading font-bold text-base text-primary-500 mb-4">Projectgegevens</h3>
                 <label class="block text-sm font-medium text-secondary-500 mb-2">Type project *</label>
                 <div class="flex flex-wrap gap-2" id="project-type-chips">
-                  <button type="button" class="chip-btn px-5 py-2.5 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-sm transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="straatwerk">Straatwerk</button>
-                  <button type="button" class="chip-btn px-5 py-2.5 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-sm transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="riolering">Riolering</button>
-                  <button type="button" class="chip-btn px-5 py-2.5 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-sm transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="grondwerk">Grondwerk</button>
-                  <button type="button" class="chip-btn px-5 py-2.5 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-sm transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="combinatie">Combinatie</button>
+                  <button type="button" class="chip-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs sm:text-sm transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="straatwerk">Straatwerk</button>
+                  <button type="button" class="chip-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs sm:text-sm transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="riolering">Riolering</button>
+                  <button type="button" class="chip-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs sm:text-sm transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="grondwerk">Grondwerk</button>
+                  <button type="button" class="chip-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs sm:text-sm transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="combinatie">Combinatie</button>
                 </div>
                 <input type="hidden" name="type_project" id="type_project" required />
               </div>

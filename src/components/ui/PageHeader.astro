@@ -14,7 +14,7 @@ interface Props {
 const { title, subtitle, breadcrumbs = [], backgroundImage } = Astro.props;
 ---
 
-<section class="relative -mt-20 sm:-mt-24 pt-40 sm:pt-48 pb-16 sm:pb-20 overflow-hidden min-h-[340px] sm:min-h-[400px] flex items-end">
+<section class="relative -mt-20 sm:-mt-24 pt-32 sm:pt-48 pb-16 sm:pb-20 overflow-hidden min-h-[280px] sm:min-h-[400px] flex items-end">
   <!-- Background image -->
   <div class="absolute inset-0">
     <img src={backgroundImage} alt="" class="w-full h-full object-cover" loading="eager" />
@@ -51,7 +51,7 @@ const { title, subtitle, breadcrumbs = [], backgroundImage } = Astro.props;
     )}
 
     <!-- Title -->
-    <h1 class="font-heading font-black text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4">
+    <h1 class="font-heading font-black text-3xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-4">
       {title}
     </h1>
 
