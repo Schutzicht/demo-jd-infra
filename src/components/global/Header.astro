@@ -1,0 +1,269 @@
+---
+import { siteConfig } from '../../data/siteConfig';
+
+interface Props {
+  transparent?: boolean;
+}
+
+const { transparent = false } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<header
+  id="main-header"
+  class="fixed top-0 left-0 right-0 z-50"
+  data-transparent={transparent}
+>
+  <!-- Main nav bar -->
+  <div id="header-main" class:list={[
+    'transition-all duration-500',
+    transparent ? 'bg-transparent' : 'bg-primary-500',
+  ]}>
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div id="header-inner" class="flex items-center justify-between h-20 sm:h-24 transition-all duration-500">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-4 shrink-0 group">
+          <div id="header-logo" class="w-12 h-12 sm:w-14 sm:h-14 transition-all duration-500">
+            <img src="/fotos-jd-infra/fotos jd infra/logo_64d0900b.svg" alt="JD Infra logo" class="w-full h-full object-contain" />
+          </div>
+          <div class="hidden sm:block">
+            <span class="font-heading text-white text-xl font-bold tracking-wide block leading-tight group-hover:text-accent-400 transition-colors">
+              JD Infra
+            </span>
+            <span id="header-subtitle" class="text-white/40 text-[10px] uppercase tracking-[0.2em] font-heading transition-all duration-500">
+              Aannemingsbedrijf BV
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-0.5">
+          {siteConfig.navigation.map((item) => (
+            <div class="relative group">
+              <a
+                href={item.href}
+                class:list={[
+                  'px-4 xl:px-5 py-3 text-[13px] font-heading font-bold uppercase tracking-[0.15em] transition-all duration-200 block',
+                  currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
+                    ? 'text-accent-400'
+                    : 'text-white/90 hover:text-accent-400',
+                ]}
+              >
+                {item.label}
+                {'children' in item && item.children && (
+                  <svg class="inline-block w-3 h-3 ml-1 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                )}
+              </a>
+              {/* Active indicator line */}
+              {(currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))) && (
+                <div class="absolute bottom-0 left-4 right-4 h-0.5 bg-accent-400"></div>
+              )}
+              {'children' in item && item.children && (
+                <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top scale-95 group-hover:scale-100">
+                  <div class="bg-primary-500 border border-white/10 shadow-2xl py-2 min-w-[220px]">
+                    <div class="w-12 h-0.5 bg-accent-400 mx-4 mb-2"></div>
+                    {item.children.map((child) => (
+                      <a
+                        href={child.href}
+                        class:list={[
+                          'block px-5 py-2.5 text-[13px] font-heading font-medium tracking-wider transition-all duration-200',
+                          currentPath === child.href
+                            ? 'text-accent-400 bg-white/5'
+                            : 'text-white/70 hover:text-accent-400 hover:bg-white/5 hover:pl-7',
+                        ]}
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+
+          <!-- Language switch -->
+          <div class="relative ml-2" id="lang-switcher">
+            <button id="lang-toggle" class="flex items-center gap-1 text-white/60 hover:text-accent-400 text-[12px] font-heading font-bold uppercase tracking-wider cursor-pointer transition-colors px-2 py-2">
+              NL
+              <svg class="w-2.5 h-2.5 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div id="lang-dropdown" class="absolute right-0 top-full mt-1 bg-white shadow-xl border border-gray-100 py-1 min-w-[140px] opacity-0 invisible transition-all duration-200 z-50">
+              <a href="#" class="block px-4 py-2 text-xs text-accent-500 bg-accent-50 font-heading tracking-wider font-bold">NL - Nederlands</a>
+              <a href="#" class="block px-4 py-2 text-xs text-secondary-500 hover:text-accent-500 hover:bg-gray-50 font-heading tracking-wider">EN - English</a>
+              <a href="#" class="block px-4 py-2 text-xs text-secondary-500 hover:text-accent-500 hover:bg-gray-50 font-heading tracking-wider">DE - Deutsch</a>
+            </div>
+          </div>
+
+          <!-- CTA button in nav -->
+          <a href="/contact/" class="ml-2 bg-accent-400 hover:bg-accent-300 text-primary-900 px-6 py-2.5 font-heading font-bold text-[12px] uppercase tracking-[0.15em] transition-all duration-300 hover:-translate-y-0.5">
+            Offerte
+          </a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="lg:hidden text-white p-2 cursor-pointer" aria-label="Open menu">
+          <svg id="menu-icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          <svg id="menu-icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Accent bottom line -->
+    <div id="header-accent" class="h-0.5 bg-gradient-to-r from-accent-400 via-accent-400/50 to-transparent transition-opacity duration-500 opacity-0"></div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-primary-500 max-h-[calc(100vh-5rem)] overflow-y-auto overscroll-contain">
+    <nav class="max-w-7xl mx-auto px-5 py-6 space-y-1">
+      {siteConfig.navigation.map((item) => (
+        <>
+          <a
+            href={item.href}
+            class:list={[
+              'block px-4 py-3.5 text-base font-heading font-bold uppercase tracking-wider transition-colors',
+              currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
+                ? 'text-accent-400 border-l-2 border-accent-400 bg-white/5'
+                : 'text-white/90 hover:text-accent-400 border-l-2 border-transparent',
+            ]}
+          >
+            {item.label}
+          </a>
+          {'children' in item && item.children && item.children.map((child) => (
+            <a
+              href={child.href}
+              class:list={[
+                'block pl-10 pr-4 py-2.5 text-sm font-heading tracking-wider transition-colors',
+                currentPath === child.href
+                  ? 'text-accent-400'
+                  : 'text-white/50 hover:text-accent-400',
+              ]}
+            >
+              {child.label}
+            </a>
+          ))}
+        </>
+      ))}
+      <!-- Mobile CTA -->
+      <div class="pt-4 border-t border-white/10 mt-4">
+        <a href="/contact/" class="block bg-accent-400 text-primary-900 text-center py-4 font-heading font-bold text-sm uppercase tracking-wider">
+          Offerte aanvragen
+        </a>
+      </div>
+      <!-- Mobile language -->
+      <div class="flex gap-6 px-4 pt-4">
+        <a href="#" class="text-accent-400 text-sm font-heading font-bold tracking-wider">NL</a>
+        <a href="#" class="text-white/40 text-sm font-heading tracking-wider hover:text-white">EN</a>
+        <a href="#" class="text-white/40 text-sm font-heading tracking-wider hover:text-white">DE</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Spacer -->
+<div id="header-spacer" class="h-20 sm:h-24 transition-all duration-500"></div>
+
+<script>
+  const header = document.getElementById('main-header')!;
+  const headerMain = document.getElementById('header-main')!;
+  const headerInner = document.getElementById('header-inner')!;
+  const headerLogo = document.getElementById('header-logo')!;
+  const headerSubtitle = document.getElementById('header-subtitle');
+  const headerAccent = document.getElementById('header-accent')!;
+  const headerSpacer = document.getElementById('header-spacer')!;
+  const isTransparent = header.dataset.transparent === 'true';
+
+  let scrolled = false;
+
+  function updateHeader() {
+    const isScrolled = window.scrollY > 60;
+
+    if (isScrolled !== scrolled) {
+      scrolled = isScrolled;
+
+      if (isScrolled) {
+        headerInner.classList.remove('h-20', 'sm:h-24');
+        headerInner.classList.add('h-14', 'sm:h-16');
+        headerLogo.classList.remove('w-12', 'h-12', 'sm:w-14', 'sm:h-14');
+        headerLogo.classList.add('w-8', 'h-8', 'sm:w-10', 'sm:h-10');
+        if (headerSubtitle) { headerSubtitle.style.opacity = '0'; headerSubtitle.style.height = '0'; }
+        headerAccent.classList.replace('opacity-0', 'opacity-100');
+        headerMain.classList.add('bg-primary-500/95', 'backdrop-blur-md', 'shadow-2xl');
+        if (isTransparent) headerMain.classList.remove('bg-transparent');
+        headerSpacer.classList.remove('h-20', 'sm:h-24');
+        headerSpacer.classList.add('h-14', 'sm:h-16');
+      } else {
+        headerInner.classList.add('h-20', 'sm:h-24');
+        headerInner.classList.remove('h-14', 'sm:h-16');
+        headerLogo.classList.add('w-12', 'h-12', 'sm:w-14', 'sm:h-14');
+        headerLogo.classList.remove('w-8', 'h-8', 'sm:w-10', 'sm:h-10');
+        if (headerSubtitle) { headerSubtitle.style.opacity = '1'; headerSubtitle.style.height = 'auto'; }
+        headerAccent.classList.replace('opacity-100', 'opacity-0');
+        headerMain.classList.remove('backdrop-blur-md', 'shadow-2xl');
+        if (isTransparent) {
+          headerMain.classList.remove('bg-primary-500/95');
+          headerMain.classList.add('bg-transparent');
+        }
+        headerSpacer.classList.add('h-20', 'sm:h-24');
+        headerSpacer.classList.remove('h-14', 'sm:h-16');
+      }
+    }
+  }
+
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  // Language switcher
+  const langToggle = document.getElementById('lang-toggle');
+  const langDropdown = document.getElementById('lang-dropdown');
+  let langOpen = false;
+
+  langToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langOpen = !langOpen;
+    if (langOpen) {
+      langDropdown?.classList.remove('opacity-0', 'invisible');
+      langDropdown?.classList.add('opacity-100', 'visible');
+    } else {
+      langDropdown?.classList.add('opacity-0', 'invisible');
+      langDropdown?.classList.remove('opacity-100', 'visible');
+    }
+  });
+
+  document.addEventListener('click', () => {
+    if (langOpen) {
+      langOpen = false;
+      langDropdown?.classList.add('opacity-0', 'invisible');
+      langDropdown?.classList.remove('opacity-100', 'visible');
+    }
+  });
+
+  // Mobile menu
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
+    mobileMenu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+    document.body.style.overflow = isOpen ? '' : 'hidden';
+    if (!isOpen) {
+      headerMain.classList.add('bg-primary-500/95');
+      if (isTransparent) headerMain.classList.remove('bg-transparent');
+    } else if (!scrolled && isTransparent) {
+      headerMain.classList.remove('bg-primary-500/95');
+      headerMain.classList.add('bg-transparent');
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && !mobileMenu?.classList.contains('hidden')) {
+      mobileMenu?.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  });
+</script>

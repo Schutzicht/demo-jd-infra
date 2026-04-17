@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/ui/PageHeader.astro';
+import Button from '../../components/ui/Button.astro';
+---
+
+<BaseLayout title="Riolering" description="Professioneel rioleringswerk door JD Infra. Aanleg en onderhoud van compleet rioleringswerk in heel Zeeland.">
+  <PageHeader
+    title="Riolering"
+    subtitle="Aanleg en onderhoud van compleet rioleringswerk voor nieuwbouw en reconstructie."
+    breadcrumbs={[{ label: 'Diensten', href: '/diensten/' }, { label: 'Riolering' }]}
+    image="/fotos-jd-infra/fotos jd infra/Foto-16-11-18-11-08-11zp-579x500.jpg.jpeg"
+  />
+
+  <!-- Content -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div class="reveal">
+          <img
+            src="/fotos-jd-infra/fotos jd infra/Foto-16-11-18-11-08-11zp-579x500.jpg.jpeg"
+            alt="Rioleringswerk door JD Infra"
+            class="w-full h-80 md:h-96 object-cover shadow-xl"
+            loading="lazy"
+          />
+        </div>
+        <div class="reveal" style="transition-delay: 100ms">
+          <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary-500 mb-6">Rioleringswerk door vakmensen</h2>
+          <p class="text-secondary-600 text-lg leading-relaxed mb-6">
+            Rioleringswerk wordt door JD Infra uitgevoerd en heeft betrekking op het nieuw aanleggen en onderhouden van compleet rioleringswerk. Wij verzorgen alle soorten riolering ten behoeve van nieuwbouw en reconstructie.
+          </p>
+          <p class="text-secondary-500 leading-relaxed mb-6">
+            Van huisaansluitingen tot complete rioolstelsels voor woonwijken en bedrijventerreinen. Onze ervaren medewerkers werken met moderne technieken en materialen om duurzame rioleringsoplossingen te realiseren.
+          </p>
+
+          <h3 class="font-heading text-lg font-semibold text-primary-500 mb-3">Onze riolering diensten:</h3>
+          <ul class="space-y-2 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-accent-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-secondary-600">Aanleg nieuw rioleringswerk</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-accent-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-secondary-600">Renovatie en vervanging bestaande riolering</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-accent-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-secondary-600">Huisaansluitingen en drukriolering</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-accent-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-secondary-600">Riolering voor nieuwbouw en reconstructie</span>
+            </li>
+          </ul>
+
+          <Button href="/contact/" variant="primary" size="lg">Vraag een offerte aan</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extra info -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary-500 mb-4">Betrouwbare rioleringsoplossingen</h2>
+      <p class="text-secondary-600 text-lg max-w-3xl mx-auto leading-relaxed">
+        Een goed functionerend rioolstelsel is essentieel. JD Infra zorgt voor duurzame oplossingen die jarenlang meegaan. Neem contact op voor advies of een vrijblijvende offerte.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

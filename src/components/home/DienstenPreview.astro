@@ -1,0 +1,63 @@
+---
+import { siteConfig } from '../../data/siteConfig';
+
+const diensten = siteConfig.diensten;
+---
+
+<section class="py-24 sm:py-32 bg-white relative overflow-hidden">
+  <!-- Ghost text -->
+  <div class="absolute top-8 left-0 text-[10rem] lg:text-[14rem] font-heading font-black text-primary-500/[0.04] pointer-events-none select-none leading-none hidden lg:block">DIENSTEN</div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="mb-16 reveal">
+      <span class="text-accent-500 font-heading font-bold text-sm uppercase tracking-[0.3em] mb-4 block">Wat wij doen</span>
+      <h2 class="font-heading font-black text-5xl sm:text-6xl lg:text-7xl text-primary-500 leading-[0.9] accent-line">
+        ONZE<br/>DIENSTEN
+      </h2>
+      <p class="text-secondary-400 max-w-md mt-8 text-base leading-relaxed">
+        Van straatwerk tot complete rioleringen — wij leveren vakwerk voor elke schaal.
+      </p>
+    </div>
+
+    <!-- Service cards - white cards with image on top -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      {diensten.map((dienst, i) => (
+        <a
+          href={`/diensten/${dienst.slug}/`}
+          class:list={[
+            'reveal group block overflow-hidden bg-white border border-secondary-100 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2',
+            i === 1 ? 'md:mt-8' : '',
+          ]}
+          style={`transition-delay: ${i * 0.15}s;`}
+        >
+          <!-- Image -->
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img
+              src={dienst.image}
+              alt={dienst.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+            />
+            <!-- Subtle gradient at bottom only -->
+            <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/10 to-transparent"></div>
+          </div>
+
+          <!-- Content - white area below -->
+          <div class="p-6 sm:p-8 relative border-l-4 border-transparent group-hover:border-accent-400 transition-all duration-500">
+            <h3 class="font-heading font-bold text-xl sm:text-2xl text-primary-500 mb-3 group-hover:text-accent-500 transition-colors duration-300">
+              {dienst.title}
+            </h3>
+
+            <p class="text-secondary-400 text-sm leading-relaxed mb-4">{dienst.description}</p>
+
+            <div class="flex items-center gap-2 text-accent-400 font-heading font-bold text-sm uppercase tracking-wider">
+              <span>Meer info</span>
+              <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

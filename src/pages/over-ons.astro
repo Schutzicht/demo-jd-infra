@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/ui/PageHeader.astro';
+import { siteConfig } from '../data/siteConfig';
+import Button from '../components/ui/Button.astro';
+---
+
+<BaseLayout title="Over ons" description="Leer meer over JD Infra Aannemingsbedrijf BV. Sinds 2006 uw partner voor infrastructureel werk in Zeeland.">
+  <PageHeader
+    title="Over ons"
+    subtitle="Al sinds 2006 uw betrouwbare partner voor infrastructureel werk in Zeeland."
+    breadcrumbs={[{ label: 'Over ons' }]}
+    image="/fotos-jd-infra/fotos jd infra/DJI_0004-1024x576.jpg.jpeg"
+  />
+
+  <!-- Company Story -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <img
+            src="/fotos-jd-infra/fotos jd infra/DJI_0004-1024x576.jpg.jpeg"
+            alt="Luchtfoto van JD Infra bedrijfspand en wagenpark in Koudekerke"
+            class="w-full h-72 md:h-96 object-cover shadow-xl"
+            loading="lazy"
+          />
+        </div>
+        <div class="reveal" style="transition-delay: 100ms">
+          <div class="w-12 h-1 bg-accent-400 mb-6"></div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary-500 mb-6">Ons verhaal</h2>
+          <p class="text-secondary-600 text-lg leading-relaxed mb-6">
+            {siteConfig.description}
+          </p>
+          <p class="text-secondary-500 leading-relaxed mb-6">
+            Opgericht in 2006 in Koudekerke, is JD Infra uitgegroeid tot een gevestigde naam in de Zeeuwse infrastructurele sector. Met een hecht team van 12 tot 15 medewerkers zijn wij dagelijks actief door heel Zeeland.
+          </p>
+          <p class="text-secondary-500 leading-relaxed">
+            Onze kracht ligt in de combinatie van ervaring, vakmanschap en een persoonlijke aanpak. Of het nu gaat om een kleine klus voor een particulier of een groot project voor een overheidsinstelling, bij JD Infra krijgt elke klant dezelfde aandacht en kwaliteit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats - light version -->
+  <section class="py-16 bg-slate-50 border-y border-secondary-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
+        <div class="text-center">
+          <p class="font-heading text-4xl md:text-5xl font-bold text-accent-400 mb-2">{siteConfig.founded}</p>
+          <p class="text-secondary-400 uppercase tracking-wider text-sm">Opgericht</p>
+        </div>
+        <div class="text-center">
+          <p class="font-heading text-4xl md:text-5xl font-bold text-accent-400 mb-2">{siteConfig.employees}</p>
+          <p class="text-secondary-400 uppercase tracking-wider text-sm">Medewerkers</p>
+        </div>
+        <div class="text-center">
+          <p class="font-heading text-4xl md:text-5xl font-bold text-accent-400 mb-2">3</p>
+          <p class="text-secondary-400 uppercase tracking-wider text-sm">Specialisaties</p>
+        </div>
+        <div class="text-center">
+          <p class="font-heading text-4xl md:text-5xl font-bold text-accent-400 mb-2">18+</p>
+          <p class="text-secondary-400 uppercase tracking-wider text-sm">Jaar ervaring</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <div class="w-12 h-1 bg-accent-400 mx-auto mb-6"></div>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary-500 mb-6">Wat wij doen</h2>
+        <p class="text-secondary-600 text-lg leading-relaxed mb-6">
+          JD Infra is gespecialiseerd in drie kerngebieden: straatwerk, riolering en grondwerk. Met ons eigen machinepark en ervaren personeel voeren wij projecten uit voor:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+        <div class="reveal bg-white p-8 shadow-md text-center border border-secondary-100" style="transition-delay: 0ms">
+          <div class="w-16 h-16 bg-accent-400/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-primary-500 mb-2">Particulieren</h3>
+          <p class="text-secondary-500 text-sm">Opritten, tuinen, terrassen en huisaansluitingen voor woningeigenaren.</p>
+        </div>
+        <div class="reveal bg-white p-8 shadow-md text-center border border-secondary-100" style="transition-delay: 100ms">
+          <div class="w-16 h-16 bg-accent-400/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-primary-500 mb-2">Bedrijven</h3>
+          <p class="text-secondary-500 text-sm">Bedrijfsterreinen, parkeerplaatsen en infrastructurele voorzieningen.</p>
+        </div>
+        <div class="reveal bg-white p-8 shadow-md text-center border border-secondary-100" style="transition-delay: 200ms">
+          <div class="w-16 h-16 bg-accent-400/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-primary-500 mb-2">Overheidsinstellingen</h3>
+          <p class="text-secondary-500 text-sm">Gemeentelijke wegen, rotondes, riolering en openbare ruimten.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team & Fleet -->
+  <section class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal order-2 lg:order-1">
+          <div class="w-12 h-1 bg-accent-400 mb-6"></div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary-500 mb-6">Ons team en machinepark</h2>
+          <p class="text-secondary-600 text-lg leading-relaxed mb-6">
+            Met 12 tot 15 ervaren medewerkers beschikt JD Infra over een team van gediplomeerde vakmensen. Onze medewerkers worden voortdurend bijgeschoold om op de hoogte te blijven van de nieuwste technieken en veiligheidseisen.
+          </p>
+          <p class="text-secondary-500 leading-relaxed mb-8">
+            Daarnaast beschikken wij over een uitgebreid en modern machinepark, waaronder graafmachines, wielladers en vrachtwagens. Hierdoor kunnen wij projecten efficient en naar de hoogste standaarden uitvoeren.
+          </p>
+          <Button href="/contact/" variant="primary" size="lg">Neem contact op</Button>
+        </div>
+        <div class="reveal order-1 lg:order-2" style="transition-delay: 100ms">
+          <img
+            src="/fotos-jd-infra/fotos jd infra/DSCF7925-1920x1080.jpg.jpeg"
+            alt="JD Infra vrachtwagen"
+            class="w-full h-72 md:h-96 object-cover shadow-xl"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

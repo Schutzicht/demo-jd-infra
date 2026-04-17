@@ -1,0 +1,83 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  breadcrumbs?: BreadcrumbItem[];
+  image?: string;
+}
+
+const { title, subtitle, breadcrumbs = [], image } = Astro.props;
+---
+
+<section class="relative bg-white pt-28 pb-12 md:pt-36 md:pb-16 overflow-hidden border-b border-secondary-100">
+  <!-- Subtle geometric decoration -->
+  <div class="absolute top-0 right-0 w-64 h-64 bg-accent-400/[0.03] rotate-45 translate-x-32 -translate-y-32 hidden lg:block"></div>
+  <div class="absolute bottom-0 left-0 w-48 h-48 bg-primary-500/[0.02] rotate-45 -translate-x-24 translate-y-24 hidden lg:block"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center gap-12 lg:gap-16">
+      <!-- Left content -->
+      <div class="flex-1 min-w-0">
+        <!-- Breadcrumbs -->
+        {breadcrumbs.length > 0 && (
+          <nav class="mb-6" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm font-heading">
+              <li>
+                <a href="/" class="text-secondary-300 hover:text-accent-400 transition-colors">Home</a>
+              </li>
+              {breadcrumbs.map((crumb, i) => (
+                <li class="flex items-center gap-2">
+                  <svg class="w-3 h-3 text-secondary-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                  {crumb.href ? (
+                    <a href={crumb.href} class="text-secondary-300 hover:text-accent-400 transition-colors">{crumb.label}</a>
+                  ) : (
+                    <span class="text-accent-400 font-semibold">{crumb.label}</span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
+
+        <!-- Title -->
+        <h1 class="font-heading font-black text-4xl md:text-5xl lg:text-6xl text-primary-500 leading-[0.95] mb-4">
+          {title}
+        </h1>
+
+        <!-- Accent line -->
+        <div class="w-16 h-1 bg-accent-400 mb-4"></div>
+
+        <!-- Subtitle -->
+        {subtitle && (
+          <p class="text-secondary-400 text-lg md:text-xl max-w-2xl leading-relaxed">
+            {subtitle}
+          </p>
+        )}
+      </div>
+
+      <!-- Right image (optional) -->
+      {image && (
+        <div class="hidden lg:block w-80 xl:w-96 shrink-0">
+          <div class="relative">
+            <img
+              src={image}
+              alt={title}
+              class="w-full aspect-[4/3] object-cover shadow-lg"
+              loading="eager"
+            />
+            <!-- Accent frame corners -->
+            <div class="absolute -top-2 -left-2 w-10 h-10 border-t-2 border-l-2 border-accent-400"></div>
+            <div class="absolute -bottom-2 -right-2 w-10 h-10 border-b-2 border-r-2 border-accent-400"></div>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/ui/PageHeader.astro';
+import { siteConfig } from '../data/siteConfig';
+---
+
+<BaseLayout title="Projecten" description="Bekijk de uitgevoerde projecten van JD Infra in heel Zeeland. Van straatwerk tot riolering en grondwerk.">
+  <PageHeader
+    title="Onze projecten"
+    subtitle="Een selectie van uitgevoerde projecten door heel Zeeland."
+    breadcrumbs={[{ label: 'Projecten' }]}
+  />
+
+  <!-- Projects Grid -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {siteConfig.projecten.map((project, i) => (
+          <div
+            class="reveal group bg-white overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-secondary-100 hover:-translate-y-1"
+            style={`transition-delay: ${i * 100}ms`}
+          >
+            <div class="relative aspect-[16/10] overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 border-l-4 border-transparent group-hover:border-accent-400 transition-all duration-300">
+              <h2 class="font-heading text-xl font-bold text-primary-500 mb-2">{project.title}</h2>
+              <p class="text-secondary-400 text-sm">
+                {new Date(project.date).toLocaleDateString('nl-NL', { year: 'numeric', month: 'long' })}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Extra project images -->
+      <div class="mt-16 reveal">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary-500 mb-8 text-center">Impressie van ons werk</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="overflow-hidden shadow-lg">
+            <img src="/fotos-jd-infra/fotos jd infra/IMG_8333lzp.jpg.jpeg" alt="Bouwwerkzaamheden" class="w-full h-56 object-cover" loading="lazy" />
+          </div>
+          <div class="overflow-hidden shadow-lg">
+            <img src="/fotos-jd-infra/fotos jd infra/IMG_2403c.jpg.jpeg" alt="Werkzaamheden op locatie" class="w-full h-56 object-cover" loading="lazy" />
+          </div>
+          <div class="overflow-hidden shadow-lg">
+            <img src="/fotos-jd-infra/fotos jd infra/DSCF7911-1920x1080.jpg.jpeg" alt="Wiellader bij grondwerk" class="w-full h-56 object-cover" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

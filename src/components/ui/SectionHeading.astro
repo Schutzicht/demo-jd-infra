@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  align?: 'left' | 'center';
+  light?: boolean;
+}
+
+const { title, subtitle, align = 'center', light = false } = Astro.props;
+const alignClass = align === 'center' ? 'text-center' : 'text-left';
+const titleColor = light ? 'text-white' : 'text-primary-500';
+const subtitleColor = light ? 'text-primary-100' : 'text-secondary-500';
+const lineAlign = align === 'center' ? 'mx-auto' : '';
+---
+
+<div class={`mb-10 md:mb-14 ${alignClass}`}>
+  <div class={`w-12 h-1 bg-accent-400 mb-4 ${lineAlign}`}></div>
+  <h2 class={`font-heading text-3xl md:text-4xl lg:text-5xl font-bold ${titleColor} mb-4`}>{title}</h2>
+  {subtitle && (
+    <p class={`text-lg md:text-xl ${subtitleColor} max-w-2xl ${align === 'center' ? 'mx-auto' : ''}`}>{subtitle}</p>
+  )}
+</div>

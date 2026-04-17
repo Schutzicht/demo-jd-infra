@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/ui/PageHeader.astro';
+import Button from '../../components/ui/Button.astro';
+---
+
+<BaseLayout title="Straatwerk" description="Professioneel straatwerk door JD Infra. Ervaren en gediplomeerde vakmensen voor bestrating in heel Zeeland.">
+  <PageHeader
+    title="Straatwerk"
+    subtitle="Professioneel straatwerk door ervaren en gediplomeerde vakmensen."
+    breadcrumbs={[{ label: 'Diensten', href: '/diensten/' }, { label: 'Straatwerk' }]}
+    image="/fotos-jd-infra/fotos jd infra/IMG_2694c-600x500.jpg.jpeg"
+  />
+
+  <!-- Content -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div class="reveal">
+          <img
+            src="/fotos-jd-infra/fotos jd infra/IMG_2694c-600x500.jpg.jpeg"
+            alt="Straatwerk door JD Infra"
+            class="w-full h-80 md:h-96 object-cover shadow-xl"
+            loading="lazy"
+          />
+        </div>
+        <div class="reveal" style="transition-delay: 100ms">
+          <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary-500 mb-6">Vakkundig straatwerk in Zeeland</h2>
+          <p class="text-secondary-600 text-lg leading-relaxed mb-6">
+            Straatwerk wordt door JD Infra uitgevoerd door ervaren en gediplomeerde vakmensen. Zowel grote als kleine oppervlakken straatwerk worden door ons aangelegd.
+          </p>
+          <p class="text-secondary-500 leading-relaxed mb-6">
+            Van opritten en tuinpaden tot complete bestratingsprojecten voor bedrijventerreinen en gemeentelijke wegen. Wij leveren kwaliteit op maat, of het nu gaat om sierbestrating, klinkers of tegels.
+          </p>
+
+          <h3 class="font-heading text-lg font-semibold text-primary-500 mb-3">Onze straatwerk diensten:</h3>
+          <ul class="space-y-2 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-accent-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-secondary-600">Aanleg van bestrating en sierbestrating</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-accent-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-secondary-600">Herbestrating en renovatie</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-accent-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-secondary-600">Opritten, parkeerplaatsen en terreinverharding</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-accent-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-secondary-600">Trottoirs en fietspaden</span>
+            </li>
+          </ul>
+
+          <Button href="/contact/" variant="primary" size="lg">Vraag een offerte aan</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extra photo section -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary-500 mb-4">Straatwerk op maat</h2>
+      <p class="text-secondary-600 text-lg max-w-3xl mx-auto leading-relaxed">
+        Elk project is anders. Daarom bespreken wij graag uw wensen en maken wij een plan op maat. Neem vrijblijvend contact met ons op voor meer informatie of een offerte.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

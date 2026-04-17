@@ -1,0 +1,215 @@
+---
+import { siteConfig } from '../../data/siteConfig';
+
+const slides = [
+  {
+    image: '/fotos-jd-infra/fotos jd infra/DSCF7925-1920x1080.jpg.jpeg',
+    alt: 'JD Infra vrachtwagen',
+    subtitle: 'Aannemingsbedrijf',
+    heading: 'JD Infra',
+    tagline: 'Bouwt. Bestraat. Verbindt.',
+    description: 'Vakmanschap in grondwerk, straatwerk en buitenriolering. Van bouwrijp maken tot complete infrastructurele projecten.',
+  },
+  {
+    image: '/fotos-jd-infra/fotos jd infra/DSCF7911-1920x1080.jpg.jpeg',
+    alt: 'Shovel aan het werk',
+    subtitle: 'Modern machinepark',
+    heading: 'Kracht &',
+    tagline: 'Precisie',
+    description: 'Met modern materieel en ervaren vakmensen realiseren wij projecten van elke omvang.',
+  },
+  {
+    image: '/fotos-jd-infra/fotos jd infra/IMG_8333lzp.jpg.jpeg',
+    alt: 'Bouwplaats werkzaamheden',
+    subtitle: 'Sinds 2006',
+    heading: 'Ervaring',
+    tagline: 'Die telt',
+    description: 'Al bijna 20 jaar uw partner voor infrastructurele projecten in heel Zeeland.',
+  },
+  {
+    image: '/fotos-jd-infra/fotos jd infra/IMG_2403c.jpg.jpeg',
+    alt: 'Bouwplaats overzicht',
+    subtitle: 'Heel Zeeland',
+    heading: 'Uw Project',
+    tagline: 'Ons vakwerk',
+    description: 'Particulier, zakelijk of overheid — wij leveren op maat voor elke opdrachtgever.',
+  },
+];
+---
+
+<section data-hero class="relative min-h-screen flex items-end -mt-20 sm:-mt-24 overflow-hidden">
+  <!-- Slide backgrounds -->
+  {slides.map((slide, i) => (
+    <div class:list={['hero-slide', i === 0 ? 'active' : '']} data-slide-bg={i}>
+      <img
+        src={slide.image}
+        alt={slide.alt}
+        class="w-full h-full object-cover"
+        loading={i === 0 ? 'eager' : 'lazy'}
+      />
+      <!-- Dark overlays -->
+      <div class="absolute inset-0 bg-gradient-to-t from-primary-900 via-primary-900/70 to-primary-900/30"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-900/40 to-transparent"></div>
+    </div>
+  ))}
+
+  <!-- Grain overlay -->
+  <div class="absolute inset-0 grain z-[2]"></div>
+
+  <!-- Accent top line -->
+  <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-400 via-accent-400/60 to-transparent z-20"></div>
+
+  <!-- Large ghost text -->
+  <div class="absolute bottom-16 right-0 z-[3] hidden lg:block pointer-events-none select-none">
+    <span class="text-[18rem] xl:text-[22rem] font-heading font-black text-white/[0.02] leading-none tracking-tighter">INFRA</span>
+  </div>
+
+  <!-- Slide content -->
+  {slides.map((slide, i) => (
+    <div
+      class:list={['absolute inset-0 z-10 flex items-end hero-content', i === 0 ? 'active' : '']}
+      data-slide-content={i}
+    >
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-16 sm:pb-24 pt-40 w-full">
+        <div class="max-w-4xl">
+          <div class="w-16 h-1 bg-accent-400 mb-8"></div>
+
+          <span class="text-accent-400 font-heading font-bold text-sm sm:text-base uppercase tracking-[0.3em] mb-4 block">
+            {slide.subtitle}
+          </span>
+
+          <h1>
+            <span class="block font-heading font-black text-white text-6xl sm:text-8xl lg:text-[8rem] xl:text-[10rem] leading-[0.85] tracking-tight">
+              {slide.heading}
+            </span>
+            <span class="block font-heading font-bold text-accent-400 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mt-2 sm:mt-4 leading-tight">
+              {slide.tagline}
+            </span>
+          </h1>
+
+          <p class="text-white/50 text-base sm:text-lg max-w-xl mt-6 sm:mt-8 leading-relaxed">
+            {slide.description}
+          </p>
+
+          {i === 0 && (
+            <div class="flex flex-col sm:flex-row gap-4 mt-8 sm:mt-10">
+              <a href="/diensten/" class="group inline-flex items-center gap-3 bg-accent-400 hover:bg-accent-300 text-primary-900 px-8 py-4 rounded-none font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300">
+                Onze diensten
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+              <a href="/contact/" class="inline-flex items-center gap-3 border-2 border-white/20 hover:border-accent-400 text-white hover:text-accent-400 px-8 py-4 rounded-none font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300">
+                Neem contact op
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  ))}
+
+  <!-- Stats bar (always visible) -->
+  <div class="relative z-20 w-full">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-8">
+      <div class="pt-8 border-t border-white/10">
+        <div class="grid grid-cols-3 gap-8 max-w-lg">
+          <div>
+            <span class="block font-heading font-bold text-3xl sm:text-4xl text-white" data-counter="2006" data-counter-type="year">2006</span>
+            <span class="text-white/40 text-xs uppercase tracking-widest font-heading mt-1 block">Opgericht</span>
+          </div>
+          <div>
+            <span class="block font-heading font-bold text-3xl sm:text-4xl text-white"><span data-counter="15">15</span><span class="text-accent-400">+</span></span>
+            <span class="text-white/40 text-xs uppercase tracking-widest font-heading mt-1 block">Vakmensen</span>
+          </div>
+          <div>
+            <span class="block font-heading font-bold text-3xl sm:text-4xl text-white"><span data-counter="100">100</span><span class="text-accent-400">%</span></span>
+            <span class="text-white/40 text-xs uppercase tracking-widest font-heading mt-1 block">Zeeland</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide indicators -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden sm:flex items-center gap-3" id="slide-indicators">
+    {slides.map((_, i) => (
+      <button
+        class:list={['slide-dot relative w-10 h-[3px] bg-white/20 overflow-hidden cursor-pointer transition-all duration-300', i === 0 ? 'w-16' : '']}
+        data-slide-dot={i}
+        aria-label={`Ga naar slide ${i + 1}`}
+      >
+        {i === 0 && <div class="slide-progress-bar absolute inset-0"></div>}
+      </button>
+    ))}
+  </div>
+
+  <!-- Scroll indicator vertical -->
+  <div class="absolute bottom-8 right-8 z-20 hidden lg:flex flex-col items-center gap-2">
+    <span class="text-white/30 text-xs uppercase tracking-widest font-heading" style="writing-mode: vertical-rl;">Scroll</span>
+    <div class="w-px h-16 bg-gradient-to-b from-accent-400 to-transparent"></div>
+  </div>
+</section>
+
+<script>
+  // Hero slideshow
+  const SLIDE_DURATION = 5000;
+  const TOTAL_SLIDES = 4;
+  let currentSlide = 0;
+  let slideTimer: ReturnType<typeof setInterval>;
+
+  function goToSlide(index: number) {
+    // Remove active from current
+    const currentBg = document.querySelector(`[data-slide-bg="${currentSlide}"]`);
+    const currentContent = document.querySelector(`[data-slide-content="${currentSlide}"]`);
+    const currentDot = document.querySelector(`[data-slide-dot="${currentSlide}"]`);
+
+    if (currentBg) currentBg.classList.remove('active');
+    if (currentContent) {
+      currentContent.classList.remove('active');
+      currentContent.classList.add('exit');
+      setTimeout(() => currentContent.classList.remove('exit'), 500);
+    }
+    if (currentDot) {
+      currentDot.classList.remove('w-16');
+      const bar = currentDot.querySelector('.slide-progress-bar');
+      if (bar) bar.remove();
+    }
+
+    currentSlide = index;
+
+    // Add active to new
+    const newBg = document.querySelector(`[data-slide-bg="${currentSlide}"]`);
+    const newContent = document.querySelector(`[data-slide-content="${currentSlide}"]`);
+    const newDot = document.querySelector(`[data-slide-dot="${currentSlide}"]`);
+
+    if (newBg) newBg.classList.add('active');
+    if (newContent) {
+      setTimeout(() => newContent.classList.add('active'), 200);
+    }
+    if (newDot) {
+      newDot.classList.add('w-16');
+      const progressBar = document.createElement('div');
+      progressBar.className = 'slide-progress-bar absolute inset-0';
+      newDot.appendChild(progressBar);
+    }
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % TOTAL_SLIDES);
+  }
+
+  function startSlideshow() {
+    clearInterval(slideTimer);
+    slideTimer = setInterval(nextSlide, SLIDE_DURATION);
+  }
+
+  // Dot click handlers
+  document.querySelectorAll('[data-slide-dot]').forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const index = parseInt(dot.getAttribute('data-slide-dot') || '0');
+      goToSlide(index);
+      startSlideshow(); // restart timer
+    });
+  });
+
+  startSlideshow();
+</script>
