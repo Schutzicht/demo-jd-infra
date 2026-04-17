@@ -1,21 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/ui/PageHeader.astro';
 import { siteConfig } from '../data/siteConfig';
 ---
 
-<BaseLayout title="Offerte aanvragen" description="Vraag vrijblijvend een offerte aan bij JD Infra. Wij reageren binnen 2 werkdagen met een passend voorstel.">
-  <!-- Hero header -->
-  <section class="relative bg-primary-500 pt-32 sm:pt-40 pb-16 sm:pb-20 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-4">
-        Uw tuin, oprit of terrein <span class="text-accent-400">vakkundig aangelegd</span>
-      </h1>
-      <p class="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed">
-        Of u nu een nieuwe oprit wilt, uw tuin herinrichten of drainage problemen heeft — wij denken graag met u mee. Geheel vrijblijvend.
-      </p>
-    </div>
-  </section>
+<BaseLayout title="Offerte aanvragen" description="Vraag vrijblijvend een offerte aan bij JD Infra. Wij reageren binnen 2 werkdagen met een passend voorstel." transparentHeader={true}>
+  <PageHeader
+    title="Offerte aanvragen"
+    subtitle="Vraag vrijblijvend een offerte aan voor uw project. Wij reageren binnen 2 werkdagen."
+    breadcrumbs={[{ label: 'Offerte aanvragen' }]}
+    backgroundImage="/fotos-jd-infra/fotos jd infra/IMG_4120c-1024x683.jpg.jpeg"
+  />
 
   <!-- USP Cards -->
   <section class="py-14 bg-slate-50">

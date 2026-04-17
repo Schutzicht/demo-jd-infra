@@ -4,11 +4,12 @@ import PageHeader from '../components/ui/PageHeader.astro';
 import { siteConfig } from '../data/siteConfig';
 ---
 
-<BaseLayout title="Projecten" description="Bekijk de uitgevoerde projecten van JD Infra in heel Zeeland. Van straatwerk tot riolering en grondwerk.">
+<BaseLayout title="Projecten" description="Bekijk de uitgevoerde projecten van JD Infra in heel Zeeland. Van straatwerk tot riolering en grondwerk." transparentHeader={true}>
   <PageHeader
     title="Onze projecten"
     subtitle="Een selectie van uitgevoerde projecten door heel Zeeland."
     breadcrumbs={[{ label: 'Projecten' }]}
+    backgroundImage="/fotos-jd-infra/fotos jd infra/DSC_2305-1024x680.jpg.jpeg"
   />
 
   <!-- Projects Grid -->
