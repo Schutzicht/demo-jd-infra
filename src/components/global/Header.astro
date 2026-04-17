@@ -14,9 +14,12 @@ const currentPath = Astro.url.pathname;
   class="fixed top-0 left-0 right-0 z-50"
   data-transparent={transparent}
 >
+  <!-- Gradient scrim behind header for text readability on hero -->
+  {transparent && <div id="header-scrim" class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary-900/70 via-primary-900/30 to-transparent pointer-events-none z-0 transition-opacity duration-500"></div>}
+
   <!-- Main nav bar -->
   <div id="header-main" class:list={[
-    'transition-all duration-500',
+    'transition-all duration-500 relative z-10',
     transparent ? 'bg-transparent' : 'bg-primary-500',
   ]}>
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -35,10 +38,10 @@ const currentPath = Astro.url.pathname;
               <a
                 href={item.href}
                 class:list={[
-                  'px-4 xl:px-5 py-3 text-[13px] font-heading font-bold uppercase tracking-[0.15em] transition-all duration-200 block',
+                  'px-4 xl:px-5 py-3 text-[13px] font-heading font-bold uppercase tracking-[0.15em] transition-all duration-200 block drop-shadow-sm',
                   currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
                     ? 'text-accent-400'
-                    : 'text-white/90 hover:text-accent-400',
+                    : 'text-white hover:text-accent-400',
                 ]}
               >
                 {item.label}
@@ -75,7 +78,7 @@ const currentPath = Astro.url.pathname;
 
           <!-- Language switch -->
           <div class="relative ml-2" id="lang-switcher">
-            <button id="lang-toggle" class="flex items-center gap-1 text-white/60 hover:text-accent-400 text-[12px] font-heading font-bold uppercase tracking-wider cursor-pointer transition-colors px-2 py-2">
+            <button id="lang-toggle" class="flex items-center gap-1 text-white hover:text-accent-400 text-[12px] font-heading font-bold uppercase tracking-wider cursor-pointer transition-colors px-2 py-2 drop-shadow-sm">
               NL
               <svg class="w-2.5 h-2.5 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
