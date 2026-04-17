@@ -177,7 +177,7 @@ const currentPath = Astro.url.pathname;
         headerLogo.classList.remove('w-20', 'h-20', 'sm:w-28', 'sm:h-28');
         headerLogo.classList.add('w-12', 'h-12', 'sm:w-14', 'sm:h-14');
         headerAccent.classList.replace('opacity-0', 'opacity-100');
-        headerMain.classList.add('bg-primary-500/95', 'backdrop-blur-md', 'shadow-2xl');
+        headerMain.classList.add('bg-primary-500/80', 'backdrop-blur-xl', 'shadow-2xl');
         if (isTransparent) headerMain.classList.remove('bg-transparent');
         headerSpacer.classList.remove('h-20', 'sm:h-24');
         headerSpacer.classList.add('h-14', 'sm:h-16');
@@ -187,7 +187,7 @@ const currentPath = Astro.url.pathname;
         headerLogo.classList.add('w-20', 'h-20', 'sm:w-28', 'sm:h-28');
         headerLogo.classList.remove('w-12', 'h-12', 'sm:w-14', 'sm:h-14');
         headerAccent.classList.replace('opacity-100', 'opacity-0');
-        headerMain.classList.remove('backdrop-blur-md', 'shadow-2xl');
+        headerMain.classList.remove('backdrop-blur-xl', 'shadow-2xl');
         if (isTransparent) {
           headerMain.classList.remove('bg-primary-500/95');
           headerMain.classList.add('bg-transparent');
@@ -239,7 +239,7 @@ const currentPath = Astro.url.pathname;
     iconClose?.classList.toggle('hidden');
     document.body.style.overflow = isOpen ? '' : 'hidden';
     if (!isOpen) {
-      headerMain.classList.add('bg-primary-500/95');
+      headerMain.classList.add('bg-primary-500/80');
       if (isTransparent) headerMain.classList.remove('bg-transparent');
     } else if (!scrolled && isTransparent) {
       headerMain.classList.remove('bg-primary-500/95');
