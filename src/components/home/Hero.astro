@@ -21,7 +21,7 @@ const slides = [
 ];
 ---
 
-<section data-hero class="relative min-h-screen flex items-end -mt-20 sm:-mt-24 overflow-hidden">
+<section data-hero class="relative min-h-screen flex flex-col justify-end -mt-20 sm:-mt-24 overflow-hidden">
   <!-- Slide backgrounds -->
   {slides.map((slide, i) => (
     <div class:list={['hero-slide', i === 0 ? 'active' : '']} data-slide-bg={i}>
@@ -31,8 +31,7 @@ const slides = [
         class="w-full h-full object-cover"
         loading={i === 0 ? 'eager' : 'lazy'}
       />
-      <!-- Dark overlays -->
-      <div class="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/50 to-primary-900/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/40 to-primary-900/20"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-primary-900/60 via-transparent to-transparent"></div>
     </div>
   ))}
@@ -40,28 +39,25 @@ const slides = [
   <!-- Grain overlay -->
   <div class="absolute inset-0 grain z-[2]"></div>
 
-  <!-- Main hero content -->
-  <div class="absolute inset-0 z-10 flex flex-col justify-center items-start">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full">
-      <div class="max-w-4xl pt-32">
-        <span class="text-accent-400 font-heading font-bold text-sm sm:text-base uppercase tracking-[0.3em] mb-4 block">
-          Aannemingsbedrijf
-        </span>
-
-        <h1>
-          <span class="block font-heading font-black text-white text-6xl sm:text-8xl lg:text-[8rem] xl:text-[10rem] leading-[0.85] tracking-tight">
+  <!-- All content stacked vertically, all relative z-10 -->
+  <div class="relative z-10 w-full flex-1 flex flex-col justify-center pb-0">
+    <!-- Heading - vertically centered -->
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full mb-auto mt-auto">
+      <div class="max-w-4xl">
+        <h1 class="animate-slide-up" style="animation-delay: 0.3s;">
+          <span class="block font-heading font-black text-white text-5xl sm:text-7xl lg:text-8xl xl:text-9xl leading-[0.85] tracking-tight">
             JD Infra
           </span>
-          <span class="block font-heading font-bold text-accent-400 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mt-2 sm:mt-4 leading-tight">
-            Bouwt. Bestraat. Verbindt.
+          <span class="block font-heading font-bold text-white/70 text-xl sm:text-2xl lg:text-3xl mt-3 sm:mt-4 leading-tight">
+            Bouwt. Bestraat. <span class="text-accent-400">Verbindt.</span>
           </span>
         </h1>
       </div>
     </div>
   </div>
 
-  <!-- Frosted glass stride cards at bottom -->
-  <div class="relative z-20 w-full pb-8 sm:pb-12 lg:pb-16 pt-4">
+  <!-- Stride cards + stats - at the very bottom -->
+  <div class="relative z-10 w-full pb-8 sm:pb-12 lg:pb-16 pt-4">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <!-- Stats bar with pill backgrounds -->
       <div class="flex flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -102,19 +98,19 @@ const slides = [
           </div>
         </div>
 
-        <!-- Right card (smaller) -->
-        <div class="lg:col-span-2 bg-white/85 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20 flex flex-col justify-between">
+        <!-- Right card - Vacatures -->
+        <div class="lg:col-span-2 bg-accent-400/90 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-2xl border border-accent-300/20 flex flex-col justify-between">
           <div>
-            <span class="text-accent-400 font-heading font-bold text-xs sm:text-sm uppercase tracking-[0.2em] mb-2 block">Specialisaties</span>
-            <h3 class="font-heading font-black text-xl sm:text-2xl text-primary-500 leading-tight mb-3">
-              Onze <span class="text-accent-400">Diensten</span>
+            <span class="text-white/70 font-heading font-bold text-xs sm:text-sm uppercase tracking-[0.2em] mb-2 block">Wij zoeken versterking</span>
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-white leading-tight mb-3">
+              Werk bij <span class="text-primary-900">JD Infra</span>
             </h3>
-            <p class="text-secondary-400 text-sm leading-relaxed mb-5">
-              Straatwerk, riolering en grondwerk. Ervaren vakmensen met modern materieel voor elk project.
+            <p class="text-white/80 text-sm leading-relaxed mb-5">
+              Op zoek naar afwisselend buitenwerk in Zeeland? Wij zoeken stratenmakers, machinisten en grondwerkers.
             </p>
           </div>
-          <a href="/diensten/" class="inline-flex items-center justify-center gap-2 border-2 border-accent-400 text-accent-400 hover:bg-accent-400 hover:text-white px-6 py-3 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 w-fit">
-            Bekijk diensten
+          <a href="/vacatures/" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-primary-50 text-primary-500 px-6 py-3 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 w-fit shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+            Bekijk vacatures
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
         </div>
