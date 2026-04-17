@@ -21,7 +21,7 @@ const slides = [
 ];
 ---
 
-<section data-hero class="relative -mt-20 sm:-mt-24 overflow-hidden">
+<section data-hero class="relative min-h-[100svh] sm:min-h-screen -mt-20 sm:-mt-24 overflow-hidden flex flex-col">
   <!-- Slide backgrounds -->
   {slides.map((slide, i) => (
     <div class:list={['hero-slide', i === 0 ? 'active' : '']} data-slide-bg={i}>
@@ -39,8 +39,8 @@ const slides = [
   <!-- Grain overlay -->
   <div class="absolute inset-0 grain z-[2]"></div>
 
-  <!-- Heading - absolutely positioned, always visible -->
-  <div class="relative z-10 w-full pt-28 sm:pt-36 lg:pt-44 pb-6 sm:pb-10">
+  <!-- Heading -->
+  <div class="relative z-10 w-full flex-1 flex items-center pt-28 sm:pt-36 lg:pt-44 pb-6 sm:pb-10">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div class="max-w-4xl">
         <h1 class="animate-slide-up" style="animation-delay: 0.3s;">
@@ -55,8 +55,8 @@ const slides = [
     </div>
   </div>
 
-  <!-- Stride cards + stats -->
-  <div class="relative z-10 w-full pb-6 sm:pb-12 lg:pb-16 pt-2 sm:pt-4">
+  <!-- Stride cards + stats - pushed to bottom -->
+  <div class="relative z-10 w-full pb-6 sm:pb-12 lg:pb-16 pt-2 sm:pt-4 mt-auto">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <!-- Stats bar with pill backgrounds -->
       <div class="flex flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8">

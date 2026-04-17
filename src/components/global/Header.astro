@@ -26,8 +26,8 @@ const currentPath = Astro.url.pathname;
       <div id="header-inner" class="flex items-center justify-between h-20 sm:h-24 transition-all duration-500">
         <!-- Logo -->
         <a href="/" class="shrink-0 group">
-          <div id="header-logo" class="h-12 w-auto sm:h-16 transition-all duration-500 group-hover:opacity-80">
-            <img src="/fotos-jd-infra/fotos jd infra/logo_64d0900b.svg" alt="JD Infra" class="h-full w-auto object-contain" />
+          <div id="header-logo" class="transition-all duration-500 group-hover:opacity-80 flex items-center">
+            <img src="/fotos-jd-infra/fotos jd infra/logo_64d0900b.svg" alt="JD Infra" id="header-logo-img" style="height: 40px; width: auto;" />
           </div>
         </a>
 
@@ -161,7 +161,7 @@ const currentPath = Astro.url.pathname;
   const header = document.getElementById('main-header')!;
   const headerMain = document.getElementById('header-main')!;
   const headerInner = document.getElementById('header-inner')!;
-  const headerLogo = document.getElementById('header-logo')!;
+  const headerLogo = document.getElementById('header-logo-img')!;
   const headerAccent = document.getElementById('header-accent')!;
   const headerSpacer = document.getElementById('header-spacer')!;
   const isTransparent = header.dataset.transparent === 'true';
@@ -177,8 +177,7 @@ const currentPath = Astro.url.pathname;
       if (isScrolled) {
         headerInner.classList.remove('h-20', 'sm:h-24');
         headerInner.classList.add('h-14', 'sm:h-16');
-        headerLogo.classList.remove('h-12', 'sm:h-16');
-        headerLogo.classList.add('h-8', 'sm:h-10');
+        headerLogo.style.height = '28px';
         headerAccent.classList.replace('opacity-0', 'opacity-100');
         headerMain.classList.add('bg-primary-500/80', 'backdrop-blur-xl', 'shadow-2xl');
         if (isTransparent) headerMain.classList.remove('bg-transparent');
@@ -187,8 +186,7 @@ const currentPath = Astro.url.pathname;
       } else {
         headerInner.classList.add('h-20', 'sm:h-24');
         headerInner.classList.remove('h-14', 'sm:h-16');
-        headerLogo.classList.add('h-12', 'sm:h-16');
-        headerLogo.classList.remove('h-8', 'sm:h-10');
+        headerLogo.style.height = '40px';
         headerAccent.classList.replace('opacity-100', 'opacity-0');
         headerMain.classList.remove('backdrop-blur-xl', 'shadow-2xl');
         if (isTransparent) {
