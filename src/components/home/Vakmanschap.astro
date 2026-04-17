@@ -1,67 +1,55 @@
 ---
-const usps = [
-  'Ervaren en gediplomeerde vakmensen',
-  'Modern machinepark',
-  'Projecten van klein tot groot',
-  'Particulier, zakelijk en overheid',
-];
 ---
 
 <section class="relative py-24 sm:py-32 bg-white overflow-hidden">
-  <!-- Subtle accent decoration -->
-  <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-accent-400 via-accent-400/30 to-transparent"></div>
-
-  <!-- Content -->
   <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
       <!-- Left - Text -->
       <div class="reveal-left">
-        <span class="text-accent-400 font-heading font-bold text-sm uppercase tracking-[0.3em] mb-4 block">Waarom JD Infra</span>
-        <h2 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-primary-500 leading-[0.9] mb-4">
-          VAKMANSCHAP
+        <h2 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-primary-500 leading-[0.95] mb-8">
+          Meesterlijk <span class="text-accent-400">vakmanschap</span> voor uw <span class="text-accent-400">infraproject</span>
         </h2>
-        <h2 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-accent-400 leading-[0.9] mb-8">
-          IS ONZE BASIS
-        </h2>
-        <div class="w-20 h-1 bg-accent-400 mb-8"></div>
-        <p class="text-secondary-400 text-base sm:text-lg leading-relaxed mb-8">
+
+        <p class="text-secondary-400 text-base sm:text-lg leading-relaxed mb-10">
           Of het nu gaat om bouwrijp maken van nieuwbouwwijken, reconstructie van straten en wegen, parkeerplaatsen, riolering of het aanleggen van waterpartijen — door modern materieel in te zetten kunnen de werken op uw behoefte worden afgestemd.
         </p>
 
-        <!-- USPs with diamond bullets -->
-        <div class="space-y-5 mb-10">
-          {usps.map((usp, i) => (
-            <div class="flex items-center gap-5 reveal" style={`transition-delay: ${0.1 + i * 0.1}s;`}>
-              <div class="w-3 h-3 bg-accent-400 rotate-45 shrink-0"></div>
-              <span class="text-secondary-500 text-sm sm:text-base font-medium font-heading tracking-wide">{usp}</span>
-            </div>
-          ))}
+        <!-- Stats in rounded pill badges -->
+        <div class="flex flex-wrap gap-3 mb-10">
+          <div class="bg-primary-50 rounded-full px-5 py-3 flex items-center gap-3">
+            <span class="font-heading font-black text-2xl text-accent-400" data-counter="2006" data-counter-type="year">2006</span>
+            <span class="text-primary-500 text-sm font-heading font-medium">Opgericht</span>
+          </div>
+          <div class="bg-primary-50 rounded-full px-5 py-3 flex items-center gap-3">
+            <span class="font-heading font-black text-2xl text-accent-400">15<span class="text-accent-400">+</span></span>
+            <span class="text-primary-500 text-sm font-heading font-medium">Vakmensen</span>
+          </div>
+          <div class="bg-primary-50 rounded-full px-5 py-3 flex items-center gap-3">
+            <span class="font-heading font-black text-2xl text-accent-400">100%</span>
+            <span class="text-primary-500 text-sm font-heading font-medium">Zeeland</span>
+          </div>
         </div>
 
-        <a href="/over-ons/" class="group inline-flex items-center gap-3 border-2 border-accent-400 text-accent-400 hover:bg-accent-400 hover:text-white px-8 py-4 rounded-none font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300">
+        <a href="/over-ons/" class="group inline-flex items-center gap-3 bg-accent-400 hover:bg-accent-500 text-white px-8 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
           Over JD Infra
           <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
         </a>
       </div>
 
-      <!-- Right - Images -->
-      <div class="reveal-right relative hidden lg:block">
+      <!-- Right - Image with rounded corners and accent frame -->
+      <div class="reveal-right relative">
         <div class="relative">
           <!-- Main image -->
-          <div class="relative">
-            <img src="/fotos-jd-infra/fotos jd infra/DSCF7911-1920x1080.jpg.jpeg" alt="Shovel aan het werk" class="w-full aspect-[4/3] object-cover shadow-lg" loading="lazy" />
-            <!-- Accent border frame -->
-            <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent-400/30 -z-10"></div>
-            <!-- Top accent corner -->
-            <div class="absolute -top-3 -left-3 w-16 h-16 border-t-3 border-l-3 border-accent-400 z-10"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-xl">
+            <img src="/fotos-jd-infra/fotos jd infra/DSCF7911-1920x1080.jpg.jpeg" alt="Shovel aan het werk" class="w-full aspect-[4/3] object-cover" loading="lazy" />
           </div>
+          <!-- Subtle accent frame behind -->
+          <div class="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-accent-400/20 -z-10"></div>
+        </div>
 
-          <!-- Overlapping smaller image -->
-          <div class="absolute -bottom-16 -left-12 w-52 h-52 border-4 border-white shadow-2xl z-20">
-            <img src="/fotos-jd-infra/fotos jd infra/IMG_8333lzp.jpg.jpeg" alt="Bouwplaats" class="w-full h-full object-cover" loading="lazy" />
-            <!-- Bottom accent corner -->
-            <div class="absolute -bottom-3 -right-3 w-12 h-12 border-b-3 border-r-3 border-accent-400"></div>
-          </div>
+        <!-- Overlapping smaller image -->
+        <div class="absolute -bottom-10 -left-6 w-40 h-40 sm:w-48 sm:h-48 rounded-xl overflow-hidden border-4 border-white shadow-2xl z-20 hidden sm:block">
+          <img src="/fotos-jd-infra/fotos jd infra/IMG_8333lzp.jpg.jpeg" alt="Bouwplaats" class="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
     </div>

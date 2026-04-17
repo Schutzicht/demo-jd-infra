@@ -69,12 +69,11 @@ const { title, subtitle, breadcrumbs = [], image } = Astro.props;
             <img
               src={image}
               alt={title}
-              class="w-full aspect-[4/3] object-cover shadow-lg"
+              class="w-full aspect-[4/3] object-cover shadow-lg rounded-2xl"
               loading="eager"
             />
-            <!-- Accent frame corners -->
-            <div class="absolute -top-2 -left-2 w-10 h-10 border-t-2 border-l-2 border-accent-400"></div>
-            <div class="absolute -bottom-2 -right-2 w-10 h-10 border-b-2 border-r-2 border-accent-400"></div>
+            <!-- Subtle accent frame behind -->
+            <div class="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-accent-400/20 -z-10"></div>
           </div>
         </div>
       )}

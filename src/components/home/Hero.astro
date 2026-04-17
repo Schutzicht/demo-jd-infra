@@ -5,34 +5,18 @@ const slides = [
   {
     image: '/fotos-jd-infra/fotos jd infra/DSCF7925-1920x1080.jpg.jpeg',
     alt: 'JD Infra vrachtwagen',
-    subtitle: 'Aannemingsbedrijf',
-    heading: 'JD Infra',
-    tagline: 'Bouwt. Bestraat. Verbindt.',
-    description: 'Vakmanschap in grondwerk, straatwerk en buitenriolering. Van bouwrijp maken tot complete infrastructurele projecten.',
   },
   {
     image: '/fotos-jd-infra/fotos jd infra/DSCF7911-1920x1080.jpg.jpeg',
     alt: 'Shovel aan het werk',
-    subtitle: 'Modern machinepark',
-    heading: 'Kracht &',
-    tagline: 'Precisie',
-    description: 'Met modern materieel en ervaren vakmensen realiseren wij projecten van elke omvang.',
   },
   {
     image: '/fotos-jd-infra/fotos jd infra/IMG_8333lzp.jpg.jpeg',
     alt: 'Bouwplaats werkzaamheden',
-    subtitle: 'Sinds 2006',
-    heading: 'Ervaring',
-    tagline: 'Die telt',
-    description: 'Al bijna 20 jaar uw partner voor infrastructurele projecten in heel Zeeland.',
   },
   {
     image: '/fotos-jd-infra/fotos jd infra/IMG_2403c.jpg.jpeg',
     alt: 'Bouwplaats overzicht',
-    subtitle: 'Heel Zeeland',
-    heading: 'Uw Project',
-    tagline: 'Ons vakwerk',
-    description: 'Particulier, zakelijk of overheid — wij leveren op maat voor elke opdrachtgever.',
   },
 ];
 ---
@@ -48,104 +32,107 @@ const slides = [
         loading={i === 0 ? 'eager' : 'lazy'}
       />
       <!-- Dark overlays -->
-      <div class="absolute inset-0 bg-gradient-to-t from-primary-900 via-primary-900/70 to-primary-900/30"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-900/40 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/50 to-primary-900/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-900/60 via-transparent to-transparent"></div>
     </div>
   ))}
 
   <!-- Grain overlay -->
   <div class="absolute inset-0 grain z-[2]"></div>
 
-  <!-- Accent top line -->
-  <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-400 via-accent-400/60 to-transparent z-20"></div>
+  <!-- Main hero content -->
+  <div class="absolute inset-0 z-10 flex flex-col justify-center items-start">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full">
+      <div class="max-w-4xl pt-32">
+        <span class="text-accent-400 font-heading font-bold text-sm sm:text-base uppercase tracking-[0.3em] mb-4 block">
+          Aannemingsbedrijf
+        </span>
 
-  <!-- Large ghost text -->
-  <div class="absolute bottom-16 right-0 z-[3] hidden lg:block pointer-events-none select-none">
-    <span class="text-[18rem] xl:text-[22rem] font-heading font-black text-white/[0.02] leading-none tracking-tighter">INFRA</span>
-  </div>
-
-  <!-- Slide content -->
-  {slides.map((slide, i) => (
-    <div
-      class:list={['absolute inset-0 z-10 flex items-end hero-content', i === 0 ? 'active' : '']}
-      data-slide-content={i}
-    >
-      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-16 sm:pb-24 pt-40 w-full">
-        <div class="max-w-4xl">
-          <div class="w-16 h-1 bg-accent-400 mb-8"></div>
-
-          <span class="text-accent-400 font-heading font-bold text-sm sm:text-base uppercase tracking-[0.3em] mb-4 block">
-            {slide.subtitle}
+        <h1>
+          <span class="block font-heading font-black text-white text-6xl sm:text-8xl lg:text-[8rem] xl:text-[10rem] leading-[0.85] tracking-tight">
+            JD Infra
           </span>
-
-          <h1>
-            <span class="block font-heading font-black text-white text-6xl sm:text-8xl lg:text-[8rem] xl:text-[10rem] leading-[0.85] tracking-tight">
-              {slide.heading}
-            </span>
-            <span class="block font-heading font-bold text-accent-400 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mt-2 sm:mt-4 leading-tight">
-              {slide.tagline}
-            </span>
-          </h1>
-
-          <p class="text-white/50 text-base sm:text-lg max-w-xl mt-6 sm:mt-8 leading-relaxed">
-            {slide.description}
-          </p>
-
-          {i === 0 && (
-            <div class="flex flex-col sm:flex-row gap-4 mt-8 sm:mt-10">
-              <a href="/diensten/" class="group inline-flex items-center gap-3 bg-accent-400 hover:bg-accent-300 text-primary-900 px-8 py-4 rounded-none font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300">
-                Onze diensten
-                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </a>
-              <a href="/contact/" class="inline-flex items-center gap-3 border-2 border-white/20 hover:border-accent-400 text-white hover:text-accent-400 px-8 py-4 rounded-none font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300">
-                Neem contact op
-              </a>
-            </div>
-          )}
-        </div>
+          <span class="block font-heading font-bold text-accent-400 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mt-2 sm:mt-4 leading-tight">
+            Bouwt. Bestraat. Verbindt.
+          </span>
+        </h1>
       </div>
     </div>
-  ))}
+  </div>
 
-  <!-- Stats bar (always visible) -->
-  <div class="relative z-20 w-full">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-8">
-      <div class="pt-8 border-t border-white/10">
-        <div class="grid grid-cols-3 gap-8 max-w-lg">
-          <div>
-            <span class="block font-heading font-bold text-3xl sm:text-4xl text-white" data-counter="2006" data-counter-type="year">2006</span>
-            <span class="text-white/40 text-xs uppercase tracking-widest font-heading mt-1 block">Opgericht</span>
+  <!-- Frosted glass stride cards at bottom -->
+  <div class="relative z-20 w-full pb-8 sm:pb-12 lg:pb-16 pt-4">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <!-- Stats bar with pill backgrounds -->
+      <div class="flex flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8">
+        <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2">
+          <span class="font-heading font-bold text-lg sm:text-xl text-white" data-counter="2006" data-counter-type="year">2006</span>
+          <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Opgericht</span>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2">
+          <span class="font-heading font-bold text-lg sm:text-xl text-white"><span data-counter="15">15</span><span class="text-accent-400">+</span></span>
+          <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Vakmensen</span>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2">
+          <span class="font-heading font-bold text-lg sm:text-xl text-white"><span data-counter="100">100</span><span class="text-accent-400">%</span></span>
+          <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Zeeland</span>
+        </div>
+      </div>
+
+      <!-- Stride cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-5">
+        <!-- Left card (larger) -->
+        <div class="lg:col-span-3 bg-white/85 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20">
+          <span class="text-accent-400 font-heading font-bold text-xs sm:text-sm uppercase tracking-[0.2em] mb-2 block">Grondwerk, straatwerk en riolering</span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-primary-500 leading-tight mb-3">
+            Vakkundig infrawerk<br class="hidden sm:block" /> voor heel <span class="text-accent-400">Zeeland</span>
+          </h2>
+          <p class="text-secondary-400 text-sm sm:text-base leading-relaxed mb-6 max-w-lg">
+            Van bouwrijp maken tot complete infrastructurele projecten. Wij leveren vakwerk voor particulieren, bedrijven en overheden.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="/contact/" class="inline-flex items-center justify-center gap-2 bg-accent-400 hover:bg-accent-500 text-white px-7 py-3.5 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+              Offerte aanvragen
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
+            <a href="/projecten/" class="inline-flex items-center justify-center gap-2 border-2 border-primary-500/20 hover:border-accent-400 text-primary-500 hover:text-accent-500 px-7 py-3.5 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300">
+              Bekijk projecten
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
           </div>
+        </div>
+
+        <!-- Right card (smaller) -->
+        <div class="lg:col-span-2 bg-white/85 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20 flex flex-col justify-between">
           <div>
-            <span class="block font-heading font-bold text-3xl sm:text-4xl text-white"><span data-counter="15">15</span><span class="text-accent-400">+</span></span>
-            <span class="text-white/40 text-xs uppercase tracking-widest font-heading mt-1 block">Vakmensen</span>
+            <span class="text-accent-400 font-heading font-bold text-xs sm:text-sm uppercase tracking-[0.2em] mb-2 block">Specialisaties</span>
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-primary-500 leading-tight mb-3">
+              Onze <span class="text-accent-400">Diensten</span>
+            </h3>
+            <p class="text-secondary-400 text-sm leading-relaxed mb-5">
+              Straatwerk, riolering en grondwerk. Ervaren vakmensen met modern materieel voor elk project.
+            </p>
           </div>
-          <div>
-            <span class="block font-heading font-bold text-3xl sm:text-4xl text-white"><span data-counter="100">100</span><span class="text-accent-400">%</span></span>
-            <span class="text-white/40 text-xs uppercase tracking-widest font-heading mt-1 block">Zeeland</span>
-          </div>
+          <a href="/diensten/" class="inline-flex items-center justify-center gap-2 border-2 border-accent-400 text-accent-400 hover:bg-accent-400 hover:text-white px-6 py-3 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 w-fit">
+            Bekijk diensten
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Slide indicators -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden sm:flex items-center gap-3" id="slide-indicators">
+  <div class="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3" id="slide-indicators">
     {slides.map((_, i) => (
       <button
-        class:list={['slide-dot relative w-10 h-[3px] bg-white/20 overflow-hidden cursor-pointer transition-all duration-300', i === 0 ? 'w-16' : '']}
+        class:list={['slide-dot relative w-10 h-[3px] rounded-full bg-white/20 overflow-hidden cursor-pointer transition-all duration-300', i === 0 ? 'w-16' : '']}
         data-slide-dot={i}
         aria-label={`Ga naar slide ${i + 1}`}
       >
-        {i === 0 && <div class="slide-progress-bar absolute inset-0"></div>}
+        {i === 0 && <div class="slide-progress-bar absolute inset-0 rounded-full"></div>}
       </button>
     ))}
-  </div>
-
-  <!-- Scroll indicator vertical -->
-  <div class="absolute bottom-8 right-8 z-20 hidden lg:flex flex-col items-center gap-2">
-    <span class="text-white/30 text-xs uppercase tracking-widest font-heading" style="writing-mode: vertical-rl;">Scroll</span>
-    <div class="w-px h-16 bg-gradient-to-b from-accent-400 to-transparent"></div>
   </div>
 </section>
 
@@ -157,17 +144,10 @@ const slides = [
   let slideTimer: ReturnType<typeof setInterval>;
 
   function goToSlide(index: number) {
-    // Remove active from current
     const currentBg = document.querySelector(`[data-slide-bg="${currentSlide}"]`);
-    const currentContent = document.querySelector(`[data-slide-content="${currentSlide}"]`);
     const currentDot = document.querySelector(`[data-slide-dot="${currentSlide}"]`);
 
     if (currentBg) currentBg.classList.remove('active');
-    if (currentContent) {
-      currentContent.classList.remove('active');
-      currentContent.classList.add('exit');
-      setTimeout(() => currentContent.classList.remove('exit'), 500);
-    }
     if (currentDot) {
       currentDot.classList.remove('w-16');
       const bar = currentDot.querySelector('.slide-progress-bar');
@@ -176,19 +156,14 @@ const slides = [
 
     currentSlide = index;
 
-    // Add active to new
     const newBg = document.querySelector(`[data-slide-bg="${currentSlide}"]`);
-    const newContent = document.querySelector(`[data-slide-content="${currentSlide}"]`);
     const newDot = document.querySelector(`[data-slide-dot="${currentSlide}"]`);
 
     if (newBg) newBg.classList.add('active');
-    if (newContent) {
-      setTimeout(() => newContent.classList.add('active'), 200);
-    }
     if (newDot) {
       newDot.classList.add('w-16');
       const progressBar = document.createElement('div');
-      progressBar.className = 'slide-progress-bar absolute inset-0';
+      progressBar.className = 'slide-progress-bar absolute inset-0 rounded-full';
       newDot.appendChild(progressBar);
     }
   }
@@ -202,12 +177,11 @@ const slides = [
     slideTimer = setInterval(nextSlide, SLIDE_DURATION);
   }
 
-  // Dot click handlers
   document.querySelectorAll('[data-slide-dot]').forEach((dot) => {
     dot.addEventListener('click', () => {
       const index = parseInt(dot.getAttribute('data-slide-dot') || '0');
       goToSlide(index);
-      startSlideshow(); // restart timer
+      startSlideshow();
     });
   });
 

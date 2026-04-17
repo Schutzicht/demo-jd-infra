@@ -60,7 +60,7 @@ const currentPath = Astro.url.pathname;
               )}
               {'children' in item && item.children && (
                 <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top scale-95 group-hover:scale-100">
-                  <div class="bg-primary-500 border border-white/10 shadow-2xl py-2 min-w-[220px]">
+                  <div class="bg-primary-500 border border-white/10 shadow-2xl py-2 min-w-[220px] rounded-xl">
                     <div class="w-12 h-0.5 bg-accent-400 mx-4 mb-2"></div>
                     {item.children.map((child) => (
                       <a
@@ -87,7 +87,7 @@ const currentPath = Astro.url.pathname;
               NL
               <svg class="w-2.5 h-2.5 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
-            <div id="lang-dropdown" class="absolute right-0 top-full mt-1 bg-white shadow-xl border border-gray-100 py-1 min-w-[140px] opacity-0 invisible transition-all duration-200 z-50">
+            <div id="lang-dropdown" class="absolute right-0 top-full mt-1 bg-white shadow-xl border border-gray-100 py-1 min-w-[140px] rounded-xl opacity-0 invisible transition-all duration-200 z-50 overflow-hidden">
               <a href="#" class="block px-4 py-2 text-xs text-accent-500 bg-accent-50 font-heading tracking-wider font-bold">NL - Nederlands</a>
               <a href="#" class="block px-4 py-2 text-xs text-secondary-500 hover:text-accent-500 hover:bg-gray-50 font-heading tracking-wider">EN - English</a>
               <a href="#" class="block px-4 py-2 text-xs text-secondary-500 hover:text-accent-500 hover:bg-gray-50 font-heading tracking-wider">DE - Deutsch</a>
@@ -95,7 +95,7 @@ const currentPath = Astro.url.pathname;
           </div>
 
           <!-- CTA button in nav -->
-          <a href="/contact/" class="ml-2 bg-accent-400 hover:bg-accent-300 text-primary-900 px-6 py-2.5 font-heading font-bold text-[12px] uppercase tracking-[0.15em] transition-all duration-300 hover:-translate-y-0.5">
+          <a href="/contact/" class="ml-2 bg-accent-400 hover:bg-accent-300 text-primary-900 px-6 py-2.5 rounded-full font-heading font-bold text-[12px] uppercase tracking-[0.15em] transition-all duration-300 hover:-translate-y-0.5">
             Offerte
           </a>
         </nav>
@@ -145,7 +145,7 @@ const currentPath = Astro.url.pathname;
       ))}
       <!-- Mobile CTA -->
       <div class="pt-4 border-t border-white/10 mt-4">
-        <a href="/contact/" class="block bg-accent-400 text-primary-900 text-center py-4 font-heading font-bold text-sm uppercase tracking-wider">
+        <a href="/contact/" class="block bg-accent-400 text-primary-900 text-center py-4 rounded-full font-heading font-bold text-sm uppercase tracking-wider">
           Offerte aanvragen
         </a>
       </div>

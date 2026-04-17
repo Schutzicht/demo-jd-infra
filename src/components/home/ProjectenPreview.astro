@@ -3,51 +3,45 @@ import { siteConfig } from '../../data/siteConfig';
 ---
 
 <section class="py-24 sm:py-32 bg-slate-50 relative overflow-hidden">
-  <!-- Ghost text -->
-  <div class="absolute top-4 left-0 text-[10rem] lg:text-[16rem] font-heading font-black text-primary-500/[0.04] pointer-events-none select-none leading-none hidden lg:block">PROJECTEN</div>
-
   <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-    <!-- Header -->
-    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-16 reveal">
+    <!-- Header - two-tone -->
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 reveal">
       <div>
-        <span class="text-accent-500 font-heading font-bold text-sm uppercase tracking-[0.3em] mb-4 block">Portfolio</span>
-        <h2 class="font-heading font-black text-5xl sm:text-6xl lg:text-7xl text-primary-500 leading-[0.9] accent-line">
-          RECENTE<br/>PROJECTEN
+        <h2 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-primary-500 leading-tight">
+          Recent <span class="text-accent-400">werk</span>
         </h2>
+        <p class="text-secondary-400 text-base sm:text-lg mt-3 max-w-md">
+          Bekijk een selectie van onze recent afgeronde projecten.
+        </p>
       </div>
-      <a href="/projecten/" class="group inline-flex items-center gap-3 text-accent-400 font-heading font-bold text-sm uppercase tracking-wider mt-8 sm:mt-0 hover:gap-5 transition-all duration-500">
+      <a href="/projecten/" class="group inline-flex items-center gap-2 bg-accent-400 hover:bg-accent-500 text-white px-6 py-3 rounded-full font-heading font-bold text-sm uppercase tracking-wider mt-6 sm:mt-0 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 w-fit">
         Alle projecten
-        <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
     </div>
 
-    <!-- Project cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Horizontal scroll marquee -->
+    <div class="flex gap-5 overflow-x-auto scroll-snap-x pb-4 -mx-5 px-5 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 hide-scrollbar">
       {siteConfig.projecten.map((project, i) => (
         <div
-          class="reveal"
+          class="reveal flex-shrink-0 w-[80vw] sm:w-[45vw] lg:w-[30vw]"
           style={`transition-delay: ${i * 0.15}s;`}
         >
-          <div class="group bg-white border border-secondary-100 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden">
-            <!-- Image -->
-            <div class="relative aspect-[16/10] overflow-hidden">
-              <img
-                src={project.image}
-                alt={project.title}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-              />
-            </div>
-
-            <!-- Content -->
-            <div class="p-6 relative border-l-4 border-transparent group-hover:border-accent-400 transition-all duration-500">
-              <!-- Accent line -->
-              <div class="absolute top-0 left-0 w-0 group-hover:w-full h-[2px] bg-accent-400/40 transition-all duration-700"></div>
-
-              <span class="text-secondary-300 text-xs font-heading uppercase tracking-widest">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 aspect-[16/10]">
+            <img
+              src={project.image}
+              alt={project.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+            />
+            <!-- Gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+            <!-- Title overlay at bottom -->
+            <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+              <span class="text-white/60 text-xs font-heading uppercase tracking-widest block mb-1">
                 {new Date(project.date).toLocaleDateString('nl-NL', { year: 'numeric', month: 'long' })}
               </span>
-              <h3 class="font-heading font-bold text-xl text-primary-500 mt-2 group-hover:text-accent-500 transition-colors duration-300">
+              <h3 class="font-heading font-bold text-lg sm:text-xl text-white leading-tight">
                 {project.title}
               </h3>
             </div>

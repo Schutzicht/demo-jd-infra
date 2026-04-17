@@ -1,393 +1,252 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHeader from '../components/ui/PageHeader.astro';
 import { siteConfig } from '../data/siteConfig';
 ---
 
 <BaseLayout title="Offerte aanvragen" description="Vraag vrijblijvend een offerte aan bij JD Infra. Wij reageren binnen 2 werkdagen met een passend voorstel.">
-  <PageHeader
-    title="Offerte aanvragen"
-    subtitle="Vraag vrijblijvend een offerte aan voor uw project. Wij reageren binnen 2 werkdagen."
-    breadcrumbs={[{ label: 'Offerte aanvragen' }]}
-  />
-
-  <!-- Form Section -->
-  <section class="py-16 md:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Intro -->
-      <div class="max-w-3xl mx-auto text-center mb-16 reveal">
-        <h2 class="font-heading font-black text-3xl md:text-4xl text-primary-500 mb-6">
-          Vraag vrijblijvend een offerte aan
-        </h2>
-        <p class="text-secondary-400 text-lg leading-relaxed mb-8">
-          Vertel ons over uw project en wij maken een passend voorstel. Geen verplichtingen, geen kleine lettertjes.
-        </p>
-        <!-- Trust indicators -->
-        <div class="flex flex-wrap justify-center gap-6 text-sm">
-          <div class="flex items-center gap-2 text-secondary-400">
-            <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-            Gratis en vrijblijvend
-          </div>
-          <div class="flex items-center gap-2 text-secondary-400">
-            <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            Reactie binnen 2 werkdagen
-          </div>
-          <div class="flex items-center gap-2 text-secondary-400">
-            <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-            18+ jaar ervaring
-          </div>
-        </div>
-      </div>
-
-      <!-- The Form -->
-      <form class="max-w-4xl mx-auto" action="#" method="POST">
-
-        <!-- Section 1: Uw gegevens -->
-        <div class="mb-12 reveal">
-          <div class="flex items-center gap-4 mb-8">
-            <span class="font-heading font-black text-4xl text-accent-400/20">01</span>
-            <div>
-              <h3 class="font-heading font-bold text-xl text-primary-500">Uw gegevens</h3>
-              <p class="text-secondary-300 text-sm">Hoe kunnen wij u bereiken?</p>
-            </div>
-          </div>
-
-          <div class="bg-white border border-secondary-100 p-6 md:p-8 shadow-sm space-y-5">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label for="voornaam" class="block text-sm font-medium text-secondary-500 mb-2">Voornaam *</label>
-                <input
-                  type="text"
-                  id="voornaam"
-                  name="voornaam"
-                  required
-                  class="w-full px-4 py-3 border border-secondary-200 focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white"
-                  placeholder="Uw voornaam"
-                />
-              </div>
-              <div>
-                <label for="achternaam" class="block text-sm font-medium text-secondary-500 mb-2">Achternaam *</label>
-                <input
-                  type="text"
-                  id="achternaam"
-                  name="achternaam"
-                  required
-                  class="w-full px-4 py-3 border border-secondary-200 focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white"
-                  placeholder="Uw achternaam"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label for="bedrijfsnaam" class="block text-sm font-medium text-secondary-500 mb-2">Bedrijfsnaam <span class="text-secondary-300">(optioneel)</span></label>
-              <input
-                type="text"
-                id="bedrijfsnaam"
-                name="bedrijfsnaam"
-                class="w-full px-4 py-3 border border-secondary-200 focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white"
-                placeholder="Uw bedrijfsnaam"
-              />
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label for="email" class="block text-sm font-medium text-secondary-500 mb-2">E-mailadres *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  class="w-full px-4 py-3 border border-secondary-200 focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white"
-                  placeholder="uw@email.nl"
-                />
-              </div>
-              <div>
-                <label for="telefoon" class="block text-sm font-medium text-secondary-500 mb-2">Telefoonnummer *</label>
-                <input
-                  type="tel"
-                  id="telefoon"
-                  name="telefoon"
-                  required
-                  class="w-full px-4 py-3 border border-secondary-200 focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white"
-                  placeholder="06 - 1234 5678"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 2: Projectgegevens -->
-        <div class="mb-12 reveal" style="transition-delay: 100ms">
-          <div class="flex items-center gap-4 mb-8">
-            <span class="font-heading font-black text-4xl text-accent-400/20">02</span>
-            <div>
-              <h3 class="font-heading font-bold text-xl text-primary-500">Projectgegevens</h3>
-              <p class="text-secondary-300 text-sm">Vertel ons meer over het project</p>
-            </div>
-          </div>
-
-          <div class="bg-white border border-secondary-100 p-6 md:p-8 shadow-sm space-y-5">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label for="type_project" class="block text-sm font-medium text-secondary-500 mb-2">Type project *</label>
-                <select
-                  id="type_project"
-                  name="type_project"
-                  required
-                  class="w-full px-4 py-3 border border-secondary-200 focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white"
-                >
-                  <option value="">Selecteer type project</option>
-                  <option value="straatwerk">Straatwerk</option>
-                  <option value="riolering">Riolering</option>
-                  <option value="grondwerk">Grondwerk</option>
-                  <option value="combinatie">Combinatie</option>
-                  <option value="anders">Anders</option>
-                </select>
-              </div>
-              <div>
-                <label for="omvang" class="block text-sm font-medium text-secondary-500 mb-2">Geschatte omvang</label>
-                <select
-                  id="omvang"
-                  name="omvang"
-                  class="w-full px-4 py-3 border border-secondary-200 focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white"
-                >
-                  <option value="">Selecteer omvang</option>
-                  <option value="klein">Klein (&lt; 100m&sup2;)</option>
-                  <option value="middel">Middel (100 - 500m&sup2;)</option>
-                  <option value="groot">Groot (500 - 2000m&sup2;)</option>
-                  <option value="zeer_groot">Zeer groot (&gt; 2000m&sup2;)</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label for="omschrijving" class="block text-sm font-medium text-secondary-500 mb-2">Omschrijving van het project *</label>
-              <textarea
-                id="omschrijving"
-                name="omschrijving"
-                required
-                rows="4"
-                class="w-full px-4 py-3 border border-secondary-200 focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white resize-vertical"
-                placeholder="Beschrijf hier kort wat u wilt laten doen..."
-              ></textarea>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label for="startdatum" class="block text-sm font-medium text-secondary-500 mb-2">Gewenste startdatum</label>
-                <input
-                  type="date"
-                  id="startdatum"
-                  name="startdatum"
-                  class="w-full px-4 py-3 border border-secondary-200 focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white"
-                />
-              </div>
-              <div>
-                <label for="locatie" class="block text-sm font-medium text-secondary-500 mb-2">Locatie van het project</label>
-                <input
-                  type="text"
-                  id="locatie"
-                  name="locatie"
-                  class="w-full px-4 py-3 border border-secondary-200 focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white"
-                  placeholder="Plaats of adres"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 3: Aanvullende informatie -->
-        <div class="mb-12 reveal" style="transition-delay: 200ms">
-          <div class="flex items-center gap-4 mb-8">
-            <span class="font-heading font-black text-4xl text-accent-400/20">03</span>
-            <div>
-              <h3 class="font-heading font-bold text-xl text-primary-500">Aanvullende informatie</h3>
-              <p class="text-secondary-300 text-sm">Optioneel maar helpt ons een beter voorstel te maken</p>
-            </div>
-          </div>
-
-          <div class="bg-white border border-secondary-100 p-6 md:p-8 shadow-sm space-y-5">
-            <!-- Radio: bestek/tekeningen -->
-            <div>
-              <label class="block text-sm font-medium text-secondary-500 mb-3">Heeft u een bestek of tekeningen?</label>
-              <div class="flex gap-6">
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="radio" name="bestek" value="ja" class="w-4 h-4 text-accent-400 border-secondary-300 focus:ring-accent-400" />
-                  <span class="text-secondary-500">Ja</span>
-                </label>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="radio" name="bestek" value="nee" class="w-4 h-4 text-accent-400 border-secondary-300 focus:ring-accent-400" checked />
-                  <span class="text-secondary-500">Nee</span>
-                </label>
-              </div>
-            </div>
-
-            <!-- File upload -->
-            <div>
-              <label for="bestanden" class="block text-sm font-medium text-secondary-500 mb-2">Bestanden uploaden <span class="text-secondary-300">(optioneel)</span></label>
-              <div class="relative">
-                <input
-                  type="file"
-                  id="bestanden"
-                  name="bestanden"
-                  multiple
-                  accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.dwg"
-                  class="hidden"
-                />
-                <label
-                  for="bestanden"
-                  class="flex items-center justify-center gap-3 w-full px-6 py-8 border-2 border-dashed border-secondary-200 hover:border-accent-400 bg-slate-50 hover:bg-accent-50/30 cursor-pointer transition-all duration-300"
-                >
-                  <svg class="w-6 h-6 text-secondary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                  </svg>
-                  <div class="text-center">
-                    <span class="text-secondary-500 font-medium">Klik om bestanden te selecteren</span>
-                    <span class="block text-secondary-300 text-xs mt-1">PDF, DOC, JPG, PNG of DWG (max. 10MB)</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            <!-- Opmerkingen -->
-            <div>
-              <label for="opmerkingen" class="block text-sm font-medium text-secondary-500 mb-2">Eventuele opmerkingen <span class="text-secondary-300">(optioneel)</span></label>
-              <textarea
-                id="opmerkingen"
-                name="opmerkingen"
-                rows="3"
-                class="w-full px-4 py-3 border border-secondary-200 focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white resize-vertical"
-                placeholder="Heeft u nog iets toe te voegen?"
-              ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <!-- Submit -->
-        <div class="text-center reveal" style="transition-delay: 300ms">
-          <button
-            type="submit"
-            class="inline-flex items-center justify-center gap-3 bg-accent-400 hover:bg-accent-500 text-white px-12 py-5 font-heading font-bold text-base uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            Offerte aanvragen
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </button>
-          <p class="text-secondary-300 text-sm mt-4">
-            Wij nemen binnen 2 werkdagen contact met u op.
-          </p>
-        </div>
-      </form>
+  <!-- Hero header -->
+  <section class="relative bg-primary-500 pt-32 sm:pt-40 pb-16 sm:pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-4">
+        Offerte <span class="text-accent-400">aanvragen</span>
+      </h1>
+      <p class="text-white/60 text-base sm:text-lg max-w-xl">
+        Vraag vrijblijvend een offerte aan voor uw project. Wij reageren binnen 2 werkdagen.
+      </p>
     </div>
   </section>
 
-  <!-- Trust Section -->
-  <section class="py-16 md:py-20 bg-slate-50 border-t border-secondary-100">
+  <!-- Main content: split layout -->
+  <section class="py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <!-- Waarom JD Infra -->
-        <div class="reveal">
-          <h2 class="font-heading font-bold text-2xl md:text-3xl text-primary-500 mb-8">Waarom JD Infra?</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-accent-400/10 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+
+        <!-- LEFT SIDE: Process steps + FAQ -->
+        <div class="lg:col-span-2 order-2 lg:order-1">
+          <!-- Hoe werkt het? - Vertical timeline -->
+          <div class="mb-12">
+            <h2 class="font-heading font-black text-2xl sm:text-3xl text-primary-500 mb-8">
+              Hoe werkt <span class="text-accent-400">het?</span>
+            </h2>
+
+            <div class="space-y-0">
+              <!-- Step 1 -->
+              <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 rounded-full bg-accent-400 text-white font-heading font-bold text-sm flex items-center justify-center shrink-0">1</div>
+                  <div class="w-0.5 h-full bg-accent-400/20 my-2"></div>
+                </div>
+                <div class="pb-8">
+                  <h3 class="font-heading font-bold text-lg text-primary-500 mb-1">Aanvraag</h3>
+                  <p class="text-secondary-400 text-sm leading-relaxed">Vul het formulier in met uw projectgegevens. U ontvangt direct een bevestiging per e-mail.</p>
+                </div>
               </div>
-              <div>
-                <h3 class="font-heading font-semibold text-primary-500 mb-1">Gratis en vrijblijvend</h3>
-                <p class="text-secondary-400 text-sm">Geen verplichtingen, geen verrassingen achteraf.</p>
+
+              <!-- Step 2 -->
+              <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 rounded-full bg-accent-400 text-white font-heading font-bold text-sm flex items-center justify-center shrink-0">2</div>
+                  <div class="w-0.5 h-full bg-accent-400/20 my-2"></div>
+                </div>
+                <div class="pb-8">
+                  <h3 class="font-heading font-bold text-lg text-primary-500 mb-1">Inventarisatie</h3>
+                  <p class="text-secondary-400 text-sm leading-relaxed">Wij nemen contact op om uw wensen te bespreken en de situatie in kaart te brengen.</p>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 rounded-full bg-accent-400 text-white font-heading font-bold text-sm flex items-center justify-center shrink-0">3</div>
+                  <div class="w-0.5 h-full bg-accent-400/20 my-2"></div>
+                </div>
+                <div class="pb-8">
+                  <h3 class="font-heading font-bold text-lg text-primary-500 mb-1">Offerte</h3>
+                  <p class="text-secondary-400 text-sm leading-relaxed">U ontvangt een gedetailleerde offerte op maat, volledig transparant en zonder verborgen kosten.</p>
+                </div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 rounded-full bg-accent-400 text-white font-heading font-bold text-sm flex items-center justify-center shrink-0">4</div>
+                </div>
+                <div>
+                  <h3 class="font-heading font-bold text-lg text-primary-500 mb-1">Realisatie</h3>
+                  <p class="text-secondary-400 text-sm leading-relaxed">Na akkoord plannen wij het project in en gaan onze vakmensen aan de slag.</p>
+                </div>
               </div>
             </div>
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-accent-400/10 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+
+          <!-- FAQ Section -->
+          <div>
+            <h2 class="font-heading font-black text-2xl sm:text-3xl text-primary-500 mb-6">
+              Veelgestelde <span class="text-accent-400">vragen</span>
+            </h2>
+
+            <div class="space-y-3" id="faq-section">
+              <div class="faq-item border border-secondary-100 rounded-xl overflow-hidden">
+                <button class="faq-trigger w-full flex items-center justify-between p-5 text-left hover:bg-slate-50 transition-colors">
+                  <span class="font-heading font-semibold text-primary-500 text-sm sm:text-base pr-4">Hoe snel kan het project starten?</span>
+                  <svg class="faq-icon w-5 h-5 text-accent-400 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                  <p class="text-secondary-400 text-sm leading-relaxed">Dat hangt af van de omvang en onze planning. Kleine projecten kunnen vaak binnen 2-4 weken starten. Voor grotere projecten plannen we graag een kennismakingsgesprek in.</p>
+                </div>
               </div>
-              <div>
-                <h3 class="font-heading font-semibold text-primary-500 mb-1">Reactie binnen 2 werkdagen</h3>
-                <p class="text-secondary-400 text-sm">Snel en persoonlijk antwoord op uw aanvraag.</p>
+
+              <div class="faq-item border border-secondary-100 rounded-xl overflow-hidden">
+                <button class="faq-trigger w-full flex items-center justify-between p-5 text-left hover:bg-slate-50 transition-colors">
+                  <span class="font-heading font-semibold text-primary-500 text-sm sm:text-base pr-4">Werken jullie ook voor particulieren?</span>
+                  <svg class="faq-icon w-5 h-5 text-accent-400 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                  <p class="text-secondary-400 text-sm leading-relaxed">Zeker! Wij werken voor particulieren, bedrijven en overheidsinstellingen. Van een oprit tot complete woonwijken.</p>
+                </div>
+              </div>
+
+              <div class="faq-item border border-secondary-100 rounded-xl overflow-hidden">
+                <button class="faq-trigger w-full flex items-center justify-between p-5 text-left hover:bg-slate-50 transition-colors">
+                  <span class="font-heading font-semibold text-primary-500 text-sm sm:text-base pr-4">Wat kost een offerte?</span>
+                  <svg class="faq-icon w-5 h-5 text-accent-400 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                  <p class="text-secondary-400 text-sm leading-relaxed">Niets! Onze offertes zijn geheel gratis en vrijblijvend. Wij komen graag langs om de situatie te bekijken en een passend voorstel te maken.</p>
+                </div>
+              </div>
+
+              <div class="faq-item border border-secondary-100 rounded-xl overflow-hidden">
+                <button class="faq-trigger w-full flex items-center justify-between p-5 text-left hover:bg-slate-50 transition-colors">
+                  <span class="font-heading font-semibold text-primary-500 text-sm sm:text-base pr-4">In welk gebied zijn jullie actief?</span>
+                  <svg class="faq-icon w-5 h-5 text-accent-400 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                  <p class="text-secondary-400 text-sm leading-relaxed">Wij zijn actief in heel Zeeland. Vanuit ons bedrijfspand in Koudekerke bedienen wij de gehele provincie.</p>
+                </div>
               </div>
             </div>
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-accent-400/10 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-              </div>
-              <div>
-                <h3 class="font-heading font-semibold text-primary-500 mb-1">Al 18+ jaar ervaring</h3>
-                <p class="text-secondary-400 text-sm">Bewezen vakmanschap sinds 2006.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-accent-400/10 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
-              </div>
-              <div>
-                <h3 class="font-heading font-semibold text-primary-500 mb-1">Maatwerk voor elk project</h3>
-                <p class="text-secondary-400 text-sm">Persoonlijke aanpak, van klein tot groot.</p>
-              </div>
+          </div>
+
+          <!-- Direct contact -->
+          <div class="mt-10 bg-slate-50 rounded-2xl p-6 sm:p-8 border border-secondary-100">
+            <h3 class="font-heading font-bold text-lg text-primary-500 mb-4">Liever direct contact?</h3>
+            <div class="space-y-3">
+              <a href={`tel:${siteConfig.contact.phone}`} class="flex items-center gap-3 text-secondary-500 hover:text-accent-400 transition-colors">
+                <div class="w-9 h-9 rounded-full bg-accent-400/10 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                </div>
+                <span class="font-heading font-semibold">{siteConfig.contact.phone}</span>
+              </a>
+              <a href={`mailto:${siteConfig.contact.email}`} class="flex items-center gap-3 text-secondary-500 hover:text-accent-400 transition-colors">
+                <div class="w-9 h-9 rounded-full bg-accent-400/10 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                </div>
+                <span class="font-heading font-semibold">{siteConfig.contact.email}</span>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Contact gegevens -->
-        <div class="reveal" style="transition-delay: 100ms">
-          <h2 class="font-heading font-bold text-2xl md:text-3xl text-primary-500 mb-8">Liever direct contact?</h2>
-          <div class="bg-white border border-secondary-100 p-6 md:p-8 shadow-sm">
-            <div class="space-y-5">
-              <div class="flex items-center gap-4">
-                <div class="w-10 h-10 bg-accent-400/10 flex items-center justify-center shrink-0">
-                  <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <div>
-                  <span class="text-secondary-300 text-xs uppercase tracking-wider font-heading block">Telefoon</span>
-                  <a href={`tel:${siteConfig.contact.phone}`} class="text-primary-500 font-heading font-bold text-lg hover:text-accent-400 transition-colors">
-                    {siteConfig.contact.phone}
-                  </a>
-                </div>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="w-10 h-10 bg-accent-400/10 flex items-center justify-center shrink-0">
-                  <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <span class="text-secondary-300 text-xs uppercase tracking-wider font-heading block">E-mail</span>
-                  <a href={`mailto:${siteConfig.contact.email}`} class="text-primary-500 font-heading font-bold text-lg hover:text-accent-400 transition-colors">
-                    {siteConfig.contact.email}
-                  </a>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-accent-400/10 flex items-center justify-center shrink-0">
-                  <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <span class="text-secondary-300 text-xs uppercase tracking-wider font-heading block">Adres</span>
-                  <span class="text-secondary-500">
-                    {siteConfig.contact.address}<br />
-                    {siteConfig.contact.postalCode} {siteConfig.contact.city}
-                  </span>
-                </div>
-              </div>
-            </div>
+        <!-- RIGHT SIDE: Form -->
+        <div class="lg:col-span-3 order-1 lg:order-2">
+          <div class="bg-white rounded-2xl border border-secondary-100 shadow-lg p-6 sm:p-8 lg:p-10">
+            <h2 class="font-heading font-black text-2xl sm:text-3xl text-primary-500 mb-2">
+              Uw <span class="text-accent-400">aanvraag</span>
+            </h2>
+            <p class="text-secondary-400 text-sm mb-8">Vul onderstaand formulier in en wij nemen binnen 2 werkdagen contact met u op.</p>
 
-            <!-- Opening hours -->
-            <div class="mt-6 pt-6 border-t border-secondary-100">
-              <span class="text-secondary-300 text-xs uppercase tracking-wider font-heading block mb-3">Bereikbaarheid</span>
-              <div class="space-y-1 text-sm">
-                <div class="flex justify-between">
-                  <span class="text-secondary-400">Maandag - Vrijdag</span>
-                  <span class="text-primary-500 font-medium">07:00 - 17:00</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-secondary-400">Zaterdag</span>
-                  <span class="text-secondary-300">Op afspraak</span>
+            <form action="#" method="POST" class="space-y-6">
+              <!-- Personal details -->
+              <div>
+                <h3 class="font-heading font-bold text-base text-primary-500 mb-4">Uw gegevens</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="voornaam" class="block text-sm font-medium text-secondary-500 mb-1.5">Voornaam *</label>
+                    <input type="text" id="voornaam" name="voornaam" required class="w-full px-4 py-3 border border-secondary-200 rounded-xl focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white" placeholder="Uw voornaam" />
+                  </div>
+                  <div>
+                    <label for="achternaam" class="block text-sm font-medium text-secondary-500 mb-1.5">Achternaam *</label>
+                    <input type="text" id="achternaam" name="achternaam" required class="w-full px-4 py-3 border border-secondary-200 rounded-xl focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white" placeholder="Uw achternaam" />
+                  </div>
                 </div>
               </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="email" class="block text-sm font-medium text-secondary-500 mb-1.5">E-mailadres *</label>
+                  <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-secondary-200 rounded-xl focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white" placeholder="uw@email.nl" />
+                </div>
+                <div>
+                  <label for="telefoon" class="block text-sm font-medium text-secondary-500 mb-1.5">Telefoonnummer *</label>
+                  <input type="tel" id="telefoon" name="telefoon" required class="w-full px-4 py-3 border border-secondary-200 rounded-xl focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white" placeholder="06 - 1234 5678" />
+                </div>
+              </div>
+
+              <!-- Project type - chip buttons -->
+              <div>
+                <h3 class="font-heading font-bold text-base text-primary-500 mb-4">Projectgegevens</h3>
+                <label class="block text-sm font-medium text-secondary-500 mb-2">Type project *</label>
+                <div class="flex flex-wrap gap-2" id="project-type-chips">
+                  <button type="button" class="chip-btn px-5 py-2.5 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-sm transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="straatwerk">Straatwerk</button>
+                  <button type="button" class="chip-btn px-5 py-2.5 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-sm transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="riolering">Riolering</button>
+                  <button type="button" class="chip-btn px-5 py-2.5 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-sm transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="grondwerk">Grondwerk</button>
+                  <button type="button" class="chip-btn px-5 py-2.5 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-sm transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="combinatie">Combinatie</button>
+                </div>
+                <input type="hidden" name="type_project" id="type_project" required />
+              </div>
+
+              <!-- Budget indicator chips -->
+              <div>
+                <label class="block text-sm font-medium text-secondary-500 mb-2">Indicatie budget</label>
+                <div class="flex flex-wrap gap-2" id="budget-chips">
+                  <button type="button" class="chip-btn px-4 py-2 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="< €10.000">&lt; &euro;10.000</button>
+                  <button type="button" class="chip-btn px-4 py-2 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="€10.000 - €25.000">&euro;10.000 - &euro;25.000</button>
+                  <button type="button" class="chip-btn px-4 py-2 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="€25.000 - €50.000">&euro;25.000 - &euro;50.000</button>
+                  <button type="button" class="chip-btn px-4 py-2 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="€50.000 - €100.000">&euro;50.000 - &euro;100.000</button>
+                  <button type="button" class="chip-btn px-4 py-2 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="> €100.000">&gt; &euro;100.000</button>
+                </div>
+                <input type="hidden" name="budget" id="budget" />
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="locatie" class="block text-sm font-medium text-secondary-500 mb-1.5">Locatie</label>
+                  <input type="text" id="locatie" name="locatie" class="w-full px-4 py-3 border border-secondary-200 rounded-xl focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white" placeholder="Plaats of adres" />
+                </div>
+                <div>
+                  <label for="startdatum" class="block text-sm font-medium text-secondary-500 mb-1.5">Gewenste startdatum</label>
+                  <input type="date" id="startdatum" name="startdatum" class="w-full px-4 py-3 border border-secondary-200 rounded-xl focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white" />
+                </div>
+              </div>
+
+              <div>
+                <label for="omschrijving" class="block text-sm font-medium text-secondary-500 mb-1.5">Omschrijving van het project *</label>
+                <textarea id="omschrijving" name="omschrijving" required rows="4" class="w-full px-4 py-3 border border-secondary-200 rounded-xl focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 outline-none transition-all text-secondary-700 bg-white resize-vertical" placeholder="Beschrijf hier kort wat u wilt laten doen..."></textarea>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent-400 hover:bg-accent-500 text-white px-10 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                Offerte aanvragen
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Trust indicators below form -->
+          <div class="flex flex-wrap justify-center gap-6 mt-8 text-sm">
+            <div class="flex items-center gap-2 text-secondary-400">
+              <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Gratis en vrijblijvend
+            </div>
+            <div class="flex items-center gap-2 text-secondary-400">
+              <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Reactie binnen 2 werkdagen
+            </div>
+            <div class="flex items-center gap-2 text-secondary-400">
+              <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+              18+ jaar ervaring
             </div>
           </div>
         </div>
@@ -395,3 +254,63 @@ import { siteConfig } from '../data/siteConfig';
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // Chip button selection logic
+  function setupChipGroup(containerId: string, hiddenInputId: string, allowMultiple = false) {
+    const container = document.getElementById(containerId);
+    const hiddenInput = document.getElementById(hiddenInputId) as HTMLInputElement;
+    if (!container || !hiddenInput) return;
+
+    container.querySelectorAll('.chip-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!allowMultiple) {
+          container.querySelectorAll('.chip-btn').forEach((b) => {
+            b.classList.remove('border-accent-400', 'bg-accent-400', 'text-white');
+            b.classList.add('border-secondary-200', 'text-secondary-500');
+          });
+        }
+
+        const isActive = btn.classList.contains('bg-accent-400');
+        if (isActive) {
+          btn.classList.remove('border-accent-400', 'bg-accent-400', 'text-white');
+          btn.classList.add('border-secondary-200', 'text-secondary-500');
+          hiddenInput.value = '';
+        } else {
+          btn.classList.remove('border-secondary-200', 'text-secondary-500');
+          btn.classList.add('border-accent-400', 'bg-accent-400', 'text-white');
+          hiddenInput.value = (btn as HTMLElement).dataset.value || '';
+        }
+      });
+    });
+  }
+
+  setupChipGroup('project-type-chips', 'type_project');
+  setupChipGroup('budget-chips', 'budget');
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.faq-item');
+      if (!item) return;
+
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+      const isOpen = content && !content.classList.contains('hidden');
+
+      // Close all others
+      document.querySelectorAll('.faq-item').forEach((otherItem) => {
+        const otherContent = otherItem.querySelector('.faq-content');
+        const otherIcon = otherItem.querySelector('.faq-icon');
+        if (otherContent) otherContent.classList.add('hidden');
+        if (otherIcon) otherIcon.classList.remove('rotate-180');
+      });
+
+      // Toggle current
+      if (!isOpen && content && icon) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      }
+    });
+  });
+</script>
