@@ -23,7 +23,7 @@ const currentPath = Astro.url.pathname;
       <div id="header-inner" class="flex items-center justify-between h-20 sm:h-24 transition-all duration-500">
         <!-- Logo -->
         <a href="/" class="shrink-0 group">
-          <div id="header-logo" class="w-16 h-16 sm:w-20 sm:h-20 transition-all duration-500 group-hover:opacity-80">
+          <div id="header-logo" class="w-20 h-20 sm:w-28 sm:h-28 transition-all duration-500 group-hover:opacity-80">
             <img src="/fotos-jd-infra/fotos jd infra/logo_64d0900b.svg" alt="JD Infra" class="w-full h-full object-contain" />
           </div>
         </a>
@@ -174,8 +174,8 @@ const currentPath = Astro.url.pathname;
       if (isScrolled) {
         headerInner.classList.remove('h-20', 'sm:h-24');
         headerInner.classList.add('h-14', 'sm:h-16');
-        headerLogo.classList.remove('w-16', 'h-16', 'sm:w-20', 'sm:h-20');
-        headerLogo.classList.add('w-10', 'h-10', 'sm:w-12', 'sm:h-12');
+        headerLogo.classList.remove('w-20', 'h-20', 'sm:w-28', 'sm:h-28');
+        headerLogo.classList.add('w-12', 'h-12', 'sm:w-14', 'sm:h-14');
         headerAccent.classList.replace('opacity-0', 'opacity-100');
         headerMain.classList.add('bg-primary-500/95', 'backdrop-blur-md', 'shadow-2xl');
         if (isTransparent) headerMain.classList.remove('bg-transparent');
@@ -184,8 +184,8 @@ const currentPath = Astro.url.pathname;
       } else {
         headerInner.classList.add('h-20', 'sm:h-24');
         headerInner.classList.remove('h-14', 'sm:h-16');
-        headerLogo.classList.add('w-16', 'h-16', 'sm:w-20', 'sm:h-20');
-        headerLogo.classList.remove('w-10', 'h-10', 'sm:w-12', 'sm:h-12');
+        headerLogo.classList.add('w-20', 'h-20', 'sm:w-28', 'sm:h-28');
+        headerLogo.classList.remove('w-12', 'h-12', 'sm:w-14', 'sm:h-14');
         headerAccent.classList.replace('opacity-100', 'opacity-0');
         headerMain.classList.remove('backdrop-blur-md', 'shadow-2xl');
         if (isTransparent) {
