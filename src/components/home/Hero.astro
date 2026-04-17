@@ -43,11 +43,11 @@ const slides = [
   <div class="relative z-10 w-full flex-1 flex items-center pt-28 sm:pt-36 lg:pt-44 pb-6 sm:pb-10">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div class="max-w-4xl">
-        <h1 class="animate-slide-up" style="animation-delay: 0.3s;">
-          <span class="block font-heading font-black text-white text-4xl sm:text-7xl lg:text-8xl xl:text-9xl leading-[0.85] tracking-tight">
+        <h1 class="animate-slide-up hidden sm:block" style="animation-delay: 0.3s;">
+          <span class="block font-heading font-black text-white sm:text-7xl lg:text-8xl xl:text-9xl leading-[0.85] tracking-tight">
             JD Infra
           </span>
-          <span class="block font-heading font-bold text-white/70 text-lg sm:text-2xl lg:text-3xl mt-2 sm:mt-4 leading-tight">
+          <span class="block font-heading font-bold text-white/70 sm:text-2xl lg:text-3xl mt-4 leading-tight">
             Bouwt. Bestraat. <span class="text-accent-400">Verbindt.</span>
           </span>
         </h1>
@@ -58,17 +58,17 @@ const slides = [
   <!-- Stride cards + stats - pushed to bottom -->
   <div class="relative z-10 w-full pb-6 sm:pb-12 lg:pb-16 pt-2 sm:pt-4 mt-auto">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      <!-- Stats bar with pill backgrounds -->
-      <div class="flex flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8">
-        <div class="bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-5 sm:py-2 flex items-center gap-2">
+      <!-- Stats bar - 1 top + 2 bottom on mobile, row on desktop -->
+      <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8">
+        <div class="col-span-2 sm:col-span-1 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 sm:px-5 sm:py-2 flex items-center justify-center sm:justify-start gap-2">
           <span class="font-heading font-bold text-sm sm:text-xl text-white" data-counter="2006" data-counter-type="year">2006</span>
           <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Opgericht</span>
         </div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-5 sm:py-2 flex items-center gap-2">
+        <div class="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 sm:px-5 sm:py-2 flex items-center justify-center sm:justify-start gap-2">
           <span class="font-heading font-bold text-sm sm:text-xl text-white"><span data-counter="15">15</span><span class="text-accent-400">+</span></span>
           <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Vakmensen</span>
         </div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-5 sm:py-2 flex items-center gap-2">
+        <div class="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 sm:px-5 sm:py-2 flex items-center justify-center sm:justify-start gap-2">
           <span class="font-heading font-bold text-sm sm:text-xl text-white"><span data-counter="100">100</span><span class="text-accent-400">%</span></span>
           <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Zeeland</span>
         </div>
