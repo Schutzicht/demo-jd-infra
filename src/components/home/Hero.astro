@@ -2,129 +2,132 @@
 import { siteConfig } from '../../data/siteConfig';
 
 const slides = [
-  {
-    image: '/fotos-jd-infra/fotos jd infra/DSCF7925-1920x1080.jpg.jpeg',
-    alt: 'JD Infra vrachtwagen',
-  },
-  {
-    image: '/fotos-jd-infra/fotos jd infra/DSCF7911-1920x1080.jpg.jpeg',
-    alt: 'Shovel aan het werk',
-  },
-  {
-    image: '/fotos-jd-infra/fotos jd infra/IMG_8333lzp.jpg.jpeg',
-    alt: 'Bouwplaats werkzaamheden',
-  },
-  {
-    image: '/fotos-jd-infra/fotos jd infra/IMG_2403c.jpg.jpeg',
-    alt: 'Bouwplaats overzicht',
-  },
+  { image: '/fotos-jd-infra/fotos jd infra/DSCF7925-1920x1080.jpg.jpeg', alt: 'JD Infra vrachtwagen' },
+  { image: '/fotos-jd-infra/fotos jd infra/DSCF7911-1920x1080.jpg.jpeg', alt: 'Shovel aan het werk' },
+  { image: '/fotos-jd-infra/fotos jd infra/IMG_8333lzp.jpg.jpeg', alt: 'Bouwplaats werkzaamheden' },
+  { image: '/fotos-jd-infra/fotos jd infra/IMG_2403c.jpg.jpeg', alt: 'Bouwplaats overzicht' },
 ];
 ---
 
-<section data-hero class="relative min-h-[100svh] sm:min-h-screen -mt-20 sm:-mt-24 overflow-hidden flex flex-col">
+<section data-hero class="relative min-h-[100svh] sm:min-h-screen -mt-20 sm:-mt-24 overflow-hidden flex flex-col justify-end">
   <!-- Slide backgrounds -->
   {slides.map((slide, i) => (
     <div class:list={['hero-slide', i === 0 ? 'active' : '']} data-slide-bg={i}>
-      <img
-        src={slide.image}
-        alt={slide.alt}
-        class="w-full h-full object-cover"
-        loading={i === 0 ? 'eager' : 'lazy'}
-      />
+      <img src={slide.image} alt={slide.alt} class="w-full h-full object-cover" loading={i === 0 ? 'eager' : 'lazy'} />
       <div class="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/40 to-primary-900/20"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-primary-900/60 via-transparent to-transparent"></div>
     </div>
   ))}
 
-  <!-- Grain overlay -->
   <div class="absolute inset-0 grain z-[2]"></div>
 
-  <!-- Heading -->
-  <div class="relative z-10 w-full flex-1 flex items-center pt-28 sm:pt-36 lg:pt-44 pb-6 sm:pb-10">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      <div class="max-w-4xl">
-        <h1 class="animate-slide-up hidden sm:block" style="animation-delay: 0.3s;">
-          <span class="block font-heading font-black text-white sm:text-7xl lg:text-8xl xl:text-9xl leading-[0.85] tracking-tight">
-            JD Infra
-          </span>
-          <span class="block font-heading font-bold text-white/70 sm:text-2xl lg:text-3xl mt-4 leading-tight">
-            Bouwt. Bestraat. <span class="text-accent-400">Verbindt.</span>
-          </span>
-        </h1>
+  <!-- === MOBILE LAYOUT === -->
+  <div class="sm:hidden relative z-10 flex flex-col h-[100svh] pt-24 pb-4 px-5">
+    <!-- Heading centered vertically -->
+    <div class="flex-1 flex items-center">
+      <h1>
+        <span class="block font-heading font-black text-white text-[3.2rem] leading-[0.85] tracking-tight">
+          Grondwerk,<br/>straatwerk &<br/><span class="text-accent-400">riolering</span>
+        </span>
+      </h1>
+    </div>
+
+    <!-- Single frosted card at bottom -->
+    <div class="bg-white/85 backdrop-blur-xl rounded-2xl p-5 shadow-2xl border border-white/20">
+      <p class="text-secondary-500 text-sm leading-relaxed mb-4">
+        Vakkundig infrawerk voor particulieren, bedrijven en overheden in heel Zeeland.
+      </p>
+      <div class="flex gap-3">
+        <a href="/contact/" class="flex-1 inline-flex items-center justify-center gap-2 bg-accent-400 text-white py-3 rounded-full font-heading font-bold text-xs uppercase tracking-wider">
+          Offerte aanvragen <span>&rarr;</span>
+        </a>
+        <a href="/projecten/" class="flex-1 inline-flex items-center justify-center gap-2 border-2 border-primary-500/20 text-primary-500 py-3 rounded-full font-heading font-bold text-xs uppercase tracking-wider">
+          Projecten <span>&rarr;</span>
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- Stride cards + stats - pushed to bottom -->
-  <div class="relative z-10 w-full pb-6 sm:pb-12 lg:pb-16 pt-2 sm:pt-4 mt-auto">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      <!-- Stats bar - 1 top + 2 bottom on mobile, row on desktop -->
-      <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8">
-        <div class="col-span-2 sm:col-span-1 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 sm:px-5 sm:py-2 flex items-center justify-center sm:justify-start gap-2">
-          <span class="font-heading font-bold text-sm sm:text-xl text-white" data-counter="2006" data-counter-type="year">2006</span>
-          <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Opgericht</span>
-        </div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 sm:px-5 sm:py-2 flex items-center justify-center sm:justify-start gap-2">
-          <span class="font-heading font-bold text-sm sm:text-xl text-white"><span data-counter="15">15</span><span class="text-accent-400">+</span></span>
-          <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Vakmensen</span>
-        </div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 sm:px-5 sm:py-2 flex items-center justify-center sm:justify-start gap-2">
-          <span class="font-heading font-bold text-sm sm:text-xl text-white"><span data-counter="100">100</span><span class="text-accent-400">%</span></span>
-          <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Zeeland</span>
+  <!-- === DESKTOP LAYOUT === -->
+  <div class="hidden sm:flex relative z-10 w-full flex-col min-h-screen">
+    <!-- Heading - centered vertically -->
+    <div class="flex-1 flex items-center pt-36 lg:pt-44 pb-10">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+        <div class="max-w-4xl">
+          <h1 class="animate-slide-up" style="animation-delay: 0.3s;">
+            <span class="block font-heading font-black text-white text-7xl lg:text-8xl xl:text-9xl leading-[0.85] tracking-tight">
+              JD Infra
+            </span>
+            <span class="block font-heading font-bold text-white/70 text-2xl lg:text-3xl mt-4 leading-tight">
+              Bouwt. Bestraat. <span class="text-accent-400">Verbindt.</span>
+            </span>
+          </h1>
         </div>
       </div>
+    </div>
 
-      <!-- Stride cards -->
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-3 sm:gap-5">
-        <!-- Left card (larger) -->
-        <div class="lg:col-span-3 bg-white/85 backdrop-blur-xl rounded-2xl p-5 sm:p-8 shadow-2xl border border-white/20">
-          <span class="text-accent-400 font-heading font-bold text-xs sm:text-sm uppercase tracking-[0.2em] mb-2 block">Grondwerk, straatwerk en riolering</span>
-          <h2 class="font-heading font-black text-2xl sm:text-3xl text-primary-500 leading-tight mb-3">
-            Vakkundig infrawerk<br class="hidden sm:block" /> voor heel <span class="text-accent-400">Zeeland</span>
-          </h2>
-          <p class="text-secondary-400 text-sm sm:text-base leading-relaxed mb-6 max-w-lg">
-            Van bouwrijp maken tot complete infrastructurele projecten. Wij leveren vakwerk voor particulieren, bedrijven en overheden.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a href="/contact/" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-accent-400 hover:bg-accent-500 text-white px-7 py-3.5 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-              Offerte aanvragen
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
-            <a href="/projecten/" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-primary-500/20 hover:border-accent-400 text-primary-500 hover:text-accent-500 px-7 py-3.5 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300">
-              Bekijk projecten
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
+    <!-- Stats + stride cards at bottom -->
+    <div class="w-full pb-12 lg:pb-16 pt-4">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <!-- Stats -->
+        <div class="flex flex-wrap gap-4 mb-8">
+          <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2">
+            <span class="font-heading font-bold text-xl text-white" data-counter="2006" data-counter-type="year">2006</span>
+            <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Opgericht</span>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2">
+            <span class="font-heading font-bold text-xl text-white"><span data-counter="15">15</span><span class="text-accent-400">+</span></span>
+            <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Vakmensen</span>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2">
+            <span class="font-heading font-bold text-xl text-white"><span data-counter="100">100</span><span class="text-accent-400">%</span></span>
+            <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Zeeland</span>
           </div>
         </div>
 
-        <!-- Right card - Vacatures -->
-        <div class="lg:col-span-2 bg-accent-400/90 backdrop-blur-xl rounded-2xl p-5 sm:p-8 shadow-2xl border border-accent-300/20 flex flex-col justify-between">
-          <div>
-            <span class="text-white/70 font-heading font-bold text-xs sm:text-sm uppercase tracking-[0.2em] mb-2 block">Wij zoeken versterking</span>
-            <h3 class="font-heading font-black text-xl sm:text-2xl text-white leading-tight mb-3">
-              Werk bij <span class="text-primary-900">JD Infra</span>
-            </h3>
-            <p class="text-white/80 text-sm leading-relaxed mb-5">
-              Op zoek naar afwisselend buitenwerk in Zeeland? Wij zoeken stratenmakers, machinisten en grondwerkers.
+        <!-- Stride cards -->
+        <div class="grid lg:grid-cols-5 gap-5">
+          <div class="lg:col-span-3 bg-white/85 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white/20">
+            <span class="text-accent-400 font-heading font-bold text-sm uppercase tracking-[0.2em] mb-2 block">Grondwerk, straatwerk en riolering</span>
+            <h2 class="font-heading font-black text-3xl text-primary-500 leading-tight mb-3">
+              Vakkundig infrawerk<br/> voor heel <span class="text-accent-400">Zeeland</span>
+            </h2>
+            <p class="text-secondary-400 text-base leading-relaxed mb-6 max-w-lg">
+              Van bouwrijp maken tot complete infrastructurele projecten. Wij leveren vakwerk voor particulieren, bedrijven en overheden.
             </p>
+            <div class="flex gap-3">
+              <a href="/contact/" class="inline-flex items-center gap-2 bg-accent-400 hover:bg-accent-500 text-white px-7 py-3.5 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                Offerte aanvragen &rarr;
+              </a>
+              <a href="/projecten/" class="inline-flex items-center gap-2 border-2 border-primary-500/20 hover:border-accent-400 text-primary-500 hover:text-accent-500 px-7 py-3.5 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300">
+                Bekijk projecten &rarr;
+              </a>
+            </div>
           </div>
-          <a href="/vacatures/" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-primary-50 text-primary-500 px-6 py-3 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 w-fit shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-            Bekijk vacatures
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </a>
+
+          <div class="lg:col-span-2 bg-accent-400/90 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-accent-300/20 flex flex-col justify-between">
+            <div>
+              <span class="text-white/70 font-heading font-bold text-sm uppercase tracking-[0.2em] mb-2 block">Wij zoeken versterking</span>
+              <h3 class="font-heading font-black text-2xl text-white leading-tight mb-3">
+                Werk bij <span class="text-primary-900">JD Infra</span>
+              </h3>
+              <p class="text-white/80 text-sm leading-relaxed mb-5">
+                Op zoek naar afwisselend buitenwerk in Zeeland? Wij zoeken stratenmakers, machinisten en grondwerkers.
+              </p>
+            </div>
+            <a href="/vacatures/" class="inline-flex items-center gap-2 bg-white hover:bg-primary-50 text-primary-500 px-6 py-3 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 w-fit shadow-lg">
+              Bekijk vacatures &rarr;
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Slide indicators -->
-  <div class="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3" id="slide-indicators">
+  <div class="absolute bottom-2 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 hidden sm:flex items-center gap-3" id="slide-indicators">
     {slides.map((_, i) => (
-      <button
-        class:list={['slide-dot relative w-10 h-[3px] rounded-full bg-white/20 overflow-hidden cursor-pointer transition-all duration-300', i === 0 ? 'w-16' : '']}
-        data-slide-dot={i}
-        aria-label={`Ga naar slide ${i + 1}`}
-      >
+      <button class:list={['slide-dot relative w-10 h-[3px] rounded-full bg-white/20 overflow-hidden cursor-pointer transition-all duration-300', i === 0 ? 'w-16' : '']} data-slide-dot={i} aria-label={`Slide ${i + 1}`}>
         {i === 0 && <div class="slide-progress-bar absolute inset-0 rounded-full"></div>}
       </button>
     ))}
@@ -132,50 +135,36 @@ const slides = [
 </section>
 
 <script>
-  // Hero slideshow
   const SLIDE_DURATION = 5000;
   const TOTAL_SLIDES = 4;
   let currentSlide = 0;
   let slideTimer: ReturnType<typeof setInterval>;
 
   function goToSlide(index: number) {
-    const currentBg = document.querySelector(`[data-slide-bg="${currentSlide}"]`);
-    const currentDot = document.querySelector(`[data-slide-dot="${currentSlide}"]`);
-
-    if (currentBg) currentBg.classList.remove('active');
-    if (currentDot) {
-      currentDot.classList.remove('w-16');
-      const bar = currentDot.querySelector('.slide-progress-bar');
-      if (bar) bar.remove();
-    }
+    document.querySelector(`[data-slide-bg="${currentSlide}"]`)?.classList.remove('active');
+    const oldDot = document.querySelector(`[data-slide-dot="${currentSlide}"]`);
+    if (oldDot) { oldDot.classList.remove('w-16'); oldDot.querySelector('.slide-progress-bar')?.remove(); }
 
     currentSlide = index;
 
-    const newBg = document.querySelector(`[data-slide-bg="${currentSlide}"]`);
+    document.querySelector(`[data-slide-bg="${currentSlide}"]`)?.classList.add('active');
     const newDot = document.querySelector(`[data-slide-dot="${currentSlide}"]`);
-
-    if (newBg) newBg.classList.add('active');
     if (newDot) {
       newDot.classList.add('w-16');
-      const progressBar = document.createElement('div');
-      progressBar.className = 'slide-progress-bar absolute inset-0 rounded-full';
-      newDot.appendChild(progressBar);
+      const bar = document.createElement('div');
+      bar.className = 'slide-progress-bar absolute inset-0 rounded-full';
+      newDot.appendChild(bar);
     }
-  }
-
-  function nextSlide() {
-    goToSlide((currentSlide + 1) % TOTAL_SLIDES);
   }
 
   function startSlideshow() {
     clearInterval(slideTimer);
-    slideTimer = setInterval(nextSlide, SLIDE_DURATION);
+    slideTimer = setInterval(() => goToSlide((currentSlide + 1) % TOTAL_SLIDES), SLIDE_DURATION);
   }
 
   document.querySelectorAll('[data-slide-dot]').forEach((dot) => {
     dot.addEventListener('click', () => {
-      const index = parseInt(dot.getAttribute('data-slide-dot') || '0');
-      goToSlide(index);
+      goToSlide(parseInt(dot.getAttribute('data-slide-dot') || '0'));
       startSlideshow();
     });
   });

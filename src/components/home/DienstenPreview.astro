@@ -21,7 +21,7 @@ const diensten = siteConfig.diensten;
       {diensten.map((dienst, i) => (
         <a
           href={`/diensten/${dienst.slug}/`}
-          class="reveal group block relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[3/4]"
+          class="reveal group block relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/5] sm:aspect-[3/4]"
           style={`transition-delay: ${i * 0.15}s;`}
         >
           <!-- Full image -->
