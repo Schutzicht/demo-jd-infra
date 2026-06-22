@@ -1,0 +1,293 @@
+---
+// Interactieve branche-feature: straatdoorsnede + klinkerverband-kiezer
+const lagen = [
+  {
+    id: 'klinkers',
+    naam: 'Bestrating',
+    dienst: 'Straatwerk',
+    tekst: 'De zichtlaag: klinkers of tegels, strak in het door u gekozen verband gelegd en afgetrild.',
+  },
+  {
+    id: 'straatzand',
+    naam: 'Straatzand',
+    dienst: 'Straatwerk',
+    tekst: 'Een dunne, vlak afgereide laag straatzand waarin de klinkers worden gelegd en vastgezet.',
+  },
+  {
+    id: 'fundering',
+    naam: 'Fundering',
+    dienst: 'Grondwerk',
+    tekst: 'Menggranulaat als draagkrachtige fundering, verdicht zodat de verharding niet verzakt.',
+  },
+  {
+    id: 'cunet',
+    naam: 'Zandbed / cunet',
+    dienst: 'Grondwerk',
+    tekst: 'Het uitgegraven cunet, opgevuld met zand. De basis waar alles op rust.',
+  },
+  {
+    id: 'riool',
+    naam: 'Riolering',
+    dienst: 'Riolering',
+    tekst: 'De rioolbuis op de juiste hoogte en afschot, voor een betrouwbare afvoer van regen- en afvalwater.',
+  },
+  {
+    id: 'water',
+    naam: 'Grondwaterpeil',
+    dienst: 'Grondwerk',
+    tekst: 'Wij houden rekening met de grondwaterstand, zodat de constructie droog en stabiel blijft.',
+  },
+];
+
+const verbanden = [
+  { id: 'halfsteens', naam: 'Halfsteens', tekst: 'Rijen klinkers, telkens een halve steen verspringend. De klassieker voor opritten en paden.' },
+  { id: 'blok', naam: 'Blokverband', tekst: 'Strak boven elkaar gelegd. Rustig en modern, mooi bij bestrating in een patroon.' },
+  { id: 'visgraat', naam: 'Visgraat', tekst: 'In elkaar grijpend weefsel. Zeer sterk, ideaal bij zwaarder belaste verharding.' },
+  { id: 'keper', naam: 'Keperverband', tekst: 'Visgraat onder 45 graden. Speels en sterk, een echte blikvanger.' },
+];
+---
+
+<section class="py-24 sm:py-32 bg-slate-50 relative overflow-hidden">
+  <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="relative mb-14 sm:mb-16 max-w-2xl">
+      <span class="section-num absolute -top-12 sm:-top-16 -left-2">03</span>
+      <span class="eyebrow mb-5 relative">Onder de straat</span>
+      <h2 class="display-lg text-primary-500 relative mb-4">
+        Eén straat, <span class="accent-serif">drie</span> ambachten.
+      </h2>
+      <p class="text-secondary-400 text-base sm:text-lg leading-relaxed">
+        Wat u ziet is de klinker. Wat het werk maakt, zit eronder. Klik door de lagen en kies uw eigen straatverband.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+      <!-- LEFT: Doorsnede -->
+      <div class="reveal-left bg-white rounded-2xl shadow-lg border border-secondary-100 p-5 sm:p-7 flex flex-col">
+        <p class="font-heading font-bold text-primary-500 text-sm uppercase tracking-wider mb-4">Dwarsdoorsnede</p>
+
+        <svg viewBox="0 0 400 300" class="w-full h-auto rounded-xl overflow-hidden select-none" role="img" aria-label="Dwarsdoorsnede van een straat">
+          <!-- sky strip -->
+          <rect x="0" y="0" width="400" height="30" fill="#dceaf2"/>
+
+          <!-- LAYER: cunet (base sand) -->
+          <g class="ods-layer" data-layer="cunet">
+            <rect x="0" y="150" width="400" height="150" fill="#e7d4ab"/>
+          </g>
+
+          <!-- LAYER: fundering -->
+          <g class="ods-layer" data-layer="fundering">
+            <rect x="0" y="118" width="400" height="34" fill="#9aa1a8"/>
+            <g fill="#7f868d">
+              <circle cx="40" cy="135" r="3"/><circle cx="95" cy="128" r="2.5"/><circle cx="150" cy="140" r="3"/><circle cx="210" cy="130" r="2.5"/><circle cx="270" cy="138" r="3"/><circle cx="330" cy="129" r="2.5"/><circle cx="375" cy="140" r="3"/>
+            </g>
+          </g>
+
+          <!-- LAYER: straatzand -->
+          <g class="ods-layer" data-layer="straatzand">
+            <rect x="0" y="100" width="400" height="20" fill="#f0dcab"/>
+          </g>
+
+          <!-- LAYER: klinkers (side view) -->
+          <g class="ods-layer" data-layer="klinkers">
+            <rect x="0" y="78" width="400" height="24" fill="#cdb89a"/>
+            <g id="ods-klinkers-row"></g>
+          </g>
+
+          <!-- LAYER: riool -->
+          <g class="ods-layer" data-layer="riool">
+            <ellipse cx="300" cy="225" rx="34" ry="34" fill="#5b626a"/>
+            <ellipse cx="300" cy="225" rx="22" ry="22" fill="#3a3f44"/>
+            <ellipse cx="300" cy="225" rx="22" ry="22" fill="#23262a"/>
+          </g>
+
+          <!-- LAYER: grondwater -->
+          <g class="ods-layer" data-layer="water">
+            <line x1="0" y1="262" x2="400" y2="262" stroke="#199ec3" stroke-width="2" stroke-dasharray="7 6"/>
+            <path d="M0 262 Q100 270 200 262 T400 262 L400 300 L0 300 Z" fill="#199ec3" fill-opacity="0.14"/>
+          </g>
+
+          <!-- highlight ring (moved by JS) -->
+          <rect id="ods-highlight" x="0" y="78" width="400" height="24" fill="none" stroke="#199ec3" stroke-width="3" rx="2" opacity="0" pointer-events="none"/>
+        </svg>
+
+        <!-- Legend buttons -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-5">
+          {lagen.map((laag, i) => (
+            <button
+              type="button"
+              class="ods-legend text-left px-3 py-2 rounded-lg border border-secondary-200 transition-all duration-200 hover:border-accent-400 cursor-pointer"
+              data-target={laag.id}
+              data-default={i === 0 ? 'true' : 'false'}
+            >
+              <span class="block font-heading font-bold text-primary-500 text-xs">{laag.naam}</span>
+              <span class="block text-accent-500 text-[10px] uppercase tracking-wider font-heading">{laag.dienst}</span>
+            </button>
+          ))}
+        </div>
+
+        <!-- Info -->
+        <div class="mt-4 bg-slate-50 rounded-xl p-4 min-h-[64px]">
+          <p id="ods-info" class="text-secondary-500 text-sm leading-relaxed"></p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Verband kiezer -->
+      <div class="reveal-right bg-white rounded-2xl shadow-lg border border-secondary-100 p-5 sm:p-7 flex flex-col">
+        <p class="font-heading font-bold text-primary-500 text-sm uppercase tracking-wider mb-4">Kies uw straatverband</p>
+
+        <div class="relative rounded-xl overflow-hidden bg-[#e8e3da] flex-1 min-h-[220px]">
+          <svg viewBox="0 0 400 260" class="w-full h-full" role="img" aria-label="Voorbeeld van het gekozen straatverband">
+            <defs>
+              <!-- joint background baked via fill; bricks anthracite -->
+              <pattern id="vb-halfsteens" width="72" height="36" patternUnits="userSpaceOnUse">
+                <rect width="72" height="36" fill="#e8e3da"/>
+                <g fill="#3a3f44">
+                  <rect x="1" y="1" width="34" height="16" rx="1.5"/>
+                  <rect x="37" y="1" width="34" height="16" rx="1.5"/>
+                  <rect x="-17" y="19" width="34" height="16" rx="1.5"/>
+                  <rect x="19" y="19" width="34" height="16" rx="1.5"/>
+                  <rect x="55" y="19" width="34" height="16" rx="1.5"/>
+                </g>
+              </pattern>
+              <pattern id="vb-blok" width="36" height="36" patternUnits="userSpaceOnUse">
+                <rect width="36" height="36" fill="#e8e3da"/>
+                <g fill="#3a3f44">
+                  <rect x="1" y="1" width="34" height="16" rx="1.5"/>
+                  <rect x="1" y="19" width="34" height="16" rx="1.5"/>
+                </g>
+              </pattern>
+              <pattern id="vb-visgraat" width="72" height="72" patternUnits="userSpaceOnUse">
+                <rect width="72" height="72" fill="#e8e3da"/>
+                <g fill="#3a3f44">
+                  <rect x="1" y="1" width="34" height="16" rx="1.5"/>
+                  <rect x="1" y="19" width="34" height="16" rx="1.5"/>
+                  <rect x="37" y="1" width="16" height="34" rx="1.5"/>
+                  <rect x="55" y="1" width="16" height="34" rx="1.5"/>
+                  <rect x="1" y="37" width="16" height="34" rx="1.5"/>
+                  <rect x="19" y="37" width="16" height="34" rx="1.5"/>
+                  <rect x="37" y="37" width="34" height="16" rx="1.5"/>
+                  <rect x="37" y="55" width="34" height="16" rx="1.5"/>
+                </g>
+              </pattern>
+              <pattern id="vb-keper" width="72" height="72" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <rect width="72" height="72" fill="#e8e3da"/>
+                <g fill="#3a3f44">
+                  <rect x="1" y="1" width="34" height="16" rx="1.5"/>
+                  <rect x="1" y="19" width="34" height="16" rx="1.5"/>
+                  <rect x="37" y="1" width="16" height="34" rx="1.5"/>
+                  <rect x="55" y="1" width="16" height="34" rx="1.5"/>
+                  <rect x="1" y="37" width="16" height="34" rx="1.5"/>
+                  <rect x="19" y="37" width="16" height="34" rx="1.5"/>
+                  <rect x="37" y="37" width="34" height="16" rx="1.5"/>
+                  <rect x="37" y="55" width="34" height="16" rx="1.5"/>
+                </g>
+              </pattern>
+            </defs>
+            <rect id="vb-preview" x="0" y="0" width="400" height="260" fill="url(#vb-halfsteens)" style="transition: opacity 0.25s ease;"/>
+          </svg>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mt-5">
+          {verbanden.map((v, i) => (
+            <button
+              type="button"
+              class="vb-btn px-4 py-2.5 rounded-full border-2 font-heading font-bold text-xs uppercase tracking-wider transition-all duration-200 cursor-pointer"
+              data-verband={v.id}
+              data-default={i === 0 ? 'true' : 'false'}
+            >
+              {v.naam}
+            </button>
+          ))}
+        </div>
+
+        <div class="mt-4 bg-slate-50 rounded-xl p-4 min-h-[64px]">
+          <p id="vb-info" class="text-secondary-500 text-sm leading-relaxed"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script
+  define:vars={{
+    lagenData: lagen.map((l) => ({ id: l.id, tekst: l.tekst })),
+    verbandenData: verbanden,
+  }}
+>
+  // ---- Doorsnede ----
+  // Build side-view klinker bricks
+  const row = document.getElementById('ods-klinkers-row');
+  if (row) {
+    let bricks = '';
+    for (let x = 2; x < 400; x += 26) {
+      bricks += `<rect x="${x}" y="80" width="22" height="20" rx="1.5" fill="#3a3f44"/>`;
+    }
+    row.innerHTML = bricks;
+  }
+
+  const highlight = document.getElementById('ods-highlight');
+  const info = document.getElementById('ods-info');
+  // y/height per layer for the highlight box
+  const bounds = {
+    klinkers: [78, 24], straatzand: [100, 20], fundering: [118, 34],
+    cunet: [150, 150], riool: [191, 68], water: [255, 14],
+  };
+
+  function selectLayer(id) {
+    const lookup = lagenData.find((l) => l.id === id);
+    if (!lookup) return;
+    document.querySelectorAll('.ods-legend').forEach((b) => {
+      const active = b.getAttribute('data-target') === id;
+      b.classList.toggle('border-accent-400', active);
+      b.classList.toggle('bg-accent-50', active);
+    });
+    document.querySelectorAll('.ods-layer').forEach((g) => {
+      g.style.transition = 'opacity 0.3s ease';
+      g.style.opacity = g.getAttribute('data-layer') === id ? '1' : '0.32';
+    });
+    if (highlight && bounds[id]) {
+      highlight.setAttribute('y', String(bounds[id][0]));
+      highlight.setAttribute('height', String(bounds[id][1]));
+      highlight.setAttribute('opacity', '1');
+    }
+    if (info) info.textContent = lookup.tekst;
+  }
+
+  document.querySelectorAll('.ods-legend').forEach((b) => {
+    b.addEventListener('click', () => selectLayer(b.getAttribute('data-target')));
+  });
+  const odsDefault = document.querySelector('.ods-legend[data-default="true"]');
+  if (odsDefault) selectLayer(odsDefault.getAttribute('data-target'));
+
+  // ---- Verband ----
+  const preview = document.getElementById('vb-preview');
+  const vbInfo = document.getElementById('vb-info');
+
+  function selectVerband(id) {
+    const v = verbandenData.find((x) => x.id === id);
+    if (!v) return;
+    document.querySelectorAll('.vb-btn').forEach((b) => {
+      const active = b.getAttribute('data-verband') === id;
+      b.classList.toggle('border-accent-400', active);
+      b.classList.toggle('text-accent-500', active);
+      b.classList.toggle('bg-accent-50', active);
+      b.classList.toggle('border-secondary-200', !active);
+      b.classList.toggle('text-secondary-500', !active);
+    });
+    if (preview) {
+      preview.style.opacity = '0';
+      setTimeout(() => {
+        preview.setAttribute('fill', `url(#vb-${id})`);
+        preview.style.opacity = '1';
+      }, 180);
+    }
+    if (vbInfo) vbInfo.textContent = v.tekst;
+  }
+
+  document.querySelectorAll('.vb-btn').forEach((b) => {
+    b.addEventListener('click', () => selectVerband(b.getAttribute('data-verband')));
+  });
+  const vbDefault = document.querySelector('.vb-btn[data-default="true"]');
+  if (vbDefault) selectVerband(vbDefault.getAttribute('data-verband'));
+</script>

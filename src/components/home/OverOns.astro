@@ -2,12 +2,13 @@
 import { siteConfig } from '../../data/siteConfig';
 ---
 
-<section class="relative py-24 sm:py-32 bg-white overflow-hidden">
-  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+<section class="relative py-24 sm:py-32 bg-mesh-ink overflow-hidden">
+  <div class="absolute inset-0 bg-grid-fine opacity-40"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       <!-- Image left - rounded with shadow -->
       <div class="reveal-scale relative">
-        <div class="rounded-2xl overflow-hidden shadow-xl">
+        <div class="rounded-2xl overflow-hidden shadow-2xl">
           <img
             src="/fotos-jd-infra/fotos jd infra/DJI_0004-1024x576.jpg.jpeg"
             alt="Bedrijfspand JD Infra drone"
@@ -16,45 +17,47 @@ import { siteConfig } from '../../data/siteConfig';
           />
         </div>
 
-        <!-- Floating stat badge -->
-        <div class="absolute -bottom-6 right-4 sm:right-8 bg-white rounded-xl p-5 sm:p-6 hidden sm:block z-10 shadow-xl border border-secondary-100">
-          <span class="block font-heading font-black text-4xl text-accent-400" data-counter="2006" data-counter-type="year">2006</span>
-          <span class="text-secondary-400 text-xs uppercase tracking-widest font-heading mt-1 block">Opgericht</span>
+        <!-- Floating glass stat badge -->
+        <div class="absolute -bottom-6 right-4 sm:right-8 bg-white/10 backdrop-blur-xl rounded-xl p-5 sm:p-6 hidden sm:block z-10 shadow-2xl border border-white/15">
+          <span class="block font-heading font-semibold text-4xl text-accent-300" data-counter="2006" data-counter-type="year">2006</span>
+          <span class="text-white/60 text-xs uppercase tracking-widest font-heading mt-1 block">Opgericht</span>
         </div>
       </div>
 
       <!-- Content right -->
-      <div class="reveal">
-        <h2 class="font-heading font-black text-3xl sm:text-5xl text-primary-500 leading-tight mb-6">
-          Over <span class="text-accent-400">JD Infra</span>
+      <div class="reveal relative">
+        <span class="section-num absolute -top-14 sm:-top-20 -left-2 !text-white !opacity-10">05</span>
+        <span class="eyebrow mb-6 relative !text-accent-300">Over ons</span>
+        <h2 class="display-lg text-white mb-6 relative">
+          Een Zeeuws bedrijf met <span class="accent-serif !text-accent-300">karakter</span>
         </h2>
 
-        <p class="text-secondary-500 text-base sm:text-lg leading-relaxed mb-4">
+        <p class="text-white/70 text-base sm:text-lg leading-relaxed mb-4">
           JD Infra aannemingsbedrijf is in 2006 opgericht en in de loop van de jaren uitgegroeid tot een vakkundig infrabedrijf met 12 tot 15 vaste medewerkers.
         </p>
-        <p class="text-secondary-500 text-base sm:text-lg leading-relaxed mb-8">
+        <p class="text-white/70 text-base sm:text-lg leading-relaxed mb-8">
           In maart 2018 zijn wij verhuisd naar ons nieuwe bedrijfspand op industrieterrein Karreveld te Koudekerke. Van hieruit bedienen wij heel Zeeland.
         </p>
 
-        <!-- Stats in rounded pills -->
-        <div class="flex flex-wrap gap-3 mb-8">
-          <div class="bg-slate-50 rounded-full px-5 py-2.5 flex items-center gap-2 border border-secondary-100">
-            <span class="font-heading font-bold text-accent-400">18+</span>
-            <span class="text-secondary-500 text-sm font-heading">Jaar ervaring</span>
+        <!-- Stats row - open, no boxes -->
+        <div class="flex flex-wrap gap-x-10 gap-y-5 mb-10">
+          <div>
+            <span class="block font-heading font-semibold text-3xl text-white">20</span>
+            <span class="text-white/50 text-xs uppercase tracking-widest font-heading">Jaar ervaring</span>
           </div>
-          <div class="bg-slate-50 rounded-full px-5 py-2.5 flex items-center gap-2 border border-secondary-100">
-            <span class="font-heading font-bold text-accent-400">15+</span>
-            <span class="text-secondary-500 text-sm font-heading">Vakmensen</span>
+          <div class="sm:border-l border-white/15 sm:pl-10">
+            <span class="block font-heading font-semibold text-3xl text-white">12-15</span>
+            <span class="text-white/50 text-xs uppercase tracking-widest font-heading">Vakmensen</span>
           </div>
-          <div class="bg-slate-50 rounded-full px-5 py-2.5 flex items-center gap-2 border border-secondary-100">
-            <span class="font-heading font-bold text-accent-400">100%</span>
-            <span class="text-secondary-500 text-sm font-heading">Zeeland</span>
+          <div class="sm:border-l border-white/15 sm:pl-10">
+            <span class="block font-heading font-semibold text-3xl text-white">Zeeland</span>
+            <span class="text-white/50 text-xs uppercase tracking-widest font-heading">Werkgebied</span>
           </div>
         </div>
 
-        <a href="/over-ons/" class="group w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent-400 hover:bg-accent-500 text-white px-8 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-          Lees meer
-          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        <a href="/over-ons/" class="editorial-link text-white hover:text-accent-300 border-white/40 hover:border-accent-300">
+          Lees ons verhaal
+          <svg class="w-4 h-4 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
         </a>
       </div>
     </div>

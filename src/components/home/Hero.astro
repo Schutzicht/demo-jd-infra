@@ -1,39 +1,39 @@
 ---
 import { siteConfig } from '../../data/siteConfig';
-
-const slides = [
-  { image: '/fotos-jd-infra/fotos jd infra/DSCF7925-1920x1080.jpg.jpeg', alt: 'JD Infra vrachtwagen' },
-  { image: '/fotos-jd-infra/fotos jd infra/DSCF7911-1920x1080.jpg.jpeg', alt: 'Shovel aan het werk' },
-  { image: '/fotos-jd-infra/fotos jd infra/IMG_8333lzp.jpg.jpeg', alt: 'Bouwplaats werkzaamheden' },
-  { image: '/fotos-jd-infra/fotos jd infra/IMG_2403c.jpg.jpeg', alt: 'Bouwplaats overzicht' },
-];
 ---
 
-<section data-hero class="relative min-h-[100svh] sm:min-h-screen -mt-20 sm:-mt-24 overflow-hidden flex flex-col justify-end">
-  <!-- Slide backgrounds -->
-  {slides.map((slide, i) => (
-    <div class:list={['hero-slide', i === 0 ? 'active' : '']} data-slide-bg={i}>
-      <img src={slide.image} alt={slide.alt} class="w-full h-full object-cover" loading={i === 0 ? 'eager' : 'lazy'} />
-      <div class="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/40 to-primary-900/20"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-primary-900/60 via-transparent to-transparent"></div>
-    </div>
-  ))}
+<section data-hero class="relative h-[100svh] -mt-20 sm:-mt-24 overflow-hidden flex flex-col justify-end">
+  <!-- Animated video background with photo poster fallback -->
+  <div class="absolute inset-0">
+    <video
+      class="w-full h-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="/hero/hero-excavator.jpg"
+    >
+      <source src="/hero/hero-excavator.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/40 to-primary-900/20"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-900/60 via-transparent to-transparent"></div>
+  </div>
 
   <div class="absolute inset-0 grain z-[2]"></div>
 
   <!-- === MOBILE LAYOUT === -->
-  <div class="sm:hidden relative z-10 flex flex-col h-[100svh] pt-24 pb-4 px-5">
+  <div class="sm:hidden relative z-10 flex flex-col h-full pt-24 pb-4 px-5">
     <!-- Heading centered vertically -->
     <div class="flex-1 flex items-center">
       <h1>
-        <span class="block font-heading font-black text-white text-[3.2rem] leading-[0.85] tracking-tight">
-          Grondwerk,<br/>straatwerk &<br/><span class="text-accent-400">riolering</span>
+        <span class="block display-xl text-white">
+          Grondwerk,<br/>straatwerk &<br/><span class="accent-serif">riolering</span>
         </span>
       </h1>
     </div>
 
     <!-- Single frosted card at bottom -->
-    <div class="bg-white/85 backdrop-blur-xl rounded-2xl p-5 shadow-2xl border border-white/20">
+    <div class="bg-white/70 backdrop-blur-2xl rounded-2xl p-5 shadow-2xl border border-white/40">
       <p class="text-secondary-500 text-sm leading-relaxed mb-4">
         Vakkundig infrawerk voor particulieren, bedrijven en overheden in heel Zeeland.
       </p>
@@ -49,17 +49,17 @@ const slides = [
   </div>
 
   <!-- === DESKTOP LAYOUT === -->
-  <div class="hidden sm:flex relative z-10 w-full flex-col min-h-screen">
+  <div class="hidden sm:flex relative z-10 w-full flex-col h-full">
     <!-- Heading - centered vertically -->
     <div class="flex-1 flex items-center pt-36 lg:pt-44 pb-10">
       <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
         <div class="max-w-4xl">
           <h1 class="animate-slide-up" style="animation-delay: 0.3s;">
-            <span class="block font-heading font-black text-white text-7xl lg:text-8xl xl:text-9xl leading-[0.85] tracking-tight">
-              JD Infra
+            <span class="block display-xl text-white" style="font-size: clamp(2.5rem, 5.2vw, 4.5rem);">
+              Bouwt. Bestraat.<br/><span class="accent-serif">Verbindt.</span>
             </span>
-            <span class="block font-heading font-bold text-white/70 text-2xl lg:text-3xl mt-4 leading-tight">
-              Bouwt. Bestraat. <span class="text-accent-400">Verbindt.</span>
+            <span class="block font-heading font-medium text-white/60 text-base lg:text-lg mt-5 tracking-[0.15em] uppercase">
+              Aannemingsbedrijf in grond-, straat- en rioleringswerk
             </span>
           </h1>
         </div>
@@ -80,17 +80,17 @@ const slides = [
             <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Vakmensen</span>
           </div>
           <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2">
-            <span class="font-heading font-bold text-xl text-white"><span data-counter="100">100</span><span class="text-accent-400">%</span></span>
-            <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Zeeland</span>
+            <span class="font-heading font-bold text-xl text-white"><span data-counter="20">20</span></span>
+            <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Jaar ervaring</span>
           </div>
         </div>
 
         <!-- Stride cards -->
         <div class="grid lg:grid-cols-5 gap-5">
-          <div class="lg:col-span-3 bg-white/85 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white/20">
-            <span class="text-accent-400 font-heading font-bold text-sm uppercase tracking-[0.2em] mb-2 block">Grondwerk, straatwerk en riolering</span>
-            <h2 class="font-heading font-black text-3xl text-primary-500 leading-tight mb-3">
-              Vakkundig infrawerk<br/> voor heel <span class="text-accent-400">Zeeland</span>
+          <div class="lg:col-span-3 bg-white/45 backdrop-blur-2xl rounded-2xl p-8 shadow-2xl border border-white/30">
+            <span class="eyebrow mb-3 block">Grond, straat &amp; riool</span>
+            <h2 class="display-md text-primary-500 mb-3">
+              Vakkundig infrawerk voor heel <span class="accent-serif">Zeeland</span>
             </h2>
             <p class="text-secondary-400 text-base leading-relaxed mb-6 max-w-lg">
               Van bouwrijp maken tot complete infrastructurele projecten. Wij leveren vakwerk voor particulieren, bedrijven en overheden.
@@ -105,11 +105,11 @@ const slides = [
             </div>
           </div>
 
-          <div class="lg:col-span-2 bg-accent-400/90 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-accent-300/20 flex flex-col justify-between">
+          <div class="lg:col-span-2 bg-accent-400/35 backdrop-blur-2xl rounded-2xl p-8 shadow-2xl border border-white/25 flex flex-col justify-between">
             <div>
-              <span class="text-white/70 font-heading font-bold text-sm uppercase tracking-[0.2em] mb-2 block">Wij zoeken versterking</span>
-              <h3 class="font-heading font-black text-2xl text-white leading-tight mb-3">
-                Werk bij <span class="text-primary-900">JD Infra</span>
+              <span class="eyebrow mb-3 block !text-white/80">Wij zoeken versterking</span>
+              <h3 class="display-md text-white mb-3">
+                Werk bij <span class="accent-serif !text-primary-900">JD Infra</span>
               </h3>
               <p class="text-white/80 text-sm leading-relaxed mb-5">
                 Op zoek naar afwisselend buitenwerk in Zeeland? Wij zoeken stratenmakers, machinisten en grondwerkers.
@@ -124,50 +124,9 @@ const slides = [
     </div>
   </div>
 
-  <!-- Slide indicators -->
-  <div class="absolute bottom-2 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 hidden sm:flex items-center gap-3" id="slide-indicators">
-    {slides.map((_, i) => (
-      <button class:list={['slide-dot relative w-10 h-[3px] rounded-full bg-white/20 overflow-hidden cursor-pointer transition-all duration-300', i === 0 ? 'w-16' : '']} data-slide-dot={i} aria-label={`Slide ${i + 1}`}>
-        {i === 0 && <div class="slide-progress-bar absolute inset-0 rounded-full"></div>}
-      </button>
-    ))}
+  <!-- Scroll hint -->
+  <div class="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 hidden sm:flex flex-col items-center gap-2 text-white/50">
+    <span class="text-[10px] uppercase tracking-[0.25em] font-heading">Scroll</span>
+    <span class="w-px h-8 bg-gradient-to-b from-white/50 to-transparent"></span>
   </div>
 </section>
-
-<script>
-  const SLIDE_DURATION = 5000;
-  const TOTAL_SLIDES = 4;
-  let currentSlide = 0;
-  let slideTimer: ReturnType<typeof setInterval>;
-
-  function goToSlide(index: number) {
-    document.querySelector(`[data-slide-bg="${currentSlide}"]`)?.classList.remove('active');
-    const oldDot = document.querySelector(`[data-slide-dot="${currentSlide}"]`);
-    if (oldDot) { oldDot.classList.remove('w-16'); oldDot.querySelector('.slide-progress-bar')?.remove(); }
-
-    currentSlide = index;
-
-    document.querySelector(`[data-slide-bg="${currentSlide}"]`)?.classList.add('active');
-    const newDot = document.querySelector(`[data-slide-dot="${currentSlide}"]`);
-    if (newDot) {
-      newDot.classList.add('w-16');
-      const bar = document.createElement('div');
-      bar.className = 'slide-progress-bar absolute inset-0 rounded-full';
-      newDot.appendChild(bar);
-    }
-  }
-
-  function startSlideshow() {
-    clearInterval(slideTimer);
-    slideTimer = setInterval(() => goToSlide((currentSlide + 1) % TOTAL_SLIDES), SLIDE_DURATION);
-  }
-
-  document.querySelectorAll('[data-slide-dot]').forEach((dot) => {
-    dot.addEventListener('click', () => {
-      goToSlide(parseInt(dot.getAttribute('data-slide-dot') || '0'));
-      startSlideshow();
-    });
-  });
-
-  startSlideshow();
-</script>

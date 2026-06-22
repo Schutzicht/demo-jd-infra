@@ -56,7 +56,7 @@ import { siteConfig } from '../data/siteConfig';
   <section class="py-14 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
-        <h2 class="font-heading font-black text-2xl sm:text-3xl text-primary-500 mb-3">
+        <h2 class="font-heading font-bold text-2xl sm:text-3xl text-primary-500 mb-3">
           Veelgevraagd door <span class="text-accent-400">particulieren</span>
         </h2>
         <p class="text-secondary-400 max-w-xl mx-auto">Klik op een projecttype om het formulier automatisch in te vullen</p>
@@ -106,7 +106,7 @@ import { siteConfig } from '../data/siteConfig';
         <div class="lg:col-span-2 order-2 lg:order-1">
           <!-- Hoe werkt het? - Vertical timeline -->
           <div class="mb-12">
-            <h2 class="font-heading font-black text-2xl sm:text-3xl text-primary-500 mb-8">
+            <h2 class="font-heading font-bold text-2xl sm:text-3xl text-primary-500 mb-8">
               Hoe werkt <span class="text-accent-400">het?</span>
             </h2>
 
@@ -162,7 +162,7 @@ import { siteConfig } from '../data/siteConfig';
 
           <!-- FAQ Section -->
           <div>
-            <h2 class="font-heading font-black text-2xl sm:text-3xl text-primary-500 mb-6">
+            <h2 class="font-heading font-bold text-2xl sm:text-3xl text-primary-500 mb-6">
               Veelgestelde <span class="text-accent-400">vragen</span>
             </h2>
 
@@ -232,12 +232,12 @@ import { siteConfig } from '../data/siteConfig';
         <!-- RIGHT SIDE: Form -->
         <div class="lg:col-span-3 order-1 lg:order-2">
           <div class="bg-white rounded-2xl border border-secondary-100 shadow-lg p-6 sm:p-8 lg:p-10">
-            <h2 class="font-heading font-black text-2xl sm:text-3xl text-primary-500 mb-2">
+            <h2 class="font-heading font-bold text-2xl sm:text-3xl text-primary-500 mb-2">
               Uw <span class="text-accent-400">aanvraag</span>
             </h2>
             <p class="text-secondary-400 text-sm mb-8">Vul onderstaand formulier in en wij nemen binnen 2 werkdagen contact met u op.</p>
 
-            <form action="#" method="POST" class="space-y-6">
+            <form id="offerte-form" action="#" method="POST" class="space-y-6">
               <!-- Personal details -->
               <div>
                 <h3 class="font-heading font-bold text-base text-primary-500 mb-4">Uw gegevens</h3>
@@ -326,7 +326,7 @@ import { siteConfig } from '../data/siteConfig';
             </div>
             <div class="flex items-center gap-2 text-secondary-400">
               <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-              18+ jaar ervaring
+              20 jaar ervaring
             </div>
           </div>
         </div>
@@ -338,7 +338,7 @@ import { siteConfig } from '../data/siteConfig';
   <section class="py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="font-heading font-black text-2xl sm:text-3xl lg:text-4xl text-primary-500 mb-3">
+        <h2 class="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl text-primary-500 mb-3">
           Wat zeggen onze <span class="text-accent-400">klanten?</span>
         </h2>
         <p class="text-secondary-400 max-w-xl mx-auto">Particuliere opdrachtgevers over hun ervaring met JD Infra</p>
@@ -445,6 +445,26 @@ import { siteConfig } from '../data/siteConfig';
 
   setupChipGroup('project-type-chips', 'type_project');
   setupChipGroup('budget-chips', 'budget');
+
+  // Form submit -> inline success state (demo, no backend)
+  const offerteForm = document.getElementById('offerte-form') as HTMLFormElement | null;
+  offerteForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!offerteForm.checkValidity()) {
+      offerteForm.reportValidity();
+      return;
+    }
+    const naam = (document.getElementById('voornaam') as HTMLInputElement)?.value || '';
+    offerteForm.innerHTML = `
+      <div class="text-center py-10">
+        <div class="w-16 h-16 rounded-full bg-accent-400/10 flex items-center justify-center mx-auto mb-5">
+          <svg class="w-8 h-8 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        </div>
+        <h3 class="font-heading font-bold text-2xl text-primary-500 mb-2">Bedankt${naam ? ', ' + naam : ''}!</h3>
+        <p class="text-secondary-400 max-w-sm mx-auto">Wij hebben uw aanvraag ontvangen en nemen binnen 2 werkdagen contact met u op.</p>
+      </div>`;
+    offerteForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
 
   // Project card click -> auto-fill form
   document.querySelectorAll('.project-card').forEach((card) => {

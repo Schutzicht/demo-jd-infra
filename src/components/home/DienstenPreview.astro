@@ -6,13 +6,17 @@ const diensten = siteConfig.diensten;
 
 <section class="py-24 sm:py-32 bg-white relative overflow-hidden">
   <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-    <!-- Section header - two-tone -->
-    <div class="text-center mb-16 reveal">
-      <h2 class="font-heading font-black text-3xl sm:text-5xl lg:text-6xl text-primary-500 leading-tight mb-4">
-        Onze <span class="text-accent-400">Diensten</span>
-      </h2>
-      <p class="text-secondary-400 max-w-lg mx-auto text-base sm:text-lg leading-relaxed">
-        Specialist in grond-, straat- en rioleringswerkzaamheden
+    <!-- Editorial header - asymmetric with section index -->
+    <div class="relative flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14 sm:mb-20">
+      <div class="reveal-left relative">
+        <span class="section-num absolute -top-12 sm:-top-16 -left-2">01</span>
+        <span class="eyebrow mb-5 relative">Wat wij doen</span>
+        <h2 class="display-lg text-primary-500 relative">
+          Drie disciplines, <span class="accent-serif">één</span> ploeg.
+        </h2>
+      </div>
+      <p class="reveal-right text-secondary-400 max-w-sm text-base sm:text-lg leading-relaxed lg:pb-2">
+        Specialist in grond-, straat- en rioleringswerk. Van bouwrijp maken tot de laatste klinker, alles in eigen beheer.
       </p>
     </div>
 
@@ -35,20 +39,23 @@ const diensten = siteConfig.diensten;
           <!-- Gradient overlay - subtle, just enough for readability -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-all duration-500 group-hover:from-black/80 group-hover:via-black/30"></div>
 
+          <!-- Index label top-left -->
+          <span class="absolute top-6 left-6 sm:top-8 sm:left-8 font-display text-white/50 text-sm tracking-widest">0{i + 1}</span>
+
           <!-- Text overlay at bottom -->
           <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end">
-            <h3 class="font-heading font-bold text-2xl sm:text-3xl text-white mb-2 leading-tight">
+            <h3 class="display-md text-white mb-2">
               {dienst.title}
             </h3>
 
-            <p class="text-white/70 text-sm leading-relaxed mb-4 max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-500 ease-out">
+            <p class="text-white/70 text-sm leading-relaxed mb-5 max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-500 ease-out">
               {dienst.description}
             </p>
 
-            <div class="inline-flex items-center gap-2 bg-accent-400 text-white px-5 py-2.5 rounded-full font-heading font-bold text-xs uppercase tracking-wider w-fit opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-              <span>Meer info</span>
-              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </div>
+            <span class="editorial-link text-white w-fit border-white/40 group-hover:border-accent-400 group-hover:text-accent-400">
+              Bekijk dienst
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </span>
           </div>
         </a>
       ))}

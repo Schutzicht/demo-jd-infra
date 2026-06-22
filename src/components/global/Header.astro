@@ -19,8 +19,8 @@ const currentPath = Astro.url.pathname;
 
   <!-- Main nav bar -->
   <div id="header-main" class:list={[
-    'transition-all duration-500 relative z-10',
-    transparent ? 'bg-transparent' : 'bg-primary-500',
+    'transition-all duration-500 relative z-10 backdrop-blur-xl border-b border-white/10',
+    transparent ? 'bg-primary-900/25' : 'bg-primary-500/80',
   ]}>
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div id="header-inner" class="flex items-center justify-between h-20 sm:h-24 transition-all duration-500">
@@ -179,8 +179,8 @@ const currentPath = Astro.url.pathname;
         headerInner.classList.add('h-14', 'sm:h-16');
         headerLogo.style.height = '28px';
         headerAccent.classList.replace('opacity-0', 'opacity-100');
-        headerMain.classList.add('bg-primary-500/80', 'backdrop-blur-xl', 'shadow-2xl');
-        if (isTransparent) headerMain.classList.remove('bg-transparent');
+        headerMain.classList.add('bg-primary-500/80', 'shadow-2xl');
+        if (isTransparent) headerMain.classList.remove('bg-primary-900/25');
         headerSpacer.classList.remove('h-20', 'sm:h-24');
         headerSpacer.classList.add('h-14', 'sm:h-16');
       } else {
@@ -188,10 +188,10 @@ const currentPath = Astro.url.pathname;
         headerInner.classList.remove('h-14', 'sm:h-16');
         headerLogo.style.height = '40px';
         headerAccent.classList.replace('opacity-100', 'opacity-0');
-        headerMain.classList.remove('backdrop-blur-xl', 'shadow-2xl');
+        headerMain.classList.remove('shadow-2xl');
         if (isTransparent) {
-          headerMain.classList.remove('bg-primary-500/95');
-          headerMain.classList.add('bg-transparent');
+          headerMain.classList.remove('bg-primary-500/80');
+          headerMain.classList.add('bg-primary-900/25');
         }
         headerSpacer.classList.add('h-20', 'sm:h-24');
         headerSpacer.classList.remove('h-14', 'sm:h-16');
@@ -241,10 +241,10 @@ const currentPath = Astro.url.pathname;
     document.body.style.overflow = isOpen ? '' : 'hidden';
     if (!isOpen) {
       headerMain.classList.add('bg-primary-500/80');
-      if (isTransparent) headerMain.classList.remove('bg-transparent');
+      if (isTransparent) headerMain.classList.remove('bg-primary-900/25');
     } else if (!scrolled && isTransparent) {
-      headerMain.classList.remove('bg-primary-500/95');
-      headerMain.classList.add('bg-transparent');
+      headerMain.classList.remove('bg-primary-500/80');
+      headerMain.classList.add('bg-primary-900/25');
     }
   });
 

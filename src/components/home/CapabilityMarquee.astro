@@ -1,0 +1,29 @@
+---
+const caps = [
+  'Bouwrijp maken',
+  'Straatwerk',
+  'Riolering',
+  'Grondwerk',
+  'Reconstructie',
+  'Parkeerterreinen',
+  'Waterpartijen',
+  'Bestrating',
+];
+---
+
+<section class="bg-white border-y border-secondary-100 py-7 sm:py-9 overflow-hidden">
+  <div class="cap-marquee text-primary-500">
+    <div class="cap-marquee__row">
+      {[0, 1].map(() => (
+        <span class="cap-marquee__item" aria-hidden="true">
+          {caps.map((c) => (
+            <>
+              <span>{c}</span>
+              <span class="cap-marquee__dot"></span>
+            </>
+          ))}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

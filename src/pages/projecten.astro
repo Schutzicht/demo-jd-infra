@@ -30,10 +30,7 @@ import { siteConfig } from '../data/siteConfig';
               />
             </div>
             <div class="p-6 border-l-4 border-transparent group-hover:border-accent-400 transition-all duration-300">
-              <h2 class="font-heading text-xl font-bold text-primary-500 mb-2">{project.title}</h2>
-              <p class="text-secondary-400 text-sm">
-                {new Date(project.date).toLocaleDateString('nl-NL', { year: 'numeric', month: 'long' })}
-              </p>
+              <h2 class="font-heading text-xl font-bold text-primary-500">{project.title}</h2>
             </div>
           </div>
         ))}

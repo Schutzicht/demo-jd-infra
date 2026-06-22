@@ -14,8 +14,8 @@ const lineAlign = align === 'center' ? 'mx-auto' : '';
 ---
 
 <div class={`mb-10 md:mb-14 ${alignClass}`}>
-  <div class={`w-12 h-1 bg-accent-400 mb-4 ${lineAlign}`}></div>
-  <h2 class={`font-heading text-3xl md:text-4xl lg:text-5xl font-bold ${titleColor} mb-4`}>{title}</h2>
+  <div class={`w-10 h-px bg-accent-400 mb-5 ${lineAlign}`}></div>
+  <h2 class={`display-lg ${titleColor} mb-4`}>{title}</h2>
   {subtitle && (
     <p class={`text-lg md:text-xl ${subtitleColor} max-w-2xl ${align === 'center' ? 'mx-auto' : ''}`}>{subtitle}</p>
   )}
