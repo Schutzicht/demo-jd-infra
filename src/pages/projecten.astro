@@ -9,48 +9,58 @@ import { siteConfig } from '../data/siteConfig';
     title="Onze projecten"
     subtitle="Een selectie van uitgevoerde projecten door heel Zeeland."
     breadcrumbs={[{ label: 'Projecten' }]}
-    backgroundImage="/fotos-jd-infra/fotos jd infra/DSC_2305-1024x680.jpg.jpeg"
+    backgroundImage="/projecten/kaapduin-piet-hein/cover.jpg"
   />
 
-  <!-- Projects Grid -->
   <section class="py-16 md:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {siteConfig.projecten.map((project, i) => (
-          <div
-            class="reveal group bg-white overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-secondary-100 hover:-translate-y-1"
-            style={`transition-delay: ${i * 100}ms`}
-          >
-            <div class="relative aspect-[2/1] overflow-hidden">
-              <img
-                src={project.image}
-                alt={project.title}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-28">
+      {siteConfig.projecten.map((project, i) => (
+        <article id={project.slug} class="scroll-mt-28 reveal">
+          <div class={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center ${i % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+            <!-- Cover -->
+            <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] group">
+              <img src={project.cover} alt={project.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+              <div class="absolute top-4 left-4 bg-primary-500/90 backdrop-blur-sm text-white text-xs font-heading font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                {project.category}
+              </div>
             </div>
-            <div class="p-6 border-l-4 border-transparent group-hover:border-accent-400 transition-all duration-300">
-              <h2 class="font-heading text-xl font-bold text-primary-500">{project.title}</h2>
-            </div>
-          </div>
-        ))}
-      </div>
 
-      <!-- Extra project images -->
-      <div class="mt-16 reveal">
-        <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary-500 mb-8 text-center">Impressie van ons werk</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="overflow-hidden shadow-lg">
-            <img src="/fotos-jd-infra/fotos jd infra/IMG_8333lzp.jpg.jpeg" alt="Bouwwerkzaamheden" class="w-full h-56 object-cover" loading="lazy" />
+            <!-- Info -->
+            <div>
+              <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-secondary-400 mb-3 font-heading">
+                <span class="text-accent-500 font-bold uppercase tracking-wider text-xs">{project.location}</span>
+                {project.year && <span>· {project.year}</span>}
+                {'client' in project && project.client && <span>· {project.client}</span>}
+              </div>
+              <h2 class="display-md text-primary-500 mb-4">{project.title}</h2>
+              <p class="text-secondary-500 leading-relaxed">{project.description}</p>
+
+              {project.gallery.length > 0 && (
+                <div class="grid grid-cols-3 gap-3 mt-6">
+                  {project.gallery.map((img) => (
+                    <a href={img} target="_blank" rel="noopener" class="block rounded-xl overflow-hidden aspect-square group/thumb">
+                      <img src={img} alt={project.title} class="w-full h-full object-cover transition-transform duration-500 group-hover/thumb:scale-110" loading="lazy" />
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
-          <div class="overflow-hidden shadow-lg">
-            <img src="/fotos-jd-infra/fotos jd infra/IMG_2403c.jpg.jpeg" alt="Werkzaamheden op locatie" class="w-full h-56 object-cover" loading="lazy" />
-          </div>
-          <div class="overflow-hidden shadow-lg">
-            <img src="/fotos-jd-infra/fotos jd infra/DSCF7911-1920x1080.jpg.jpeg" alt="Wiellader bij grondwerk" class="w-full h-56 object-cover" loading="lazy" />
-          </div>
-        </div>
-      </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-mesh-ink relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-fine opacity-40"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4 text-center">
+      <h2 class="display-md text-white mb-4">Een project in gedachten?</h2>
+      <p class="text-white/70 mb-8">Wij denken graag mee, van eerste schets tot de laatste klinker. Vraag vrijblijvend een offerte aan.</p>
+      <a href="/contact/" class="inline-flex items-center gap-2 bg-accent-400 hover:bg-accent-500 text-white px-8 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:-translate-y-0.5">
+        Offerte aanvragen
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
     </div>
   </section>
 </BaseLayout>

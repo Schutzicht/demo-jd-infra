@@ -1,55 +1,25 @@
 ---
-// Interactieve branche-feature: straatdoorsnede + klinkerverband-kiezer
+// Interactieve branche-feature: realistische straatdoorsnede (Gemini) + klinkerverband-kiezer
+// pos = highlight-zone over de doorsnede-foto, in % (top/left/width/height)
 const lagen = [
-  {
-    id: 'klinkers',
-    naam: 'Bestrating',
-    dienst: 'Straatwerk',
-    tekst: 'De zichtlaag: klinkers of tegels, strak in het door u gekozen verband gelegd en afgetrild.',
-  },
-  {
-    id: 'straatzand',
-    naam: 'Straatzand',
-    dienst: 'Straatwerk',
-    tekst: 'Een dunne, vlak afgereide laag straatzand waarin de klinkers worden gelegd en vastgezet.',
-  },
-  {
-    id: 'fundering',
-    naam: 'Fundering',
-    dienst: 'Grondwerk',
-    tekst: 'Menggranulaat als draagkrachtige fundering, verdicht zodat de verharding niet verzakt.',
-  },
-  {
-    id: 'cunet',
-    naam: 'Zandbed / cunet',
-    dienst: 'Grondwerk',
-    tekst: 'Het uitgegraven cunet, opgevuld met zand. De basis waar alles op rust.',
-  },
-  {
-    id: 'riool',
-    naam: 'Riolering',
-    dienst: 'Riolering',
-    tekst: 'De rioolbuis op de juiste hoogte en afschot, voor een betrouwbare afvoer van regen- en afvalwater.',
-  },
-  {
-    id: 'water',
-    naam: 'Grondwaterpeil',
-    dienst: 'Grondwerk',
-    tekst: 'Wij houden rekening met de grondwaterstand, zodat de constructie droog en stabiel blijft.',
-  },
+  { id: 'klinkers',   naam: 'Bestrating',      dienst: 'Straatwerk', pos: { top: 14,   left: 0,  width: 100, height: 7 },  tekst: 'De zichtlaag: klinkers of tegels, strak in het door u gekozen verband gelegd en afgetrild.' },
+  { id: 'straatzand', naam: 'Straatzand',      dienst: 'Straatwerk', pos: { top: 21,   left: 0,  width: 100, height: 3.5 }, tekst: 'Een dunne, vlak afgereide laag straatzand waarin de klinkers worden gelegd en vastgezet.' },
+  { id: 'fundering',  naam: 'Fundering',       dienst: 'Grondwerk',  pos: { top: 24.5, left: 0,  width: 100, height: 27 },  tekst: 'Menggranulaat als draagkrachtige fundering, verdicht zodat de verharding niet verzakt.' },
+  { id: 'cunet',      naam: 'Zandbed / cunet', dienst: 'Grondwerk',  pos: { top: 52,   left: 0,  width: 100, height: 34 },  tekst: 'Het uitgegraven cunet, opgevuld met zand. De stabiele basis waar alles op rust.' },
+  { id: 'riool',      naam: 'Riolering',       dienst: 'Riolering',  pos: { top: 44,   left: 65, width: 27,  height: 34 },  tekst: 'De rioolbuis op de juiste hoogte en afschot, voor een betrouwbare afvoer van regen- en afvalwater.' },
+  { id: 'water',      naam: 'Grondwaterpeil',  dienst: 'Grondwerk',  pos: { top: 86,   left: 0,  width: 100, height: 14 },  tekst: 'Wij houden rekening met de grondwaterstand, zodat de constructie droog en stabiel blijft.' },
 ];
 
 const verbanden = [
-  { id: 'halfsteens', naam: 'Halfsteens', tekst: 'Rijen klinkers, telkens een halve steen verspringend. De klassieker voor opritten en paden.' },
-  { id: 'blok', naam: 'Blokverband', tekst: 'Strak boven elkaar gelegd. Rustig en modern, mooi bij bestrating in een patroon.' },
-  { id: 'visgraat', naam: 'Visgraat', tekst: 'In elkaar grijpend weefsel. Zeer sterk, ideaal bij zwaarder belaste verharding.' },
-  { id: 'keper', naam: 'Keperverband', tekst: 'Visgraat onder 45 graden. Speels en sterk, een echte blikvanger.' },
+  { id: 'halfsteens', naam: 'Halfsteens',   img: '/images/jd-infra/generated/verband-halfsteens.jpg', tekst: 'Rijen klinkers, telkens een halve steen verspringend. De klassieker voor opritten en paden.' },
+  { id: 'blok',       naam: 'Blokverband',  img: '/images/jd-infra/generated/verband-blok.jpg',       tekst: 'Strak boven elkaar gelegd. Rustig en modern, mooi bij bestrating in een patroon.' },
+  { id: 'visgraat',   naam: 'Visgraat',     img: '/images/jd-infra/generated/verband-visgraat.jpg',   tekst: 'In elkaar grijpend weefsel. Zeer sterk, ideaal bij zwaarder belaste verharding.' },
+  { id: 'keper',      naam: 'Keperverband', img: '/images/jd-infra/generated/verband-keper.jpg',      tekst: 'Visgraat onder 45 graden. Speels en sterk, een echte blikvanger.' },
 ];
 ---
 
 <section class="py-24 sm:py-32 bg-slate-50 relative overflow-hidden">
   <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-    <!-- Header -->
     <div class="relative mb-14 sm:mb-16 max-w-2xl">
       <span class="section-num absolute -top-12 sm:-top-16 -left-2">03</span>
       <span class="eyebrow mb-5 relative">Onder de straat</span>
@@ -66,50 +36,11 @@ const verbanden = [
       <div class="reveal-left bg-white rounded-2xl shadow-lg border border-secondary-100 p-5 sm:p-7 flex flex-col">
         <p class="font-heading font-bold text-primary-500 text-sm uppercase tracking-wider mb-4">Dwarsdoorsnede</p>
 
-        <svg viewBox="0 0 400 300" class="w-full h-auto rounded-xl overflow-hidden select-none" role="img" aria-label="Dwarsdoorsnede van een straat">
-          <!-- sky strip -->
-          <rect x="0" y="0" width="400" height="30" fill="#dceaf2"/>
-
-          <!-- LAYER: cunet (base sand) -->
-          <g class="ods-layer" data-layer="cunet">
-            <rect x="0" y="150" width="400" height="150" fill="#e7d4ab"/>
-          </g>
-
-          <!-- LAYER: fundering -->
-          <g class="ods-layer" data-layer="fundering">
-            <rect x="0" y="118" width="400" height="34" fill="#9aa1a8"/>
-            <g fill="#7f868d">
-              <circle cx="40" cy="135" r="3"/><circle cx="95" cy="128" r="2.5"/><circle cx="150" cy="140" r="3"/><circle cx="210" cy="130" r="2.5"/><circle cx="270" cy="138" r="3"/><circle cx="330" cy="129" r="2.5"/><circle cx="375" cy="140" r="3"/>
-            </g>
-          </g>
-
-          <!-- LAYER: straatzand -->
-          <g class="ods-layer" data-layer="straatzand">
-            <rect x="0" y="100" width="400" height="20" fill="#f0dcab"/>
-          </g>
-
-          <!-- LAYER: klinkers (side view) -->
-          <g class="ods-layer" data-layer="klinkers">
-            <rect x="0" y="78" width="400" height="24" fill="#cdb89a"/>
-            <g id="ods-klinkers-row"></g>
-          </g>
-
-          <!-- LAYER: riool -->
-          <g class="ods-layer" data-layer="riool">
-            <ellipse cx="300" cy="225" rx="34" ry="34" fill="#5b626a"/>
-            <ellipse cx="300" cy="225" rx="22" ry="22" fill="#3a3f44"/>
-            <ellipse cx="300" cy="225" rx="22" ry="22" fill="#23262a"/>
-          </g>
-
-          <!-- LAYER: grondwater -->
-          <g class="ods-layer" data-layer="water">
-            <line x1="0" y1="262" x2="400" y2="262" stroke="#199ec3" stroke-width="2" stroke-dasharray="7 6"/>
-            <path d="M0 262 Q100 270 200 262 T400 262 L400 300 L0 300 Z" fill="#199ec3" fill-opacity="0.14"/>
-          </g>
-
-          <!-- highlight ring (moved by JS) -->
-          <rect id="ods-highlight" x="0" y="78" width="400" height="24" fill="none" stroke="#199ec3" stroke-width="3" rx="2" opacity="0" pointer-events="none"/>
-        </svg>
+        <div class="relative rounded-xl overflow-hidden select-none">
+          <img src="/images/jd-infra/generated/doorsnede-straat.jpg" alt="Realistische dwarsdoorsnede van een straat" class="w-full h-auto block" />
+          <!-- highlight zone -->
+          <div id="ods-zone" class="absolute rounded-md border-2 border-accent-400 bg-accent-400/15 shadow-[0_0_0_2000px_rgba(0,10,26,0.45)] transition-all duration-300 pointer-events-none opacity-0"></div>
+        </div>
 
         <!-- Legend buttons -->
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-5">
@@ -126,7 +57,6 @@ const verbanden = [
           ))}
         </div>
 
-        <!-- Info -->
         <div class="mt-4 bg-slate-50 rounded-xl p-4 min-h-[64px]">
           <p id="ods-info" class="text-secondary-500 text-sm leading-relaxed"></p>
         </div>
@@ -136,56 +66,17 @@ const verbanden = [
       <div class="reveal-right bg-white rounded-2xl shadow-lg border border-secondary-100 p-5 sm:p-7 flex flex-col">
         <p class="font-heading font-bold text-primary-500 text-sm uppercase tracking-wider mb-4">Kies uw straatverband</p>
 
-        <div class="relative rounded-xl overflow-hidden bg-[#e8e3da] flex-1 min-h-[220px]">
-          <svg viewBox="0 0 400 260" class="w-full h-full" role="img" aria-label="Voorbeeld van het gekozen straatverband">
-            <defs>
-              <!-- joint background baked via fill; bricks anthracite -->
-              <pattern id="vb-halfsteens" width="72" height="36" patternUnits="userSpaceOnUse">
-                <rect width="72" height="36" fill="#e8e3da"/>
-                <g fill="#3a3f44">
-                  <rect x="1" y="1" width="34" height="16" rx="1.5"/>
-                  <rect x="37" y="1" width="34" height="16" rx="1.5"/>
-                  <rect x="-17" y="19" width="34" height="16" rx="1.5"/>
-                  <rect x="19" y="19" width="34" height="16" rx="1.5"/>
-                  <rect x="55" y="19" width="34" height="16" rx="1.5"/>
-                </g>
-              </pattern>
-              <pattern id="vb-blok" width="36" height="36" patternUnits="userSpaceOnUse">
-                <rect width="36" height="36" fill="#e8e3da"/>
-                <g fill="#3a3f44">
-                  <rect x="1" y="1" width="34" height="16" rx="1.5"/>
-                  <rect x="1" y="19" width="34" height="16" rx="1.5"/>
-                </g>
-              </pattern>
-              <pattern id="vb-visgraat" width="72" height="72" patternUnits="userSpaceOnUse">
-                <rect width="72" height="72" fill="#e8e3da"/>
-                <g fill="#3a3f44">
-                  <rect x="1" y="1" width="34" height="16" rx="1.5"/>
-                  <rect x="1" y="19" width="34" height="16" rx="1.5"/>
-                  <rect x="37" y="1" width="16" height="34" rx="1.5"/>
-                  <rect x="55" y="1" width="16" height="34" rx="1.5"/>
-                  <rect x="1" y="37" width="16" height="34" rx="1.5"/>
-                  <rect x="19" y="37" width="16" height="34" rx="1.5"/>
-                  <rect x="37" y="37" width="34" height="16" rx="1.5"/>
-                  <rect x="37" y="55" width="34" height="16" rx="1.5"/>
-                </g>
-              </pattern>
-              <pattern id="vb-keper" width="72" height="72" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                <rect width="72" height="72" fill="#e8e3da"/>
-                <g fill="#3a3f44">
-                  <rect x="1" y="1" width="34" height="16" rx="1.5"/>
-                  <rect x="1" y="19" width="34" height="16" rx="1.5"/>
-                  <rect x="37" y="1" width="16" height="34" rx="1.5"/>
-                  <rect x="55" y="1" width="16" height="34" rx="1.5"/>
-                  <rect x="1" y="37" width="16" height="34" rx="1.5"/>
-                  <rect x="19" y="37" width="16" height="34" rx="1.5"/>
-                  <rect x="37" y="37" width="34" height="16" rx="1.5"/>
-                  <rect x="37" y="55" width="34" height="16" rx="1.5"/>
-                </g>
-              </pattern>
-            </defs>
-            <rect id="vb-preview" x="0" y="0" width="400" height="260" fill="url(#vb-halfsteens)" style="transition: opacity 0.25s ease;"/>
-          </svg>
+        <div class="relative rounded-xl overflow-hidden aspect-square bg-secondary-100">
+          {verbanden.map((v, i) => (
+            <img
+              src={v.img}
+              alt={`Straatverband ${v.naam}`}
+              data-verband-img={v.id}
+              class="vb-img absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+              style={i === 0 ? 'opacity:1' : 'opacity:0'}
+              loading="lazy"
+            />
+          ))}
         </div>
 
         <div class="flex flex-wrap gap-2 mt-5">
@@ -211,47 +102,30 @@ const verbanden = [
 
 <script
   define:vars={{
-    lagenData: lagen.map((l) => ({ id: l.id, tekst: l.tekst })),
-    verbandenData: verbanden,
+    lagenData: lagen.map((l) => ({ id: l.id, tekst: l.tekst, pos: l.pos })),
+    verbandenData: verbanden.map((v) => ({ id: v.id, tekst: v.tekst })),
   }}
 >
   // ---- Doorsnede ----
-  // Build side-view klinker bricks
-  const row = document.getElementById('ods-klinkers-row');
-  if (row) {
-    let bricks = '';
-    for (let x = 2; x < 400; x += 26) {
-      bricks += `<rect x="${x}" y="80" width="22" height="20" rx="1.5" fill="#3a3f44"/>`;
-    }
-    row.innerHTML = bricks;
-  }
-
-  const highlight = document.getElementById('ods-highlight');
+  const zone = document.getElementById('ods-zone');
   const info = document.getElementById('ods-info');
-  // y/height per layer for the highlight box
-  const bounds = {
-    klinkers: [78, 24], straatzand: [100, 20], fundering: [118, 34],
-    cunet: [150, 150], riool: [191, 68], water: [255, 14],
-  };
 
   function selectLayer(id) {
-    const lookup = lagenData.find((l) => l.id === id);
-    if (!lookup) return;
+    const laag = lagenData.find((l) => l.id === id);
+    if (!laag) return;
     document.querySelectorAll('.ods-legend').forEach((b) => {
       const active = b.getAttribute('data-target') === id;
       b.classList.toggle('border-accent-400', active);
       b.classList.toggle('bg-accent-50', active);
     });
-    document.querySelectorAll('.ods-layer').forEach((g) => {
-      g.style.transition = 'opacity 0.3s ease';
-      g.style.opacity = g.getAttribute('data-layer') === id ? '1' : '0.32';
-    });
-    if (highlight && bounds[id]) {
-      highlight.setAttribute('y', String(bounds[id][0]));
-      highlight.setAttribute('height', String(bounds[id][1]));
-      highlight.setAttribute('opacity', '1');
+    if (zone) {
+      zone.style.opacity = '1';
+      zone.style.top = laag.pos.top + '%';
+      zone.style.left = laag.pos.left + '%';
+      zone.style.width = laag.pos.width + '%';
+      zone.style.height = laag.pos.height + '%';
     }
-    if (info) info.textContent = lookup.tekst;
+    if (info) info.textContent = laag.tekst;
   }
 
   document.querySelectorAll('.ods-legend').forEach((b) => {
@@ -261,7 +135,6 @@ const verbanden = [
   if (odsDefault) selectLayer(odsDefault.getAttribute('data-target'));
 
   // ---- Verband ----
-  const preview = document.getElementById('vb-preview');
   const vbInfo = document.getElementById('vb-info');
 
   function selectVerband(id) {
@@ -275,13 +148,9 @@ const verbanden = [
       b.classList.toggle('border-secondary-200', !active);
       b.classList.toggle('text-secondary-500', !active);
     });
-    if (preview) {
-      preview.style.opacity = '0';
-      setTimeout(() => {
-        preview.setAttribute('fill', `url(#vb-${id})`);
-        preview.style.opacity = '1';
-      }, 180);
-    }
+    document.querySelectorAll('.vb-img').forEach((img) => {
+      img.style.opacity = img.getAttribute('data-verband-img') === id ? '1' : '0';
+    });
     if (vbInfo) vbInfo.textContent = v.tekst;
   }
 
