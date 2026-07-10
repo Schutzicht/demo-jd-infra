@@ -277,19 +277,6 @@ import { siteConfig } from '../data/siteConfig';
                 <input type="hidden" name="type_project" id="type_project" required />
               </div>
 
-              <!-- Budget indicator chips -->
-              <div>
-                <label class="block text-sm font-medium text-secondary-500 mb-2">Indicatie budget</label>
-                <div class="flex flex-wrap gap-2" id="budget-chips">
-                  <button type="button" class="chip-btn px-4 py-2 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="< €10.000">&lt; &euro;10.000</button>
-                  <button type="button" class="chip-btn px-4 py-2 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="€10.000 - €25.000">&euro;10.000 - &euro;25.000</button>
-                  <button type="button" class="chip-btn px-4 py-2 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="€25.000 - €50.000">&euro;25.000 - &euro;50.000</button>
-                  <button type="button" class="chip-btn px-4 py-2 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="€50.000 - €100.000">&euro;50.000 - &euro;100.000</button>
-                  <button type="button" class="chip-btn px-4 py-2 rounded-full border-2 border-secondary-200 text-secondary-500 font-heading font-semibold text-xs transition-all duration-300 hover:border-accent-400 hover:text-accent-400" data-value="> €100.000">&gt; &euro;100.000</button>
-                </div>
-                <input type="hidden" name="budget" id="budget" />
-              </div>
-
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label for="locatie" class="block text-sm font-medium text-secondary-500 mb-1.5">Locatie</label>
@@ -444,7 +431,6 @@ import { siteConfig } from '../data/siteConfig';
   }
 
   setupChipGroup('project-type-chips', 'type_project');
-  setupChipGroup('budget-chips', 'budget');
 
   // Form submit -> inline success state (demo, no backend)
   const offerteForm = document.getElementById('offerte-form') as HTMLFormElement | null;
