@@ -76,19 +76,6 @@ const currentPath = Astro.url.pathname;
             </div>
           ))}
 
-          <!-- Language switch -->
-          <div class="relative ml-2" id="lang-switcher">
-            <button id="lang-toggle" class="flex items-center gap-1 text-white hover:text-accent-400 text-[12px] font-heading font-bold uppercase tracking-wider cursor-pointer transition-colors px-2 py-2 drop-shadow-sm">
-              NL
-              <svg class="w-2.5 h-2.5 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-            </button>
-            <div id="lang-dropdown" class="absolute right-0 top-full mt-1 bg-white shadow-xl border border-gray-100 py-1 min-w-[140px] rounded-xl opacity-0 invisible transition-all duration-200 z-50 overflow-hidden">
-              <a href="#" class="block px-4 py-2 text-xs text-accent-500 bg-accent-50 font-heading tracking-wider font-bold">NL - Nederlands</a>
-              <a href="#" class="block px-4 py-2 text-xs text-secondary-500 hover:text-accent-500 hover:bg-gray-50 font-heading tracking-wider">EN - English</a>
-              <a href="#" class="block px-4 py-2 text-xs text-secondary-500 hover:text-accent-500 hover:bg-gray-50 font-heading tracking-wider">DE - Deutsch</a>
-            </div>
-          </div>
-
           <!-- CTA button in nav -->
           <a href="/contact/" class="ml-2 bg-accent-400 hover:bg-accent-300 text-primary-900 px-6 py-2.5 rounded-full font-heading font-bold text-[12px] uppercase tracking-[0.15em] transition-all duration-300 hover:-translate-y-0.5">
             Offerte
@@ -144,12 +131,6 @@ const currentPath = Astro.url.pathname;
           Offerte aanvragen
         </a>
       </div>
-      <!-- Mobile language -->
-      <div class="flex gap-6 px-4 pt-4">
-        <a href="#" class="text-accent-400 text-sm font-heading font-bold tracking-wider">NL</a>
-        <a href="#" class="text-white/40 text-sm font-heading tracking-wider hover:text-white">EN</a>
-        <a href="#" class="text-white/40 text-sm font-heading tracking-wider hover:text-white">DE</a>
-      </div>
     </nav>
   </div>
 </header>
@@ -201,31 +182,6 @@ const currentPath = Astro.url.pathname;
 
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
-
-  // Language switcher
-  const langToggle = document.getElementById('lang-toggle');
-  const langDropdown = document.getElementById('lang-dropdown');
-  let langOpen = false;
-
-  langToggle?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    langOpen = !langOpen;
-    if (langOpen) {
-      langDropdown?.classList.remove('opacity-0', 'invisible');
-      langDropdown?.classList.add('opacity-100', 'visible');
-    } else {
-      langDropdown?.classList.add('opacity-0', 'invisible');
-      langDropdown?.classList.remove('opacity-100', 'visible');
-    }
-  });
-
-  document.addEventListener('click', () => {
-    if (langOpen) {
-      langOpen = false;
-      langDropdown?.classList.add('opacity-0', 'invisible');
-      langDropdown?.classList.remove('opacity-100', 'visible');
-    }
-  });
 
   // Mobile menu
   const menuBtn = document.getElementById('mobile-menu-btn');

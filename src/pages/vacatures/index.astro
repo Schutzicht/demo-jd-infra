@@ -1,61 +1,106 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageHeader from '../../components/ui/PageHeader.astro';
 import { siteConfig } from '../../data/siteConfig';
-
-// Cohesive line-icon set (1.75 stroke, rounded)
-const voordelen = [
-  { titel: 'Marktconform salaris', tekst: 'Een eerlijk salaris met ruimte om door te groeien.', icon: 'euro' },
-  { titel: 'Geen dag hetzelfde', tekst: 'Afwisselend buitenwerk op wisselende locaties in Zeeland.', icon: 'route' },
-  { titel: 'Modern materieel', tekst: 'Werken met een goed onderhouden, modern machinepark.', icon: 'machine' },
-  { titel: 'Hecht team', tekst: 'Klein, familiair bedrijf met 12-15 vaste collega’s.', icon: 'team' },
-  { titel: 'Doorgroeien', tekst: 'Van stratenmaker of grondwerker tot uitvoerder.', icon: 'growth' },
-  { titel: 'Dicht bij huis', tekst: 'Vanuit Koudekerke werk je in de eigen regio.', icon: 'pin' },
-];
-
-const icons: Record<string, string> = {
-  euro: 'M13 7c-2.5 0-4.5 2.2-4.5 5s2 5 4.5 5c1.3 0 2.5-.6 3.3-1.5M6 10.5h5M6 13.5h5',
-  route: 'M6 19a2 2 0 100-4 2 2 0 000 4zM18 9a2 2 0 100-4 2 2 0 000 4zM8 17h6a3 3 0 003-3V9M8 7H7a3 3 0 000 6h1',
-  machine: 'M3 17h11v-4l3-1 4 2v3M3 17v-5h8v5M3 17a2 2 0 104 0M15 17a2 2 0 104 0M6 12V8h4v4',
-  team: 'M17 20v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2M10 10a3 3 0 100-6 3 3 0 000 6zM21 20v-2a4 4 0 00-3-3.9M16 4.1a4 4 0 010 7.8',
-  growth: 'M4 18l5-5 3 3 7-7M15 9h5v5',
-  pin: 'M12 21s-6-5.3-6-10a6 6 0 1112 0c0 4.7-6 10-6 10zM12 11a2 2 0 100-4 2 2 0 000 4z',
-};
 ---
 
-<BaseLayout title="Vacatures - Werk bij JD Infra" description="Werken bij JD Infra? Bekijk onze openstaande vacatures en word onderdeel van een vakkundig team in Zeeland." transparentHeader={true}>
-  <PageHeader
-    title="Werk bij JD Infra"
-    subtitle="Word onderdeel van een vakkundig team in de mooiste provincie van Nederland"
-    breadcrumbs={[{ label: 'Vacatures' }]}
-    backgroundImage="/projecten/reconstructie-woonstraat/cover.jpg"
-  />
+<BaseLayout title="Vacatures - Werk bij JD Infra" description="Werken bij JD Infra? Afwisselend buitenwerk in heel Zeeland, met een hecht team en modern materieel. Bekijk onze vacatures." transparentHeader={true} darkTheme={true}>
 
-  <!-- Waarom werken bij JD Infra -->
-  <section class="py-16 md:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl mb-12">
-        <span class="eyebrow mb-4">Waarom JD Infra</span>
-        <h2 class="display-lg text-primary-500">Vakmanschap, teamwork en <span class="accent-serif">plezier</span>.</h2>
-      </div>
+  <!-- HERO -->
+  <section class="relative min-h-[92svh] -mt-20 sm:-mt-24 flex items-end overflow-hidden">
+    <img src="/projecten/reconstructie-woonstraat/cover.jpg" alt="Machinist aan het werk bij JD Infra" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-primary-900 via-primary-900/60 to-primary-900/30"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-900/70 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 grain z-[2]"></div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        {voordelen.map((v, i) => (
-          <div class="reveal group relative bg-white rounded-2xl border border-secondary-100 p-6 sm:p-7 transition-all duration-300 hover:border-accent-400/40 hover:shadow-xl hover:-translate-y-1" style={`transition-delay: ${i * 60}ms`}>
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center mb-5 shadow-lg shadow-accent-400/20">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d={icons[v.icon]} /></svg>
-            </div>
-            <h3 class="font-heading font-bold text-lg text-primary-500 mb-1.5">{v.titel}</h3>
-            <p class="text-secondary-400 text-sm leading-relaxed">{v.tekst}</p>
-          </div>
-        ))}
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-16 sm:pb-24 pt-32">
+      <div class="max-w-3xl">
+        <span class="eyebrow mb-5 !text-accent-300">Werken bij JD Infra</span>
+        <h1 class="display-xl text-white mb-5" style="font-size: clamp(2.6rem, 6vw, 5rem);">
+          Bouw mee aan <span class="accent-serif !text-accent-300">Zeeland</span>.
+        </h1>
+        <p class="text-white/75 text-lg sm:text-xl leading-relaxed max-w-xl mb-9">
+          Afwisselend buitenwerk met echte vakmensen, modern materieel en elke dag een ander uitzicht. Van woonwijk tot duinpad aan zee.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#vacatures" class="inline-flex items-center gap-2 bg-accent-400 hover:bg-accent-500 text-white px-8 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:-translate-y-0.5">
+            Bekijk vacatures
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+          </a>
+          <a href={`mailto:${siteConfig.contact.email}`} class="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white px-8 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300">
+            Open sollicitatie
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Openstaande vacatures -->
-  <section class="py-16 md:py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- WAAROM — fotorijke bento -->
+  <section class="py-20 sm:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12">
+        <span class="eyebrow mb-4">Waarom JD Infra</span>
+        <h2 class="display-lg text-primary-500">Geen kantoor. Wel het mooiste <span class="accent-serif">werk</span> van Zeeland.</h2>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 auto-rows-[190px] sm:auto-rows-[200px] gap-4">
+        <!-- Big photo tile -->
+        <article class="reveal relative col-span-2 row-span-2 rounded-2xl overflow-hidden group">
+          <img src="/projecten/reconstructie-woonstraat/g1.jpg" alt="Grondwerk met de graafmachine" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/20 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+            <span class="eyebrow mb-3 !text-accent-300">Het werk</span>
+            <h3 class="display-md text-white">Elke dag buiten, nooit twee keer dezelfde klus.</h3>
+          </div>
+        </article>
+
+        <!-- Navy stat tile -->
+        <article class="reveal bg-mesh-ink relative rounded-2xl overflow-hidden p-6 flex flex-col justify-between">
+          <div class="absolute inset-0 bg-grid-fine opacity-40"></div>
+          <span class="relative font-heading font-bold text-5xl text-white">20</span>
+          <span class="relative text-white/70 font-heading text-sm leading-snug">jaar vakmanschap in de regio</span>
+        </article>
+
+        <!-- Accent tile -->
+        <article class="reveal bg-gradient-to-br from-accent-400 to-accent-600 rounded-2xl p-6 flex flex-col justify-between text-white">
+          <svg class="w-8 h-8 opacity-90" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h11v-4l3-1 4 2v3M3 17v-5h8v5M3 17a2 2 0 104 0M15 17a2 2 0 104 0" /></svg>
+          <span class="font-heading font-bold text-lg leading-tight">Modern, goed onderhouden materieel</span>
+        </article>
+
+        <!-- Photo tile: zee -->
+        <article class="reveal relative rounded-2xl overflow-hidden group">
+          <img src="/projecten/kaapduin-piet-hein/g3.jpg" alt="Werk in de duinen aan zee" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-900/85 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 p-5">
+            <h3 class="font-heading font-bold text-white text-lg leading-tight">Van woonwijk tot duinpad aan zee</h3>
+          </div>
+        </article>
+
+        <!-- Navy tile: doorgroeien -->
+        <article class="reveal bg-primary-500 rounded-2xl p-6 flex flex-col justify-between">
+          <svg class="w-8 h-8 text-accent-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18l5-5 3 3 7-7M15 9h5v5" /></svg>
+          <span class="font-heading font-bold text-white text-lg leading-tight">Doorgroeien van vakman tot uitvoerder</span>
+        </article>
+
+        <!-- Wide team photo tile -->
+        <article class="reveal relative col-span-2 lg:col-span-4 rounded-2xl overflow-hidden group">
+          <img src="/fotos-jd-infra/fotos jd infra/DJI_0004-1024x576.jpg.jpeg" alt="Werkplaats en team van JD Infra" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-900/50 to-primary-900/20"></div>
+          <div class="absolute inset-0 flex items-center p-6 sm:p-10">
+            <div class="max-w-lg">
+              <p class="font-heading font-bold text-white text-xl sm:text-2xl leading-snug mb-2">
+                “Klein en familiair. We werken hard, lachen veel en zijn trots op wat we achterlaten.”
+              </p>
+              <span class="text-accent-300 font-heading text-sm uppercase tracking-wider">Het team van JD Infra</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VACATURES -->
+  <section class="py-20 sm:py-28 bg-slate-50" id="vacatures">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div class="max-w-2xl mb-12">
         <span class="eyebrow mb-4">Openstaande vacatures</span>
         <h2 class="display-lg text-primary-500">Kom ons <span class="accent-serif">team</span> versterken.</h2>
@@ -63,17 +108,21 @@ const icons: Record<string, string> = {
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
         {siteConfig.vacatures.map((vac, i) => (
-          <a href={`/vacatures/${vac.slug}/`} class="reveal group flex flex-col bg-white rounded-2xl border border-secondary-100 p-7 transition-all duration-300 hover:border-accent-400/40 hover:shadow-xl hover:-translate-y-1" style={`transition-delay: ${i * 80}ms`}>
-            <div class="flex flex-wrap items-center gap-2 mb-4">
-              <span class="inline-block px-3 py-1 rounded-full bg-accent-400/10 text-accent-500 font-heading font-bold text-xs">{vac.type}</span>
-              <span class="inline-block px-3 py-1 rounded-full bg-primary-500/5 text-primary-500 font-heading font-semibold text-xs">{vac.location}</span>
+          <a href={`/vacatures/${vac.slug}/`} class="reveal group relative flex flex-col bg-white rounded-2xl border border-secondary-100 overflow-hidden transition-all duration-300 hover:border-accent-400/40 hover:shadow-xl hover:-translate-y-1" style={`transition-delay: ${i * 80}ms`}>
+            <!-- accent top strip -->
+            <div class="h-1.5 bg-gradient-to-r from-accent-400 to-accent-600 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+            <div class="p-7 flex flex-col flex-1">
+              <div class="flex flex-wrap items-center gap-2 mb-4">
+                <span class="inline-block px-3 py-1 rounded-full bg-accent-400/10 text-accent-500 font-heading font-bold text-xs">{vac.type}</span>
+                <span class="inline-block px-3 py-1 rounded-full bg-primary-500/5 text-primary-500 font-heading font-semibold text-xs">{vac.location}</span>
+              </div>
+              <h3 class="font-heading font-bold text-xl text-primary-500 mb-2 leading-tight">{vac.title}</h3>
+              <p class="text-secondary-400 text-sm leading-relaxed mb-6 flex-1">{vac.tagline}</p>
+              <span class="editorial-link text-primary-500 group-hover:text-accent-500 border-primary-500/30 group-hover:border-accent-500 w-fit">
+                Bekijk vacature
+                <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </span>
             </div>
-            <h3 class="font-heading font-bold text-xl text-primary-500 mb-2 leading-tight">{vac.title}</h3>
-            <p class="text-secondary-400 text-sm leading-relaxed mb-6 flex-1">{vac.tagline}</p>
-            <span class="editorial-link text-primary-500 group-hover:text-accent-500 border-primary-500/30 group-hover:border-accent-500 w-fit">
-              Bekijk vacature
-              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </span>
           </a>
         ))}
       </div>
