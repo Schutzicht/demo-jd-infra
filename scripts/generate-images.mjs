@@ -44,7 +44,7 @@ const IMAGES = [
     prompt:
       "Photorealistic architectural cutaway cross-section, straight side view, of a Dutch residential street construction, like a clean museum diagram with a flat vertical cut face. " +
       "From top to bottom, clearly separated horizontal layers: 1) a top layer of tightly laid anthracite-grey concrete paver bricks seen on edge, 2) a thin pale bedding-sand layer, 3) a thick layer of grey crushed-rock gravel foundation, 4) a compacted yellow-brown sand sub-base. " +
-      "Embedded in the sand sub-base on the right side, a large round grey concrete sewer pipe shown in cross-section. Near the bottom a faint horizontal groundwater line with slightly darker damp sand beneath it. " +
+      "Deep down in the lower sand sub-base on the right side, well BELOW the grey gravel foundation with a clear band of sand between the gravel and the pipe, a large round grey concrete sewer pipe shown in cross-section (the pipe must not touch the gravel layer). Near the bottom a faint horizontal groundwater line with slightly darker damp sand beneath it. " +
       "Above the paving a thin strip showing the finished street surface and a hint of soft sky. Clean, educational, precise, wide 4:3 composition.",
   },
   {

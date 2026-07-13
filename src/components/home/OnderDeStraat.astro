@@ -2,19 +2,19 @@
 // Interactieve branche-feature: realistische straatdoorsnede (Gemini) + klinkerverband-kiezer
 // pos = highlight-zone over de doorsnede-foto, in % (top/left/width/height)
 const lagen = [
-  { id: 'klinkers',   naam: 'Bestrating',      dienst: 'Straatwerk', pos: { top: 14,   left: 0,  width: 100, height: 7 },  tekst: 'De zichtlaag: klinkers of tegels, strak in het door u gekozen verband gelegd en afgetrild.' },
-  { id: 'straatzand', naam: 'Straatzand',      dienst: 'Straatwerk', pos: { top: 21,   left: 0,  width: 100, height: 3.5 }, tekst: 'Een dunne, vlak afgereide laag straatzand waarin de klinkers worden gelegd en vastgezet.' },
-  { id: 'fundering',  naam: 'Fundering',       dienst: 'Grondwerk',  pos: { top: 24.5, left: 0,  width: 100, height: 27 },  tekst: 'Menggranulaat als draagkrachtige fundering, verdicht zodat de verharding niet verzakt.' },
-  { id: 'cunet',      naam: 'Zandbed / cunet', dienst: 'Grondwerk',  pos: { top: 52,   left: 0,  width: 100, height: 34 },  tekst: 'Het uitgegraven cunet, opgevuld met zand. De stabiele basis waar alles op rust.' },
-  { id: 'riool',      naam: 'Riolering',       dienst: 'Riolering',  pos: { top: 44,   left: 65, width: 27,  height: 34 },  tekst: 'De rioolbuis op de juiste hoogte en afschot, voor een betrouwbare afvoer van regen- en afvalwater.' },
-  { id: 'water',      naam: 'Grondwaterpeil',  dienst: 'Grondwerk',  pos: { top: 86,   left: 0,  width: 100, height: 14 },  tekst: 'Wij houden rekening met de grondwaterstand, zodat de constructie droog en stabiel blijft.' },
+  { id: 'klinkers',   naam: 'Bestrating',      dienst: 'Straatwerk', pos: { top: 0,  left: 0,  width: 100, height: 8 },  tekst: 'De zichtlaag: klinkers of tegels, strak in het door u gekozen verband gelegd en afgetrild.' },
+  { id: 'straatzand', naam: 'Straatzand',      dienst: 'Straatwerk', pos: { top: 8,  left: 0,  width: 100, height: 5 },  tekst: 'Een dunne, vlak afgereide laag straatzand waarin de klinkers worden gelegd en vastgezet.' },
+  { id: 'fundering',  naam: 'Fundering',       dienst: 'Grondwerk',  pos: { top: 13, left: 0,  width: 100, height: 25 }, tekst: 'Menggranulaat als draagkrachtige fundering, verdicht zodat de verharding niet verzakt.' },
+  { id: 'cunet',      naam: 'Zandbed / cunet', dienst: 'Grondwerk',  pos: { top: 38, left: 0,  width: 100, height: 62 }, tekst: 'Het uitgegraven cunet, opgevuld met zand. De stabiele basis waar alles op rust.' },
+  { id: 'riool',      naam: 'Riolering',       dienst: 'Riolering',  pos: { top: 46, left: 62, width: 31, height: 40 }, tekst: 'De rioolbuis, ruim onder de fundering aangelegd met het juiste afschot voor een betrouwbare afvoer van regen- en afvalwater.' },
+  { id: 'water',      naam: 'Grondwaterpeil',  dienst: 'Grondwerk',  pos: { top: 90, left: 0,  width: 100, height: 10 }, tekst: 'Wij houden rekening met de grondwaterstand, zodat de constructie droog en stabiel blijft.' },
 ];
 
 const verbanden = [
-  { id: 'halfsteens', naam: 'Halfsteens',   img: '/images/jd-infra/generated/verband-halfsteens.jpg', tekst: 'Rijen klinkers, telkens een halve steen verspringend. De klassieker voor opritten en paden.' },
-  { id: 'blok',       naam: 'Blokverband',  img: '/images/jd-infra/generated/verband-blok.jpg',       tekst: 'Strak boven elkaar gelegd. Rustig en modern, mooi bij bestrating in een patroon.' },
-  { id: 'visgraat',   naam: 'Visgraat',     img: '/images/jd-infra/generated/verband-visgraat.jpg',   tekst: 'In elkaar grijpend weefsel. Zeer sterk, ideaal bij zwaarder belaste verharding.' },
-  { id: 'keper',      naam: 'Keperverband', img: '/images/jd-infra/generated/verband-keper.jpg',      tekst: 'Visgraat onder 45 graden. Speels en sterk, een echte blikvanger.' },
+  { id: 'halfsteens', naam: 'Halfsteens',      img: '/images/jd-infra/generated/verband-halfsteens.jpg', tekst: 'Rijen klinkers, telkens een halve steen verspringend. De klassieker voor opritten en paden.' },
+  { id: 'blok',       naam: 'Blokverband',     img: '/images/jd-infra/generated/verband-blok.jpg',       tekst: 'Strak boven elkaar gelegd. Rustig en modern, mooi bij bestrating in een patroon.' },
+  { id: 'elleboog',   naam: 'Elleboogverband', img: '/images/jd-infra/generated/verband-visgraat.jpg',   tekst: 'Haaks in elkaar grijpende klinkers. Zeer sterk, ideaal bij zwaarder belaste verharding.' },
+  { id: 'keper',      naam: 'Keperverband',    img: '/images/jd-infra/generated/verband-keper.jpg',      tekst: 'Diagonaal in elkaar grijpend onder 45 graden. Speels en sterk, een echte blikvanger.' },
 ];
 ---
 
