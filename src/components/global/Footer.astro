@@ -120,10 +120,25 @@ import { siteConfig } from '../../data/siteConfig';
       <p class="text-white/30 text-xs font-heading tracking-wide">
         &copy; {new Date().getFullYear()} {siteConfig.name}. Alle rechten voorbehouden.
       </p>
-      <p class="text-white/30 text-xs font-heading tracking-wide">
-        {siteConfig.contact.city}, {siteConfig.contact.country}
+      <p class="text-white/40 text-xs font-heading tracking-wide">
+        Website door <a href="https://agensea.nl" target="_blank" rel="noopener" class="agensea-glow inline-block font-bold">Agensea</a>
       </p>
     </div>
   </div>
+
+  <style>
+    .agensea-glow {
+      color: #33c1d9;
+      text-shadow: 0 0 6px rgba(9, 158, 198, 0.6), 0 0 14px rgba(9, 158, 198, 0.4), 0 0 26px rgba(9, 158, 198, 0.22);
+      animation: agenseaGlow 2.8s ease-in-out infinite;
+      transition: color 0.3s ease;
+    }
+    .agensea-glow:hover { color: #66d1e5; }
+    @keyframes agenseaGlow {
+      0%, 100% { text-shadow: 0 0 5px rgba(9, 158, 198, 0.45), 0 0 12px rgba(9, 158, 198, 0.3); }
+      50% { text-shadow: 0 0 9px rgba(9, 158, 198, 0.85), 0 0 20px rgba(9, 158, 198, 0.6), 0 0 34px rgba(9, 158, 198, 0.32); }
+    }
+    @media (prefers-reduced-motion: reduce) { .agensea-glow { animation: none; } }
+  </style>
 
 </footer>
