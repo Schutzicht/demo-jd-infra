@@ -56,6 +56,20 @@ export const siteConfig = {
 
   projecten: [
     {
+      slug: 'parkeerterrein-4-hoogten',
+      title: 'Parkeerterrein de 4 Hoogten',
+      location: 'Duinweg, Oostkapelle',
+      year: '',
+      category: 'Straatwerk & grondwerk',
+      cover: '/projecten/parkeerterrein-4-hoogten/cover.jpg',
+      gallery: [
+        '/projecten/parkeerterrein-4-hoogten/g1.jpg',
+        '/projecten/parkeerterrein-4-hoogten/g2.jpg',
+        '/projecten/parkeerterrein-4-hoogten/g3.jpg',
+      ],
+      description: 'De complete aanleg van parkeerterrein de 4 Hoogten aan de Duinweg in Oostkapelle. Grondwerk en fundering, ruime parkeervakken in asfalt met belijning en rijbanen en paden in keperverband. Strak afgewerkt met banden, zwerfkeien en zitbanken, zodat het terrein natuurlijk opgaat in de duinrand.',
+    },
+    {
       slug: 'kaapduin-piet-hein',
       title: 'Vernieuwen duinpaden Kaapduin - Piet Hein',
       location: 'Dishoek',
