@@ -25,7 +25,10 @@ import { siteConfig } from '../../data/siteConfig';
   <div class="sm:hidden relative z-10 flex flex-col h-full pt-24 pb-4 px-5">
     <!-- Heading centered vertically -->
     <div class="flex-1 flex flex-col justify-center">
-      <span class="eyebrow !text-accent-300 mb-4">Sinds 2006 &middot; Zeeland</span>
+      <span class="inline-flex items-center gap-2.5 mb-4 text-white font-heading font-semibold text-xs uppercase tracking-[0.2em]">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent-300 shrink-0"></span>
+        Sinds 2006 &middot; Zeeland
+      </span>
       <h1>
         <span class="block display-xl text-white">
           Bouwt.<br/>Bestraat.<br/><span class="accent-serif">Verbindt.</span>
@@ -53,7 +56,8 @@ import { siteConfig } from '../../data/siteConfig';
   <div class="hidden sm:flex relative z-10 w-full flex-col justify-end h-full pb-14 lg:pb-20">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
       <div class="max-w-3xl">
-        <span class="eyebrow !text-accent-300 mb-6 animate-fade-in" style="animation-delay: 0.15s;">
+        <span class="inline-flex items-center gap-2.5 mb-6 text-white font-heading font-semibold text-xs uppercase tracking-[0.2em] animate-fade-in" style="animation-delay: 0.15s;">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent-300 shrink-0"></span>
           Sinds 2006 &middot; Grond, straat &amp; riool
         </span>
 
@@ -93,14 +97,15 @@ import { siteConfig } from '../../data/siteConfig';
             <div class="font-heading font-bold text-2xl lg:text-3xl text-white leading-none"><span data-counter="20">20</span></div>
             <div class="text-white/55 text-[0.7rem] uppercase tracking-[0.18em] font-heading mt-1.5">Jaar ervaring</div>
           </div>
-          <div class="hidden lg:block w-px bg-white/15"></div>
-          <a href="/vacatures/" class="group hidden lg:flex flex-col justify-center ml-auto text-right">
-            <span class="text-white/55 text-[0.7rem] uppercase tracking-[0.18em] font-heading">Wij zoeken versterking</span>
-            <span class="inline-flex items-center justify-end gap-1.5 text-accent-300 group-hover:text-accent-200 font-heading font-semibold text-sm mt-1.5 transition-colors duration-300">
-              Bekijk vacatures <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-            </span>
-          </a>
         </div>
+
+        <!-- Vacature-regel -->
+        <a href="/vacatures/" class="group animate-fade-in inline-flex items-center gap-2 mt-6 text-white/70 hover:text-white font-heading text-sm transition-colors duration-300" style="animation-delay: 0.82s;">
+          <span class="text-white/50">Wij zoeken versterking.</span>
+          <span class="inline-flex items-center gap-1.5 text-accent-300 group-hover:text-accent-200 font-semibold">
+            Bekijk vacatures <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </span>
+        </a>
       </div>
     </div>
   </div>
