@@ -56,6 +56,20 @@ export const siteConfig = {
 
   projecten: [
     {
+      slug: 'reconstructie-woonstraat',
+      title: 'Reconstructie Meanderlaan',
+      location: 'Middelburg',
+      year: '',
+      category: 'Grondwerk & straatwerk',
+      cover: '/projecten/reconstructie-woonstraat/cover.jpg',
+      gallery: [
+        '/projecten/reconstructie-woonstraat/g1.jpg',
+        '/projecten/reconstructie-woonstraat/g2.jpg',
+        '/projecten/reconstructie-woonstraat/g3.jpg',
+      ],
+      description: 'Reconstructie in de woonomgeving rond de Meanderflat: opbreken en afvoeren van de oude verharding, grondwerk, rioleringen, kolken, maken park met wadi’s voor beheersing van regenwater, het aanbrengen van wegen met gebakken klinkers en open verharding in de parkeervakken met eigen materieel en mensen. In combinatie met leveranciers en onderaannemers hebben we het park aangekleed met schanskorven, zitbanken en paadjes uitgevoerd in halfverharding.',
+    },
+    {
       slug: 'parkeerterrein-4-hoogten',
       title: 'Parkeerterrein de 4 Hoogten',
       location: 'Duinweg, Oostkapelle',
@@ -97,20 +111,6 @@ export const siteConfig = {
         '/projecten/herinrichting-t-zand/g3.jpg',
       ],
       description: 'Complete herinrichting van een woonstraat: het opnemen van de bestaande verharding, vervangen van de riolering en het opnieuw bestraten van rijbaan, parkeervakken en trottoirs. Uitgevoerd met minimale overlast voor de bewoners.',
-    },
-    {
-      slug: 'reconstructie-woonstraat',
-      title: 'Reconstructie Meanderlaan',
-      location: 'Vlissingen',
-      year: '',
-      category: 'Grondwerk & straatwerk',
-      cover: '/projecten/reconstructie-woonstraat/cover.jpg',
-      gallery: [
-        '/projecten/reconstructie-woonstraat/g1.jpg',
-        '/projecten/reconstructie-woonstraat/g2.jpg',
-        '/projecten/reconstructie-woonstraat/g3.jpg',
-      ],
-      description: 'Reconstructie in de woonomgeving rond de Meanderlaan: opbreken en afvoeren van de oude verharding, grondwerk en bouwrijp maken met eigen materieel, gevolgd door de nieuwe fundering en bestrating.',
     },
     {
       slug: 'pauwenburglaan-vlissingen',
