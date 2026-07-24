@@ -24,10 +24,11 @@ import { siteConfig } from '../../data/siteConfig';
   <!-- === MOBILE LAYOUT === -->
   <div class="sm:hidden relative z-10 flex flex-col h-full pt-24 pb-4 px-5">
     <!-- Heading centered vertically -->
-    <div class="flex-1 flex items-center">
+    <div class="flex-1 flex flex-col justify-center">
+      <span class="eyebrow !text-accent-300 mb-4">Sinds 2006 &middot; Zeeland</span>
       <h1>
         <span class="block display-xl text-white">
-          Grondwerk,<br/>straatwerk &<br/><span class="accent-serif">riolering</span>
+          Bouwt.<br/>Bestraat.<br/><span class="accent-serif">Verbindt.</span>
         </span>
       </h1>
     </div>
@@ -49,76 +50,56 @@ import { siteConfig } from '../../data/siteConfig';
   </div>
 
   <!-- === DESKTOP LAYOUT === -->
-  <div class="hidden sm:flex relative z-10 w-full flex-col h-full">
-    <!-- Heading - centered vertically -->
-    <div class="flex-1 flex items-center pt-36 lg:pt-44 pb-10">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div class="max-w-4xl">
-          <h1 class="animate-slide-up" style="animation-delay: 0.3s;">
-            <span class="block display-xl text-white" style="font-size: clamp(2.5rem, 5.2vw, 4.5rem);">
-              Bouwt. Bestraat.<br/><span class="accent-serif">Verbindt.</span>
-            </span>
-            <span class="block font-heading font-medium text-white/60 text-base lg:text-lg mt-5 tracking-[0.15em] uppercase">
-              Aannemingsbedrijf in grond-, straat- en rioleringswerk
-            </span>
-          </h1>
-        </div>
-      </div>
-    </div>
+  <div class="hidden sm:flex relative z-10 w-full flex-col justify-end h-full pb-14 lg:pb-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <div class="max-w-3xl">
+        <span class="eyebrow !text-accent-300 mb-6 animate-fade-in" style="animation-delay: 0.15s;">
+          Sinds 2006 &middot; Grond, straat &amp; riool
+        </span>
 
-    <!-- Stats + stride cards at bottom -->
-    <div class="w-full pb-12 lg:pb-16 pt-4">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <!-- Stats -->
-        <div class="flex flex-wrap gap-4 mb-8">
-          <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2">
-            <span class="font-heading font-bold text-xl text-white" data-counter="2006" data-counter-type="year">2006</span>
-            <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Opgericht</span>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2">
-            <span class="font-heading font-bold text-xl text-white"><span data-counter="15">15</span><span class="text-accent-400">+</span></span>
-            <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Vakmensen</span>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 flex items-center gap-2">
-            <span class="font-heading font-bold text-xl text-white"><span data-counter="20">20</span></span>
-            <span class="text-white/60 text-xs uppercase tracking-widest font-heading">Jaar ervaring</span>
-          </div>
+        <h1 class="animate-slide-up" style="animation-delay: 0.3s;">
+          <span class="block display-xl text-white" style="font-size: clamp(2.75rem, 5.6vw, 5rem);">
+            Bouwt. Bestraat.<br/><span class="accent-serif">Verbindt.</span>
+          </span>
+        </h1>
+
+        <p class="animate-slide-up text-white/75 text-lg lg:text-xl leading-relaxed mt-6 max-w-xl" style="animation-delay: 0.42s;">
+          Vakkundig grond-, straat- en rioleringswerk voor particulieren, bedrijven en overheden in heel Zeeland.
+        </p>
+
+        <div class="animate-slide-up flex items-center gap-6 mt-9" style="animation-delay: 0.54s;">
+          <a href="/contact/" class="inline-flex items-center gap-2 bg-accent-400 hover:bg-accent-500 text-white px-8 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+            Offerte aanvragen &rarr;
+          </a>
+          <a href="/projecten/" class="group inline-flex items-center gap-2 text-white font-heading font-semibold text-sm uppercase tracking-wider">
+            <span class="border-b border-white/40 group-hover:border-accent-300 pb-0.5 transition-colors duration-300">Bekijk projecten</span>
+            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>
         </div>
 
-        <!-- Stride cards -->
-        <div class="grid lg:grid-cols-5 gap-5">
-          <div class="lg:col-span-3 bg-white/80 backdrop-blur-2xl rounded-2xl p-8 shadow-2xl border border-white/50">
-            <span class="eyebrow mb-3 block">Grond, straat &amp; riool</span>
-            <h2 class="display-md text-primary-900 mb-3">
-              Vakkundig infrawerk voor heel <span class="accent-serif !text-accent-600">Zeeland</span>
-            </h2>
-            <p class="text-secondary-700 text-base leading-relaxed mb-6 max-w-lg">
-              Van bouwrijp maken tot complete infrastructurele projecten. Wij leveren vakwerk voor particulieren, bedrijven en overheden.
-            </p>
-            <div class="flex gap-3">
-              <a href="/contact/" class="inline-flex items-center gap-2 bg-accent-400 hover:bg-accent-500 text-white px-7 py-3.5 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-                Offerte aanvragen &rarr;
-              </a>
-              <a href="/projecten/" class="inline-flex items-center gap-2 border-2 border-primary-500/20 hover:border-accent-400 text-primary-500 hover:text-accent-500 px-7 py-3.5 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300">
-                Bekijk projecten &rarr;
-              </a>
-            </div>
+        <!-- Integrated stat row -->
+        <div class="animate-fade-in flex items-stretch gap-8 lg:gap-10 mt-12 pt-8 border-t border-white/15" style="animation-delay: 0.7s;">
+          <div>
+            <div class="font-heading font-bold text-2xl lg:text-3xl text-white leading-none" data-counter="2006" data-counter-type="year">2006</div>
+            <div class="text-white/55 text-[0.7rem] uppercase tracking-[0.18em] font-heading mt-1.5">Opgericht</div>
           </div>
-
-          <div class="lg:col-span-2 bg-accent-500/60 backdrop-blur-2xl rounded-2xl p-8 shadow-2xl border border-white/25 flex flex-col justify-between">
-            <div>
-              <span class="eyebrow mb-3 block !text-white">Wij zoeken versterking</span>
-              <h3 class="display-md text-white mb-3">
-                Werk bij <span class="accent-serif !text-primary-900">JD Infra</span>
-              </h3>
-              <p class="text-white/90 text-sm leading-relaxed mb-5">
-                Op zoek naar afwisselend buitenwerk in Zeeland? Wij zoeken stratenmakers, machinisten en grondwerkers.
-              </p>
-            </div>
-            <a href="/vacatures/" class="inline-flex items-center gap-2 bg-white hover:bg-primary-50 text-primary-500 px-6 py-3 rounded-full font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 w-fit shadow-lg">
-              Bekijk vacatures &rarr;
-            </a>
+          <div class="w-px bg-white/15"></div>
+          <div>
+            <div class="font-heading font-bold text-2xl lg:text-3xl text-white leading-none"><span data-counter="15">15</span><span class="text-accent-300">+</span></div>
+            <div class="text-white/55 text-[0.7rem] uppercase tracking-[0.18em] font-heading mt-1.5">Vakmensen</div>
           </div>
+          <div class="w-px bg-white/15"></div>
+          <div>
+            <div class="font-heading font-bold text-2xl lg:text-3xl text-white leading-none"><span data-counter="20">20</span></div>
+            <div class="text-white/55 text-[0.7rem] uppercase tracking-[0.18em] font-heading mt-1.5">Jaar ervaring</div>
+          </div>
+          <div class="hidden lg:block w-px bg-white/15"></div>
+          <a href="/vacatures/" class="group hidden lg:flex flex-col justify-center ml-auto text-right">
+            <span class="text-white/55 text-[0.7rem] uppercase tracking-[0.18em] font-heading">Wij zoeken versterking</span>
+            <span class="inline-flex items-center justify-end gap-1.5 text-accent-300 group-hover:text-accent-200 font-heading font-semibold text-sm mt-1.5 transition-colors duration-300">
+              Bekijk vacatures <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+            </span>
+          </a>
         </div>
       </div>
     </div>
